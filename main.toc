@@ -1,13 +1,19 @@
 \contentsline {chapter}{Acknowledgements}{vii}{section*.1}%
 \contentsline {chapter}{Abstract}{ix}{section*.3}%
-\contentsline {part}{\numberline {I}Introduction and Background Theory}{1}{part.1}%
+\contentsline {part}{\numberline {I}Introduction}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Including code}{4}{section.1.1}%
-\contentsline {part}{\numberline {II}Body: What was done for the thesis}{7}{part.2}%
-\contentsline {chapter}{\numberline {2}Part2}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Including code}{10}{section.2.1}%
-\contentsline {part}{\numberline {III}Results and Conclusion}{13}{part.3}%
-\contentsline {part}{Appendix}{17}{part*.12}%
-\contentsline {chapter}{\numberline {A}Detailed Descriptions}{17}{appendix.A}%
-\contentsline {chapter}{Bibliography}{19}{appendix.A}%
+\contentsline {part}{\numberline {II}Theory}{5}{part.2}%
+\contentsline {chapter}{\numberline {2}Background Theory - Fluid Dynamics}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Problem Definition}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Coanda Jet Deflection in the HOMER nozzle}{8}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Flow Simulation}{9}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Background Theory - Deep Learning}{11}{chapter.3}%
+\contentsline {part}{\numberline {III}Methodology}{13}{part.3}%
+\contentsline {chapter}{\numberline {4}Methodology and Implementation}{15}{chapter.4}%
+\contentsline {part}{\numberline {IV}Model Evaluation}{17}{part.4}%
+\contentsline {chapter}{\numberline {5}Model Evaluation, Results and Discussions}{19}{chapter.5}%
+\contentsline {part}{\numberline {V}Conclusion}{21}{part.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{23}{chapter.6}%
+\contentsline {part}{Appendix}{27}{part*.9}%
+\contentsline {chapter}{Bibliography}{27}{part*.9}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

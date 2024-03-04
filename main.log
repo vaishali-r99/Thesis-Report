@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.9)  12 JAN 2024 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.9)  4 MAR 2024 17:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -895,70 +895,49 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \glo@main@file=\write6
 \openout6 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 60.
+Package glossaries Info: Writing glossary file main.glo on input line 62.
 runsystem(which pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
 
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 6
-2.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
-) (./main.aux
-
-LaTeX Warning: Label `fig:swingPlot' multiply defined.
-
-
-LaTeX Warning: Label `eq:equation1' multiply defined.
-
-
-LaTeX Warning: Label `fig:circcenter' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:circcenter' multiply defined.
-
-
-LaTeX Warning: Label `fig:generaloffset' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:generaloffset' multiply defined.
-
-
-LaTeX Warning: Label `lst:nice_listing' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-Package scrbase Info: activating english \partname on input line 62.
-Package scrbase Info: activating english \chaptername on input line 62.
-Package scrbase Info: activating english \appendixname on input line 62.
-Package scrbase Info: activating english \figurename on input line 62.
-Package scrbase Info: activating english \tablename on input line 62.
-Package scrbase Info: activating english \contentsname on input line 62.
-Package scrbase Info: activating english \listfigurename on input line 62.
-Package scrbase Info: activating english \listtablename on input line 62.
-Package scrbase Info: activating english \bibname on input line 62.
-Package scrbase Info: activating english \indexname on input line 62.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+Package scrbase Info: activating english \partname on input line 64.
+Package scrbase Info: activating english \chaptername on input line 64.
+Package scrbase Info: activating english \appendixname on input line 64.
+Package scrbase Info: activating english \figurename on input line 64.
+Package scrbase Info: activating english \tablename on input line 64.
+Package scrbase Info: activating english \contentsname on input line 64.
+Package scrbase Info: activating english \listfigurename on input line 64.
+Package scrbase Info: activating english \listtablename on input line 64.
+Package scrbase Info: activating english \bibname on input line 64.
+Package scrbase Info: activating english \indexname on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count367
 \scratchdimen=\dimen263
@@ -980,7 +959,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 62.
+Package hyperref Info: Link coloring ON on input line 64.
 
 (./main.out) (./main.out)
 \@outlinefile=\write7
@@ -993,7 +972,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 62.
+(scrbook)           before \begin{document} on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1070,10 +1049,11 @@ Package pdftex.def Info: styles/cse_logo.pdf  used on input line 41.
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [11] [12
 
+Underfull \vbox (badness 4713) has occurred while \output is active []
 
-] (./components/text.tex
+ [11]
+[12] (./components/text.tex
 part I.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
@@ -1081,54 +1061,14 @@ Package scrkbase Info: You've told me to use the font selection of the element
 [1
 
 
+
+
 ] [2] (./chapters/Introduction.tex
 chapter 1.
-
-LaTeX Warning: Citation `latex' on page 3 undefined on input line 6.
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-3.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-7.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
-<images/swing_function_plot.png, id=136, 562.1pt x 421.575pt>
-File: images/swing_function_plot.png Graphic file (type png)
-<use images/swing_function_plot.png>
-Package pdftex.def Info: images/swing_function_plot.png  used on input line 32.
-
-(pdftex.def)             Requested size: 142.26378pt x 106.69289pt.
-<images/CircCenter.png, id=137, 250.9375pt x 250.9375pt>
-File: images/CircCenter.png Graphic file (type png)
-<use images/CircCenter.png>
-Package pdftex.def Info: images/CircCenter.png  used on input line 50.
-(pdftex.def)             Requested size: 130.00854pt x 130.01344pt.
-<images/GeneralOffset.png, id=141, 290.08376pt x 250.9375pt>
-File: images/GeneralOffset.png Graphic file (type png)
-<use images/GeneralOffset.png>
-Package pdftex.def Info: images/GeneralOffset.png  used on input line 56.
-(pdftex.def)             Requested size: 130.00854pt x 112.46516pt.
-\openout3 = `main.pyg'.
-
-
-(./_minted-main/default.pygstyle)
-(./_minted-main/583C527E46940819E1FE7AD85DB256E582A15B1DCA8D177369A2514541E452D
-C.pygtex
-LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 7.
-)
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 101.
 ) [3
 
 
- <./images/swing_function_plot.png (PNG copy)>] [4 <./images/CircCenter.png> <.
-/images/GeneralOffset.png>] [5] [6
+] [4
 
 
 ]
@@ -1136,53 +1076,110 @@ part II.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 21.
-[7] [8] (./chapters/Part 2.tex
+[5] [6] (./chapters/Theory-CFD.tex
 chapter 2.
-
-LaTeX Warning: Citation `latex' on page 9 undefined on input line 6.
-
-File: images/swing_function_plot.png Graphic file (type png)
-<use images/swing_function_plot.png>
-Package pdftex.def Info: images/swing_function_plot.png  used on input line 32.
-
-(pdftex.def)             Requested size: 142.26378pt x 106.69289pt.
-File: images/CircCenter.png Graphic file (type png)
-<use images/CircCenter.png>
-Package pdftex.def Info: images/CircCenter.png  used on input line 50.
-(pdftex.def)             Requested size: 130.00854pt x 130.01344pt.
-File: images/GeneralOffset.png Graphic file (type png)
-<use images/GeneralOffset.png>
-Package pdftex.def Info: images/GeneralOffset.png  used on input line 56.
-(pdftex.def)             Requested size: 130.00854pt x 112.46516pt.
-\openout3 = `main.pyg'.
+<images/Theory-CFD/nozzle.png, id=168, 317.185pt x 202.7575pt>
+File: images/Theory-CFD/nozzle.png Graphic file (type png)
+<use images/Theory-CFD/nozzle.png>
+Package pdftex.def Info: images/Theory-CFD/nozzle.png  used on input line 8.
+(pdftex.def)             Requested size: 284.52756pt x 181.89532pt.
+[7
 
 
-(./_minted-main/583C527E46940819E1FE7AD85DB256E582A15B1DCA8D177369A2514541E452D
-C.pygtex)) [9
+ <./images/Theory-CFD/nozzle.png>]
+<images/Theory-CFD/Coanda-effect.png, id=179, 853.1875pt x 302.12875pt>
+File: images/Theory-CFD/Coanda-effect.png Graphic file (type png)
+<use images/Theory-CFD/Coanda-effect.png>
+Package pdftex.def Info: images/Theory-CFD/Coanda-effect.png  used on input lin
+e 18.
+(pdftex.def)             Requested size: 284.52756pt x 100.7585pt.
 
 
-] [10] [11] [12
+LaTeX Warning: Reference `fig:Domain' on page 8 undefined on input line 23.
+
+
+LaTeX Warning: File `images/Theory-CFD/Flow Domain.png' not found on input line
+ 26.
+
+
+./chapters/Theory-CFD.tex:26: Package pdftex.def Error: File `images/Theory-CFD
+/Flow Domain.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...h=10cm]{images/Theory-CFD/Flow Domain.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+6.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+))
+(./chapters/Theory-Deep Learning.tex
+Underfull \vbox (badness 3919) has occurred while \output is active []
+
+ [8 <./images/Theory-CFD/Coanda-effect.png>] [9] [10
+
+
+]
+chapter 3.
+) [11] [12
 
 
 ]
 part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 29.
-[13] [14] [15
+(scrkbase)              on input line 30.
+[13] [14] (./chapters/Methodology.tex
+chapter 4.
+) [15
 
 
-] [16] (./chapters/Appendix.tex
-chapter A.
-[17
-
-
-])) [18
+] [16
 
 
 ]
+part IV.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 38.
+[17] [18] (./chapters/Results.tex
+chapter 5.
+) [19
+
+
+] [20
+
+
+]
+part V.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 46.
+[21] [22] (./chapters/Conclusion.tex
+chapter 6.
+) [23
+
+
+] [24
+
+
+] [25] [26] (./chapters/Appendix.tex))
 No file main.gls.
-(./main.bbl [19] [20
+(./main.bbl (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [27
+
+
+]
+[28
 
 
 ]
@@ -1190,12 +1187,15 @@ No file main.gls.
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 3.
 
-) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [21]
+
+Package ocgx2 Warning: Rerun to get OCG references right!
+
+[29]
+
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (39 not 41).
+               Rerun to correct this.
+
 (./main.aux)
  ***********
 LaTeX2e <2023-06-01>
@@ -1206,40 +1206,30 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-runsystem(rm main.pyg)...executed.
-
  ) 
 Here is how much of TeX's memory you used:
- 27016 strings out of 477695
- 510898 string characters out of 5831648
- 1869759 words of memory out of 5000000
- 46951 multiletter control sequences out of 15000+600000
- 544152 words of font info for 117 fonts, out of 8000000 for 9000
+ 26904 strings out of 477695
+ 510351 string characters out of 5831648
+ 1864759 words of memory out of 5000000
+ 46853 multiletter control sequences out of 15000+600000
+ 535293 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,19n,134p,10899b,749s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{glo:computer} has been referenced but does not exis
-t, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
-r/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (33 pages, 504203 bytes).
+ 108i,19n,134p,10899b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
+no/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb
+>
+Output written on main.pdf (41 pages, 483502 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 142 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
