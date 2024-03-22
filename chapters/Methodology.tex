@@ -1,2 +1,43 @@
-\chapter{Methodology and Implementation}
+\chapter{Implementation}
 \label{chap:Method}
+\section{CFD Simulation Setup}
+Trancossi and Dumas \cite{trandum} proposed a mathematical model of a thrust-vectoring propulsive nozzle called the HOMER nozzle. CFD simulations are subsequently carried out on this geometry using the Ansys Fluent software under the assumption of 2D, incompressible flow. The simplified model predicts the detachment angle of the jet stream over the curved surface. The nozzle chosen for our study is a slightly modified version of a thrust vectoring propulsive HOMER nozzle, proposed by Trancossi and Dumas \cite{trandum}. The modified design of the HOMER nozzle is inspired by the numerical investigation and experimental validation of Kara and Erpulat \cite{kara}. The nozzle flow problem is setup on a computational domain with fixed geometrical parameters as shown in Figure !!!!!!. The selected channel length ensures the mean flow quantities are fully-developed, hence establishing steady-state conditions. The meshing and CFD simulation are carried out on \verb|OpenFOAM|. 
+\subsection{Mesh Generation}
+The geometry is created using FreeCAD and patch names are assigned based on the type of boundaries. A 2D unstructured triangular mesh has been generated for the computational domain and is enhanced by boundary layer refinement and a refinement box around the nozzle region. The meshing process on \verb|OpenFOAM| begins with the discretization of the geometry into hexahedral blocks using \verb|blockMesh|. Then, \verb|snappyHexMesh| refines the mesh based on parameters specified in snappyHexMeshDict. This includes defining refinement controls, snapping settings, adding boundary layers, and ensuring mesh quality. The process iteratively refines the mesh until desired quality and resolution are achieved, enabling accurate simulations of the geometry's physical behavior. A 2D, incompressible, steady-state CFD simulation is then carried out on this mesh by setting appropriate boundary and initial conditions.
+\subsection{Boundary Conditions and Solver}
+For \( k \), \( \nu_t \), and \( \omega \), low Reynolds number wall functions are applied at walls to account for near-wall turbulence effects. This ensures accurate modeling of turbulence near boundaries. Pressure is set to \verb|zeroGradient| at walls to maintain a neutral pressure condition. Adiabatic stationary walls with no slip conditions are prescribed at the Coanda surfaces as well as inner walls of the nozzle. Inlets are prescribed with fixed values of velocities to define the flow entering the domain. Both the inlet turbulence intensities are set to 1\% (medium turbulence). Additionally, a pressure outlet boundary condition is used to specify the pressure at outlets, allowing flow to exit the domain without reflecting back. These boundary conditions collectively ensure proper representation of the flow behavior within the computational domain. The simulations are performed using the \verb|simpleFoam| solver which utilizes the SIMPLE (Semi-Implicit Method for Pressure Linked Equations) algorithm for pressure-velocity coupling. This method iteratively resolves the momentum and pressure equations until a predetermined convergence criterion is satisfied. 
+\subsection{Dataset Generation}
+CFD simulations are executed for 120 cases with varying Inlet 1 and Inlet 2 velocities such that the velocity ratios between the inlets range from 1 to 9. (Velocity ratio in our case refers to the ratio of higher velocity to that of lower velocity) The simulation results, i.e; the steady-state fields are logged after 1000, 10000 and 30000 steps. The simulation results after 30000 steps are taken as the ground truth values or simply target data.
+\section{Data Pre-Processing}
+\subsection{Model Inputs and Outputs}
+There are 5 input channels and 3 output channels in the surrogate model. The feature and prediction vectors of the surrogate model at each node $i$ is defined as,
+\begin{equation}
+    \begin{aligned}
+    & \mathbf{x}_i=\left[u_{x, i}, u_{y, i},x_i, y_i, \gamma_{\operatorname{tag}, i}\right] \\
+    & \mathbf{y}_i=\left[u_{x, i}, u_{y, i}, p_i\right]
+    \end{aligned}
+\end{equation}
+where $u_{x, i}$ and $u_{y, i}$ are the node velocities in X and Y directions, $x_i$ and $y_i$ are the spatial coordinates of the nodes, $p_i$ is the node pressure and $\gamma_{\operatorname{tag}, i}$ is the node tag that defines which cell the node belongs to: inlet, walls or internal mesh. In addition to these channels, the GNN model also requires an edge index vector of the shape [no. of pairs of connected cells,2] as an argument which denotes the connectivity or adjacency between cells, which is then used to internally compute the adjacency matrix for the graph.
+\subsection{Transformation of Mesh Data to Graph Data}
+While conventional RANS solvers require substantial distances from domain boundaries to avoid or mitigate adverse effects on solutions around the region of interest, this is not required for the deep learning task. Hence, we narrow our attention to a small region just enclosing the nozzle and clip the CFD mesh appropriately and the cell centers are defined for this clipped mesh. The velocity and pressure fields are then resampled to the mesh with reduced spatial extent. CFD solvers assign pressure, velocity and other fields typically to each cell of the mesh whereas graphs require node features, i.e; fields defined on each node. Therefore, nodes are taken as cell centers of the mesh cells and the cell data is converted to point data so that it can be used for GNNs. The simulation data is then saved in a hdf5 format. This can directly be used to read $u_{x}$, $u_{y}$, $x$, $y$, and $\gamma_{\operatorname{tag}}$ and $p$ in case of target data. The edge index vector required for the GNN model is generated by computing adjacent cells and storing their indices in a pairwise manner.
+\subsection{Data Normalization}
+Data Normalization is performed on both model inputs and outputs, i.e; input channels and target vectors, carried out in three steps outlined as follows: 
+\begin{enumerate}
+\item Following common practice, we normalize all the fields of interest with respect to the magnitude of freestream or reference velocity $u_0$ to make them dimensionless. \begin{equation}
+    \Tilde{u}=u /\left\|u_0\right\|, \quad \Tilde{p}=p /\left\|u_0\right\|^2
+    \end{equation}
+The latter plays a crucial role as it eliminates the quadratic scaling effect present in the pressure values of the target data, effectively flattening the solution space, thereby simplifying the task for the neural network in subsequent stages.
+\item Next, we subtract the mean pressure from the dimensionless pressure values. 
+\begin{equation}
+\hat{p} = \Tilde{p} - p_{mean} , \quad \text{where } p_{mean} = \sum_i p_i / n
+\end{equation}
+$n$ is the number of training samples and $p_i$ denotes individual pressure values. Without this step, the pressure targets depict an ill-posed learning objective since the random pressure offsets in the solutions lack correlation with the inputs.
+\item As a final step, every channel undergoes normalization to the range of [-1, 1]. This standardization aims to mitigate errors stemming from finite numerical precision during the training period. We opt for the maximum absolute value of each quantity across the entire training dataset to normalize the data. 
+\end{enumerate}
+The dataset is split into 3 parts to distribute it as Training Data : Validation Data : Test Data in the ratio 80:10:10. 
+\section{Proposed Architecture}
+ 
+\subsection{The Graph U-Net Architecture}
+\subsection{The Multi-Resolution Graph Net Architecture}
+\section{Model Hyperparameters and Training Parameters}
+

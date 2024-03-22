@@ -1,3 +1,20 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{kara}
+Emre Kara and Hüdai Erpulat.
+\newblock Experimental investigation and numerical verification of coanda
+  effect on curved surfaces using co-flow thrust vectoring.
+\newblock {\em International Advanced Researches and Engineering Journal},
+  5:72–78, 2021.
+
+\bibitem{newman}
+BG~Newman.
+\newblock The deflection of plane jets by adjacent boundaries-coanda effect.
+\newblock {\em Boundary layer and flow control}, 1961.
+
+\bibitem{trandum}
+Michele Trancossi and Antonio Dumas.
+\newblock A.c.h.e.o.n.: Aerial coanda high efficiency orienting-jet nozzle.
+\newblock {\em SAE Technical Papers}, 10 2011.
 
 \end{thebibliography}

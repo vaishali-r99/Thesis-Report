@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.9)  4 MAR 2024 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  22 MAR 2024 10:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1045,15 +1045,11 @@ Package pdftex.def Info: styles/cse_logo.pdf  used on input line 41.
 
 
 ]
-(./main.toc)
+(./main.toc [11])
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
-
-Underfull \vbox (badness 4713) has occurred while \output is active []
-
- [11]
-[12] (./components/text.tex
+ [12] (./components/text.tex
 part I.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
@@ -1078,56 +1074,186 @@ Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)              on input line 21.
 [5] [6] (./chapters/Theory-CFD.tex
 chapter 2.
-<images/Theory-CFD/nozzle.png, id=168, 317.185pt x 202.7575pt>
+<images/Theory-CFD/nozzle.png, id=239, 317.185pt x 202.7575pt>
 File: images/Theory-CFD/nozzle.png Graphic file (type png)
 <use images/Theory-CFD/nozzle.png>
-Package pdftex.def Info: images/Theory-CFD/nozzle.png  used on input line 8.
+Package pdftex.def Info: images/Theory-CFD/nozzle.png  used on input line 7.
 (pdftex.def)             Requested size: 284.52756pt x 181.89532pt.
 [7
 
 
  <./images/Theory-CFD/nozzle.png>]
-<images/Theory-CFD/Coanda-effect.png, id=179, 853.1875pt x 302.12875pt>
+<images/Theory-CFD/Coanda-effect.png, id=252, 853.1875pt x 302.12875pt>
 File: images/Theory-CFD/Coanda-effect.png Graphic file (type png)
 <use images/Theory-CFD/Coanda-effect.png>
 Package pdftex.def Info: images/Theory-CFD/Coanda-effect.png  used on input lin
-e 18.
+e 16.
 (pdftex.def)             Requested size: 284.52756pt x 100.7585pt.
 
 
-LaTeX Warning: Reference `fig:Domain' on page 8 undefined on input line 23.
-
-
 LaTeX Warning: File `images/Theory-CFD/Flow Domain.png' not found on input line
- 26.
+ 25.
 
 
-./chapters/Theory-CFD.tex:26: Package pdftex.def Error: File `images/Theory-CFD
+./chapters/Theory-CFD.tex:25: Package pdftex.def Error: File `images/Theory-CFD
 /Flow Domain.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26 ...h=10cm]{images/Theory-CFD/Flow Domain.png}
+l.25 ...th=7cm]{images/Theory-CFD/Flow Domain.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-6.
+5.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-))
-(./chapters/Theory-Deep Learning.tex
-Underfull \vbox (badness 3919) has occurred while \output is active []
-
- [8 <./images/Theory-CFD/Coanda-effect.png>] [9] [10
+) [8 <./images/Theory-CFD/Coanda-effect.png>] [9]) (./chapters/Theory-Deep Lear
+ning.tex [10] [11]
+[12
 
 
 ]
 chapter 3.
-) [11] [12
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+[13]
+<images/Theory-DL/ActFn.png, id=304, 691.58376pt x 340.27126pt>
+File: images/Theory-DL/ActFn.png Graphic file (type png)
+<use images/Theory-DL/ActFn.png>
+Package pdftex.def Info: images/Theory-DL/ActFn.png  used on input line 19.
+(pdftex.def)             Requested size: 284.52756pt x 139.99498pt.
+<images/Theory-DL/ActGraphs.png, id=306, 711.65875pt x 495.8525pt>
+File: images/Theory-DL/ActGraphs.png Graphic file (type png)
+<use images/Theory-DL/ActGraphs.png>
+Package pdftex.def Info: images/Theory-DL/ActGraphs.png  used on input line 27.
+
+(pdftex.def)             Requested size: 284.52756pt x 198.23912pt.
+<images/Theory-DL/MLP.png, id=308, 689.57625pt x 221.82875pt>
+File: images/Theory-DL/MLP.png Graphic file (type png)
+<use images/Theory-DL/MLP.png>
+Package pdftex.def Info: images/Theory-DL/MLP.png  used on input line 36.
+(pdftex.def)             Requested size: 284.52756pt x 91.52916pt.
+ [14 <./images/Theory-DL/ActFn.png>] [15 <./images/Theory-DL/ActGraphs.png>] [1
+6 <./images/Theory-DL/MLP.png>]
+<images/Theory-DL/LR.png, id=333, 505.89pt x 243.91125pt>
+File: images/Theory-DL/LR.png Graphic file (type png)
+<use images/Theory-DL/LR.png>
+Package pdftex.def Info: images/Theory-DL/LR.png  used on input line 57.
+(pdftex.def)             Requested size: 284.52756pt x 137.18484pt.
+ [17 <./images/Theory-DL/LR.png>]
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+ [18]
+[19]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
+00.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+) [20]
+Overfull \hbox (4.48366pt too wide) in paragraph at lines 108--109
+[]\OT1/ppl/m/n/10.95 Kaiming ini-tial-iza-tion is de-signed for net-works us-in
+g non-linear ac-ti-va-tions like ReLU
+ []
+
+[21] [22] [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+[25]
+<images/Theory-DL/CNN.png, id=404, 568.1225pt x 225.84375pt>
+File: images/Theory-DL/CNN.png Graphic file (type png)
+<use images/Theory-DL/CNN.png>
+Package pdftex.def Info: images/Theory-DL/CNN.png  used on input line 165.
+(pdftex.def)             Requested size: 284.52756pt x 113.11111pt.
+<images/Theory-DL/Conv1.png, id=405, 752.8125pt x 354.32375pt>
+File: images/Theory-DL/Conv1.png Graphic file (type png)
+<use images/Theory-DL/Conv1.png>
+Package pdftex.def Info: images/Theory-DL/Conv1.png  used on input line 173.
+(pdftex.def)             Requested size: 284.52756pt x 133.91994pt.
+<images/Theory-DL/Conv2.png, id=406, 853.1875pt x 658.46pt>
+File: images/Theory-DL/Conv2.png Graphic file (type png)
+<use images/Theory-DL/Conv2.png>
+Package pdftex.def Info: images/Theory-DL/Conv2.png  used on input line 179.
+(pdftex.def)             Requested size: 170.71652pt x 131.74995pt.
+<images/Theory-DL/Pool.png, id=407, 565.11125pt x 400.49625pt>
+File: images/Theory-DL/Pool.png Graphic file (type png)
+<use images/Theory-DL/Pool.png>
+Package pdftex.def Info: images/Theory-DL/Pool.png  used on input line 186.
+(pdftex.def)             Requested size: 170.71652pt x 120.98701pt.
+<images/Theory-DL/MaxUnPool.png, id=408, 1612.0225pt x 714.67pt>
+File: images/Theory-DL/MaxUnPool.png Graphic file (type png)
+<use images/Theory-DL/MaxUnPool.png>
+Package pdftex.def Info: images/Theory-DL/MaxUnPool.png  used on input line 191
+.
+(pdftex.def)             Requested size: 341.43306pt x 151.36101pt.
+<images/Theory-DL/NNUnpool.png, id=409, 684.5575pt x 405.515pt>
+File: images/Theory-DL/NNUnpool.png Graphic file (type png)
+<use images/Theory-DL/NNUnpool.png>
+Package pdftex.def Info: images/Theory-DL/NNUnpool.png  used on input line 197.
+
+(pdftex.def)             Requested size: 170.71652pt x 101.1248pt.
+ [26 <./images/Theory-DL/CNN.png> <./images/Theory-DL/Conv1.png>]
+<images/Theory-DL/UNet.png, id=419, 637.38126pt x 426.59375pt>
+File: images/Theory-DL/UNet.png Graphic file (type png)
+<use images/Theory-DL/UNet.png>
+Package pdftex.def Info: images/Theory-DL/UNet.png  used on input line 205.
+(pdftex.def)             Requested size: 284.52756pt x 190.42921pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27 <./images/Theory-DL/Conv2.png> <./images/Theory-DL/Pool.png>]
+Overfull \hbox (2.91864pt too wide) in paragraph at lines 212--213
+[]\OT1/ppl/m/n/10.95 The con-tract-ing path con-sists of a se-ries of down-conv
+olutional and max-pooling
+ []
+
+[28 <./images/Theory-DL/MaxUnPool.png> <./images/Theory-DL/NNUnpool.png>]
+<images/Theory-DL/Skip.png, id=441, 643.40375pt x 355.3275pt>
+File: images/Theory-DL/Skip.png Graphic file (type png)
+<use images/Theory-DL/Skip.png>
+Package pdftex.def Info: images/Theory-DL/Skip.png  used on input line 230.
+(pdftex.def)             Requested size: 227.62204pt x 125.70567pt.
+
+[29 <./images/Theory-DL/UNet.png>] [30 <./images/Theory-DL/Skip.png>]
+<images/Theory-DL/AdjMat.png, id=458, 506.89375pt x 125.46875pt>
+File: images/Theory-DL/AdjMat.png Graphic file (type png)
+<use images/Theory-DL/AdjMat.png>
+Package pdftex.def Info: images/Theory-DL/AdjMat.png  used on input line 248.
+(pdftex.def)             Requested size: 227.62204pt x 56.3417pt.
+ [31 <./images/Theory-DL/AdjMat.png>] [32]
+Overfull \hbox (6.46558pt too wide) in paragraph at lines 308--310
+\OT1/ppl/m/n/10.95 en-able hi-er-ar-chi-cal fea-ture learn-ing by it-er-a-tivel
+y ag-gre-gat-ing in-for-ma-tion from neigh-
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 332--336
+
+ []
+
+[34]) [35] [36
 
 
 ]
@@ -1135,12 +1261,12 @@ part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 30.
-[13] [14] (./chapters/Methodology.tex
+[37] [38] (./chapters/Methodology.tex
 chapter 4.
-) [15
+[39
 
 
-] [16
+] [40]) [41] [42
 
 
 ]
@@ -1148,12 +1274,12 @@ part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 38.
-[17] [18] (./chapters/Results.tex
+[43] [44] (./chapters/Results.tex
 chapter 5.
-) [19
+) [45
 
 
-] [20
+] [46
 
 
 ]
@@ -1161,75 +1287,67 @@ part V.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 46.
-[21] [22] (./chapters/Conclusion.tex
+[47] [48] (./chapters/Conclusion.tex
 chapter 6.
-) [23
+) [49
 
 
-] [24
+] [50
 
 
-] [25] [26] (./chapters/Appendix.tex))
+] [51] [52] (./chapters/Appendix.tex))
 No file main.gls.
-(./main.bbl (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+(./main.bbl [53
+
+
+] [54
+
+
+])
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [27
-
-
-]
-[28
-
-
-]
-
-LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
-               before end of `thebibliography' environment on input line 3.
-
 )
-
-Package ocgx2 Warning: Rerun to get OCG references right!
-
-[29]
-
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (39 not 41).
-               Rerun to correct this.
-
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [55]
 (./main.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26904 strings out of 477695
- 510351 string characters out of 5831648
- 1864759 words of memory out of 5000000
- 46853 multiletter control sequences out of 15000+600000
- 535293 words of font info for 92 fonts, out of 8000000 for 9000
+ 27349 strings out of 477695
+ 518923 string characters out of 5831648
+ 1871759 words of memory out of 5000000
+ 47156 multiletter control sequences out of 15000+600000
+ 538980 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,19n,134p,10899b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
-no/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb
->
-Output written on main.pdf (41 pages, 483502 bytes).
+ 108i,20n,134p,10899b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{subsection.4.3.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (67 pages, 1275791 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 327 compressed objects within 4 object streams
- 66 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 895 PDF objects out of 1000 (max. 8388607)
+ 741 compressed objects within 8 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 530 words of extra memory for PDF output out of 10000 (max. 10000000)
 
