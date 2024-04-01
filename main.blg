@@ -3,44 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography/literature.bib
-You've used 3 entries,
+Warning--empty journal in pnpp
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            516 strings with 4485 characters,
-and the built_in function-call counts, 783 in all, are:
-= -- 74
-> -- 33
+            525 strings with 4762 characters,
+and the built_in function-call counts, 1324 in all, are:
+= -- 123
+> -- 69
 < -- 0
-+ -- 14
-- -- 10
-* -- 46
-:= -- 147
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 14
++ -- 28
+- -- 22
+* -- 79
+:= -- 248
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 26
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 31
-empty$ -- 61
-format.name$ -- 10
-if$ -- 155
+cite$ -- 6
+duplicate$ -- 51
+empty$ -- 95
+format.name$ -- 22
+if$ -- 260
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 12
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 26
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 21
 quote$ -- 0
-skip$ -- 23
+skip$ -- 38
 stack$ -- 0
-substring$ -- 37
-swap$ -- 3
+substring$ -- 47
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
-warning$ -- 0
-while$ -- 7
-width$ -- 4
-write$ -- 33
+type$ -- 20
+warning$ -- 1
+while$ -- 11
+width$ -- 6
+write$ -- 52
+(There was 1 warning)

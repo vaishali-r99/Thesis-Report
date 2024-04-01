@@ -455,34 +455,39 @@ INPUT components/text.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
-INPUT ./chapters/Introduction.tex
-INPUT ./chapters/Introduction.tex
-INPUT ./chapters/Introduction.tex
-INPUT ./chapters/Introduction.tex
-INPUT chapters/Introduction.tex
+INPUT ./chapters/Intro.tex
+INPUT ./chapters/Intro.tex
+INPUT ./chapters/Intro.tex
+INPUT ./chapters/Intro.tex
+INPUT chapters/Intro.tex
 INPUT ./chapters/Theory-CFD.tex
 INPUT ./chapters/Theory-CFD.tex
 INPUT ./chapters/Theory-CFD.tex
 INPUT ./chapters/Theory-CFD.tex
 INPUT chapters/Theory-CFD.tex
-INPUT ./images/Theory-CFD/nozzle.png
-INPUT ./images/Theory-CFD/nozzle.png
-INPUT ./images/Theory-CFD/nozzle.png
-INPUT ./images/Theory-CFD/nozzle.png
-INPUT ./images/Theory-CFD/nozzle.png
+INPUT ./images/Theory-CFD/nozzle2.png
+INPUT ./images/Theory-CFD/nozzle2.png
+INPUT ./images/Theory-CFD/nozzle2.png
+INPUT ./images/Theory-CFD/nozzle2.png
+INPUT ./images/Theory-CFD/nozzle2.png
 INPUT ./images/Theory-CFD/Coanda-effect.png
 INPUT ./images/Theory-CFD/Coanda-effect.png
 INPUT ./images/Theory-CFD/Coanda-effect.png
 INPUT ./images/Theory-CFD/Coanda-effect.png
 INPUT ./images/Theory-CFD/Coanda-effect.png
+INPUT ./images/Theory-CFD/Flow Domain.png
+INPUT ./images/Theory-CFD/Flow Domain.png
+INPUT ./images/Theory-CFD/Flow Domain.png
+INPUT ./images/Theory-CFD/Flow Domain.png
+INPUT ./images/Theory-CFD/Flow Domain.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT ./chapters/Theory-Deep Learning.tex
 INPUT ./chapters/Theory-Deep Learning.tex
 INPUT ./chapters/Theory-Deep Learning.tex
@@ -496,23 +501,11 @@ INPUT ./images/Theory-DL/ActFn.png
 INPUT ./images/Theory-DL/ActFn.png
 INPUT ./images/Theory-DL/ActFn.png
 INPUT ./images/Theory-DL/ActFn.png
-INPUT ./images/Theory-DL/ActGraphs.png
-INPUT ./images/Theory-DL/ActGraphs.png
-INPUT ./images/Theory-DL/ActGraphs.png
-INPUT ./images/Theory-DL/ActGraphs.png
-INPUT ./images/Theory-DL/ActGraphs.png
 INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
-INPUT ./images/Theory-DL/LR.png
-INPUT ./images/Theory-DL/LR.png
-INPUT ./images/Theory-DL/LR.png
-INPUT ./images/Theory-DL/LR.png
-INPUT ./images/Theory-DL/LR.png
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
@@ -521,6 +514,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT ./images/Theory-DL/CNN.png
 INPUT ./images/Theory-DL/CNN.png
 INPUT ./images/Theory-DL/CNN.png
@@ -531,21 +526,11 @@ INPUT ./images/Theory-DL/Conv1.png
 INPUT ./images/Theory-DL/Conv1.png
 INPUT ./images/Theory-DL/Conv1.png
 INPUT ./images/Theory-DL/Conv1.png
-INPUT ./images/Theory-DL/Conv2.png
-INPUT ./images/Theory-DL/Conv2.png
-INPUT ./images/Theory-DL/Conv2.png
-INPUT ./images/Theory-DL/Conv2.png
-INPUT ./images/Theory-DL/Conv2.png
 INPUT ./images/Theory-DL/Pool.png
 INPUT ./images/Theory-DL/Pool.png
 INPUT ./images/Theory-DL/Pool.png
 INPUT ./images/Theory-DL/Pool.png
 INPUT ./images/Theory-DL/Pool.png
-INPUT ./images/Theory-DL/MaxUnPool.png
-INPUT ./images/Theory-DL/MaxUnPool.png
-INPUT ./images/Theory-DL/MaxUnPool.png
-INPUT ./images/Theory-DL/MaxUnPool.png
-INPUT ./images/Theory-DL/MaxUnPool.png
 INPUT ./images/Theory-DL/NNUnpool.png
 INPUT ./images/Theory-DL/NNUnpool.png
 INPUT ./images/Theory-DL/NNUnpool.png
@@ -571,6 +556,16 @@ INPUT ./chapters/Methodology.tex
 INPUT ./chapters/Methodology.tex
 INPUT ./chapters/Methodology.tex
 INPUT chapters/Methodology.tex
+INPUT ./images/Methodology/Clipped.png
+INPUT ./images/Methodology/Clipped.png
+INPUT ./images/Methodology/Clipped.png
+INPUT ./images/Methodology/Clipped.png
+INPUT ./images/Methodology/Clipped.png
+INPUT ./images/Methodology/GraphUNet.png
+INPUT ./images/Methodology/GraphUNet.png
+INPUT ./images/Methodology/GraphUNet.png
+INPUT ./images/Methodology/GraphUNet.png
+INPUT ./images/Methodology/GraphUNet.png
 INPUT ./chapters/Results.tex
 INPUT ./chapters/Results.tex
 INPUT ./chapters/Results.tex
@@ -607,6 +602,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
