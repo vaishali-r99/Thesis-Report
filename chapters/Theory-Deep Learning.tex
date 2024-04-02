@@ -1,18 +1,18 @@
 \chapter{Deep learning primer}
 \label{chap:Theory-Deep Learning}
-This chapter provides a comprehensive explanation of foundational concepts and methodologies in deep learning, with a particular emphasis on Graph Neural Networks (GNNs). It begins by introducing deep learning and elucidating the basics of neural networks, focusing on their architecture and operational principles. Subsequently, it delves into optimization techniques, addressing essential elements such as loss functions, backpropagation, learning rates, and optimizers. Furthermore, it navigates through the intricacies of training neural networks with topics including data partitioning, feature scaling, weights initialization, regularization, batch training, and hyperparameter tuning. Additionally, this chapter examines model evaluation metrics and explores advanced neural network architectures such as Convolutional Neural Networks (CNNs) and Graph Neural Networks (GNNs), highlighting their important features and components. 
+This chapter provides a comprehensive explanation of foundational concepts and methodologies in deep learning, with a particular emphasis on Graph Neural Networks (GNNs). It begins by introducing deep learning and elucidating the basics of neural networks, focusing on their architecture and operational principles. Section \ref{optrain} delves into optimization techniques, addressing essential elements such as loss functions, backpropagation, learning rates, and optimizers. Subsequently, it navigates through the intricacies of training neural networks with topics including data partitioning, feature scaling, weights initialization, regularization, batch training, and hyperparameter tuning. Furthermore, this chapter examines model evaluation metrics and explores advanced neural network architectures such as Convolutional Neural Networks (CNNs) in Section \ref{cnnse} and Graph Neural Networks (GNNs) in Section \ref{gnnse}, highlighting their important features and components. 
 
 \section{Introduction to machine learning and deep learning}
-Machine learning is a branch of artificial intelligence that focuses on developing algorithms capable of learning from data and improving their performance over time. The learning process utilizes statistical models and optimization algorithms to iteratively adjust parameters and improve performance. Machine learning approaches are broadly categorized into supervised learning and unsupervised learning based on learning objectives. \\
+Machine learning, a dynamic subset of artificial intelligence, is dedicated to developing algorithms that extract insights and patterns from data. This enables systems to enhance their accuracy and decision-making capabilities without being explicitly programmed for each task. The learning process utilizes statistical models and optimization algorithms to iteratively adjust parameters and improve performance. Machine learning approaches are broadly categorized into supervised learning and unsupervised learning based on learning objectives. \\
 
 \textbf{Supervised learning} involves training a model using labeled data, where each input is paired with a corresponding output. During training, the model learns to map input data to output labels by minimizing the difference between its predictions and the true labels. This approach is commonly used for tasks such as classification and regression. \\
 
-\textbf{Unsupervised learning}, in contrast, involves training a model on unlabeled data, where the algorithm aims to find hidden patterns or structures within the data without explicit guidance. Unsupervised learning is often used for tasks like anomaly detection, data exploration, and feature learning, where the data lacks labeled examples or where the underlying structure is unknown. \\
+\textbf{Unsupervised learning}, involves training a model on unlabeled data, where the algorithm aims to find hidden patterns or structures within the data without explicit guidance. Unsupervised learning is often used for tasks like anomaly detection, data exploration, and feature learning, where the data lacks labeled examples or where the underlying structure is unknown. \\
 
-Deep learning is a subset of machine learning that has gained significant attention due to its remarkable performance in various tasks, ranging from image and speech recognition to autonomous driving. It utilizes neural networks consisting of multiple layers of interconnected neurons to learn representations of data through iterative processing of input data to make predictions or decisions. The key distinction between machine learning and deep learning lies in the depth and complexity of the models. We will exclusively delve into the specifics of supervised learning in this work. Henceforth, when we mention machine learning or deep learning, it refers to supervised learning in this context.
+Deep learning is a subset of machine learning that has gained significant attention due to its remarkable performance in various tasks, ranging from image and speech recognition to autonomous driving. It utilizes neural networks consisting of multiple layers of interconnected neurons to learn representations of data through iterative processing of input data to make predictions or decisions. Henceforth, when we mention machine learning or deep learning, it refers to supervised learning in this context, unless otherwise specified.
 \section{Fundamentals of neural networks}
-Artificial Neural Networks (ANNs) are computational models inspired by the structure and function of biological neural networks. They consist of interconnected nodes organized into layers, typically including an input layer, one or more hidden layers, and an output layer. \\ 
-A \textbf{perceptron} or an artificial neuron, inspired by biological neurons in the brain, is the fundamental building block of ANNs. It takes multiple input signals $\mathbf{x}= \left(x_1, x_2 ...x_n\right)$, each weighted by a connection weight $w_1,w_2,...w_n$, sums them up, and applies an activation function $\sigma$ to produce an output $\mathbf{y} = \sigma \left(\mathbf{w}^T\mathbf{x} + \mathbf{b} \right)$, where $\mathbf{b}$ is the bias. Perceptrons are arranged in layers to build complex neural network architectures.\\
+Artificial Neural Networks (ANNs) are computational models inspired by the structure and function of biological neural networks \cite{rumel}. They consist of interconnected nodes organized into layers, typically including an input layer, one or more hidden layers, and an output layer. \\ 
+A \textbf{perceptron} or an artificial neuron, is the fundamental building block of ANNs. It takes multiple input signals $\mathbf{x}= \left(x_1, x_2 ...x_n\right)$, each weighted by a connection weight $w_1,w_2,...w_n$, sums them up, and applies an activation function $\sigma$ to produce an output $\mathbf{y} = \sigma \left(\mathbf{w}^T\mathbf{x} + \mathbf{b} \right)$, where $\mathbf{b}$ is the bias. Perceptrons are arranged in layers to build complex neural network architectures.\\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Theory-DL/ActFn.png}
@@ -20,23 +20,21 @@ A \textbf{perceptron} or an artificial neuron, inspired by biological neurons in
     \label{fig:Perceptron}
   \end{figure}
 \textbf{Activation functions} are usually non-linear functions to introduce non-linearity within the layers of neural networks, allowing them to learn and represent complex relationships in data. Common activation functions include sigmoid, tanh, ReLU (Rectified Linear Unit), and leaky ReLU. Activation functions transform the weighted sum of inputs $\mathbf{z}$ into the output signal $\mathbf{y}$, typically in the range between 0 and 1 (for sigmoid) or -1 and 1 (for tanh). Without the nonlinear transformation via the activation function, the network would be confined to solving merely linear problems. \\
-% \begin{figure}[ht]
-%     \centering
-%     \includegraphics[width=8cm]{images/Theory-DL/ActGraphs.png}
-%     \caption{Activation functions: (a) Sigmoid, (b) Tanh, (c) ReLU, and (d) Leaky ReLU}
-%     \label{fig:ActGraphs}
-%   \end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=8cm]{images/Theory-DL/ActGraphs.png}
+    \caption{Activation functions: (a) Sigmoid, (b) Tanh, (c) ReLU, and (d) Leaky ReLU}
+    \label{fig:ActGraphs}
+  \end{figure}
 \textbf{Weights} in a neural network represent the strength of connections between neurons. They are learned parameters to adjust the influence of input signals on the neuron's output. \textbf{Biases} allow neural networks to model the offset from zero output, influencing the activation of neurons regardless of the input.\\
-\textbf{Neural Networks (NNs)} consist of interconnected layers of perceptrons that process input data to produce output predictions. NNs can be represented as directed graphs, where nodes correspond to perceptrons, and edges depict connections between them. These connections typically carry weighted signals from one neuron's output to another neuron's input. Based on the structure of this connection graph, neural networks can be broadly classified into feed-forward neural networks and recurrent neural networks.\\
-In \textbf{feed-forward neural networks}, information flows only in one direction, from the input layer through one or more hidden layers to the output layer. Each layer processes the input data independently, and the output of one layer serves as the input to the next layer. The connections between neurons do not form directed cycles, ensuring that the network architecture is acyclic. Multi Layer Perceptrons (MLPs) are the simplest feed-forward neural networks, and their architecture is described in Figure \ref{fig:MLP}. 
+\textbf{Neural Networks (NNs)} consist of interconnected layers of perceptrons that process input data to produce output predictions. NNs can be represented as directed graphs, where nodes correspond to perceptrons, and edges depict connections between them. These connections typically carry weighted signals from one neuron's output to another neuron's input. In particular, we are interested in \textbf{feed-forward neural networks}, in which, information flows only in one direction, from the input layer through one or more hidden layers to the output layer. Each layer processes the input data independently, and the output of one layer serves as the input to the next layer. The connections between neurons do not form directed cycles, ensuring that the network architecture is acyclic. Multi Layer Perceptrons (MLPs) are the simplest feed-forward neural networks, and their architecture is described in Figure \ref{fig:MLP}. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=10cm]{images/Theory-DL/MLP.png}
     \caption{Architecture of a Multi Layer Perceptron}
     \label{fig:MLP}
   \end{figure}
-\textbf{Recurrent neural networks}, on the other hand, are designed to handle sequential data by allowing connections between neurons to form directed cycles. The feedback loops allow the network to maintain a memory of past inputs, making them suitable for tasks involving sequential data.
-\section{Optimization}
+\section{Training and optimization} \label{optrain}
 Optimization involves adjusting the parameters of the neural network, such as weights and biases, to minimize a predefined objective function, typically referred to as the loss function. The optimization process iteratively updates the parameters based on the gradients of the loss function with respect to the network's parameters, aiming to converge to a set of optimal parameters that yield the best performance on the given task. Some important aspects of the optimization process are discussed in the following subsections. 
 \subsection{Loss function}
 The loss function quantifies the difference between the model's predictions and the actual target values. It represents the measure of how well the model is performing on the training data. Common loss functions include mean squared error (MSE) for regression tasks and categorical cross-entropy for classification tasks. The loss function $\mathcal{L}(\theta)$ is defined as: 
@@ -50,7 +48,7 @@ Backpropagation is a fundamental algorithm used to compute the gradients of the 
     \nabla_\theta \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N \nabla_\theta L\left(y_i, \hat{y}_i ; \theta\right)
     \end{equation}
 \subsection{Learning rate}
-The learning rate is a hyperparameter that controls the size of the parameter updates, that is, the step size in the direction of the gradients computed by backpropagation. A higher learning rate may lead to faster convergence but risks overshooting the optimal solution, while a lower learning rate may result in slower convergence but more stable training. The parameter update rule with learning rate $\eta$ is given by:
+The learning rate is a hyperparameter that controls the size of the parameter updates, that is, the step-size in the direction of the gradients computed by backpropagation. A higher learning rate may lead to faster convergence but risks overshooting the optimal solution, while a lower learning rate may result in slower convergence but more stable training. The parameter update rule with learning rate $\eta$ is given by:
 \begin{equation}
     \theta_{t+1}=\theta_t-\eta \nabla_\theta \mathcal{L}(\theta)
     \end{equation}
@@ -65,18 +63,18 @@ Here, $\theta_{t+1}$ and $\theta_t$ represent the parameters at time step $t$ an
 %   \caption{Effect of Learning Rates}
 %   \label{fig:LR}
 %   \end{figure}
-\subsection{Optimizer}
-The optimizer is responsible for updating the parameters of the neural network based on the gradients computed during backpropagation. It determines the direction and magnitude of parameter updates to minimize the loss function efficiently. Popular optimizers include stochastic gradient descent (SGD), Adam, RMSProp, and AdaGrad.
-\begin{enumerate}
-\item \textbf{Stochastic Gradient Descent (SGD)} performs parameter updates using a fixed learning rate, which can lead to oscillations or slow convergence in the presence of sparse or noisy gradients.
-\item \textbf{RMSProp (Root Mean Square Propagation)} adapts the learning rate for each parameter based on the magnitudes of recent gradients. It maintains a moving average of squared gradients for each parameter and divides the learning rate by the square root of this average to scale the parameter updates. RMSProp gets rid of the oscillations and slow convergence associated with fixed learning rates in SGD.
-\item \textbf{AdaGrad (Adaptive Gradient)} algorithm adapts the learning rate for each parameter based on the history of gradients accumulated during training. It gives larger updates to parameters with smaller gradients, and vice versa. AdaGrad is useful for sparse data or problems with varying feature scales, as it automatically adjusts the learning rates for different parameters.
-\item \textbf{Adam (Adaptive Moment Estimation)} maintains exponentially decaying moving averages of past gradients and past squared gradients for each parameter. Adam also incorporates bias correction terms to compensate for the initial bias towards zero at the beginning of training. The parameter update rule for Adam is given by
-\begin{equation}
-    \theta_{t+1}=\theta_t-\frac{\eta}{\sqrt{\hat{v}_t}+\epsilon} \cdot \hat{m}_t
-    \end{equation}
-where, $\hat{m}_t$ is the bias-corrected estimate of the first moment (mean) of the gradients, $\hat{v}_t$ is the bias-corrected estimate of the second moment (uncentered variance) of the gradients, and $\epsilon$ is a small constant to prevent division by zero.
+\subsection{Optimizer} 
+The optimizer is responsible for updating the parameters of the neural network based on the gradients computed during backpropagation. It determines the direction and magnitude of parameter updates to minimize the loss function efficiently. Popular optimizers include stochastic gradient descent (SGD) \cite{sgd}, Adam \cite{adam}, RMSProp \cite{rmsprop}, and AdaGrad \cite{adagrad}. We use the Adam optimizer in the training and testing phases of our work. \\
+ \textbf{Adam (Adaptive Moment Estimation)} is an algorithm for stochastic optimization that combines the ideas of SGD with momentum and RMSProp. It maintains exponentially decaying moving averages of past gradients and past squared gradients for each parameter. These moving averages serve as estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. Adam also incorporates bias correction terms to compensate for the initial bias towards zero at the beginning of training. The parameter update rules at time step $t$ are given by,
+ \begin{enumerate}
+  \item Compute the gradient of the loss function with respect to the parameters, \(\theta_t\).
+  \item Update biased first moment estimate: \(m_t = \beta_1 m_{t-1} + (1 - \beta_1)\theta_t\).
+  \item Update biased second raw moment estimate: \(v_t = \beta_2 v_{t-1} + (1 - \beta_2)\theta_t^2\).
+  \item Compute bias-corrected first moment estimate: \(\hat{m}_t = \frac{m_t}{(1 - \beta_1^t)}\).
+  \item Compute bias-corrected second raw moment estimate: \(\hat{v}_t = \frac{v_t}{(1 - \beta_2^t)}\).
+  \item Update the parameters: \(\theta_{t+1} = \theta_t - \alpha \cdot \frac{\hat{m}_t}{(\sqrt{\hat{v}_t} + \epsilon)}\).
 \end{enumerate}
+Here, \(m_t\) and \(v_t\) are estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. \(\beta_1\) and \(\beta_2\) are exponential decay rates for these moment estimates, typically close to 1. $\hat{m}_t$ and $\hat{v}_t$ refer to the bias-corrected estimates of the first and second moments (uncentered variance) of the gradients, and $\epsilon$ is a small constant to prevent division by zero.
 \section{Training of neural networks}
 \subsection{Data partitioning}Data partitioning is a crucial step in deep learning in which the dataset is divided into separate subsets for training, validation, and testing. The data partitioned into training data is used to train the model, and validation data is used to tune hyperparameters and monitor performance. The testing data is used to evaluate the final model's generalization performance. The partitioning process ensures that the model's performance is assessed accurately on unseen data and provides independent datasets for training and evaluation. 
 \subsection{Feature scaling}Feature scaling or normalization, is a preprocessing step aimed at bringing all input features to a similar scale. Features with large magnitudes can lead to large gradients during training, which may cause unstable behavior and make it challenging for the optimizer to find the optimum. Feature scaling mitigates this issue by reducing the range of feature values, thus preventing gradient instability and ensuring more reliable optimization. Common feature scaling techniques include,
@@ -94,16 +92,16 @@ Weight initialization sets the initial values for the model's parameters before 
 \end{enumerate}
 % In summary, weight initialization is crucial for initializing neural networks effectively. 
 Random initialization with small weights is a common practice in deep learning. Initializing weights to random values drawn from a suitable distribution with a zero mean and small variance breaks symmetry and helps prevent both vanishing and exploding gradients. It encourages each neuron to learn different features from the input data, promoting diverse representations and effective learning. Techniques like Xavier and Kaiming initialization further refine this process by adapting to the specific characteristics of activation functions.
-\subsubsection{Xavier/Glorot initialization}
-This technique initializes weights from a normal or uniform distribution with a zero mean. The variance of the distribution is adjusted based on the number of input neurons (fan-in) and output neurons (fan-out) as $\text{Var}(W) = \frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}$. Xavier initialization is commonly used in shallow networks with symmetric activation functions, ensuring balanced weight initialization and stable training dynamics. 
-\subsubsection{Kaiming/He initialization}
-Kaiming initialization is designed for networks using non-linear activations like ReLU as seen in modern deep learning architectures. It initializes weights from a normal distribution with zero mean, adjusting the variance based on fan-in as $ \text{Var}(W) = \frac{2}{\text{fan}_{\text{in}}}$. Kaiming initialization helps mitigate the issue of vanishing gradients associated with ReLU activations, ensuring stable training and faster convergence.
+\subsubsection{Xavier-Glorot initialization}
+This technique \cite{glorot} initializes weights from a normal or uniform distribution with a zero mean. The variance of the distribution is adjusted based on the number of input neurons (fan-in) and output neurons (fan-out) as $\text{Var}(W) = \frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}$. Xavier initialization is commonly used in shallow networks with symmetric activation functions, ensuring balanced weight initialization and stable training dynamics. 
+\subsubsection{Kaiming-He initialization}
+Kaiming initialization \cite{he2015} is designed for networks using non-linear activations like ReLU as seen in modern deep learning architectures. It initializes weights from a normal distribution with zero mean, adjusting the variance based on fan-in as $ \text{Var}(W) = \frac{2}{\text{fan}_{\text{in}}}$. Kaiming initialization helps mitigate the issue of vanishing gradients associated with ReLU activations, ensuring stable training and faster convergence.
 \subsection{Regularization}
-Regularization broadly refers to techniques used to prevent overfitting by imposing additional constraints on the model's parameters, i.e; by adding penalties to the loss function, thus discouraging complex models. Regularization penalizes large weights in the model, thereby promoting simpler models that generalize better to unseen data. Two common forms of regularization are L1 regularization (Lasso) and L2 regularization (Ridge). \\
-L1 regularization encourages sparsity in the weights, performing feature selection by setting irrelevant weights to zero, making the model simpler and more interpretable. 
-\[ \operatorname{Loss}_{\mathrm{L} 1}=\operatorname{Loss}_{\text {original }}+\lambda \sum_{i=1}^n\left|w_i\right| \]
-L2 regularization encourages the weights to be spread out more evenly, preventing individual weights from becoming too large.
-\[ \operatorname{Loss}_{\mathrm{L} 2}=\operatorname{Loss}_{\text {original }}+\lambda \sum_{i=1}^n w^2_i \]
+Regularization broadly refers to techniques used to prevent overfitting by imposing additional constraints on the model's parameters, i.e; by adding penalties to the loss function, thus discouraging complex models. Regularization penalizes large weights in the model, thereby promoting simpler models that generalize better to unseen data. Two common forms of regularization are L$_2$ regularization (Lasso) and L$_1$ regularization (Ridge). \\
+L$_1$ regularization encourages sparsity in the weights, performing feature selection by setting irrelevant weights to zero, making the model simpler and more interpretable. 
+\[ \operatorname{Loss}_{\mathrm{L}_1}=\operatorname{Loss}_{\text {original }}+\lambda \sum_{i=1}^n\left|w_i\right| \]
+L$_2$ regularization encourages the weights to be spread out more evenly, preventing individual weights from becoming too large.
+\[ \operatorname{Loss}_{\mathrm{L}_2}=\operatorname{Loss}_{\text {original }}+\lambda \sum_{i=1}^n w^2_i \]
 Here, $\lambda$ is the regularization strength and determines the degree of penalty imposed on large weights. A smaller $\lambda$ value results in weaker regularization, allowing the model to fit the training data more closely but increasing the risk of overfitting. Conversely, a larger $\lambda$ value increases the regularization effect, resulting in a simpler model that generalizes better but may underfit the training data if set too high.
 \subsubsection{Dropout}
 Dropout is a regularization technique used in neural networks during training, where a random fraction of neurons is temporarily dropped out or ignored during forward and backward propagation. This prevents neurons from co-adapting and overfitting to the training data, promoting robustness and generalization. 
@@ -112,7 +110,7 @@ Batch training is a technique in deep learning in which the model updates its pa
 Selecting an appropriate batch size is crucial, as too small a batch size leads to frequent updates and noisy gradient updates. On the other hand, too large a batch requires more computational resources and memory despite providing precise gradient estimates, leading to stable optimization and faster convergence. Optimal batch size requires balancing the trade-off between computational efficiency and the quality of gradient estimates. \\                     
 Another important term in this context is an epoch, which refers to a single pass through the entire training dataset. During one epoch, each batch is processed sequentially through the neural network. Once all batches have been processed, completing a full iteration over the entire dataset, one epoch is considered complete. Typically, training iterates over the entire dataset for multiple times or epochs until the model converges or a predefined stopping criterion is met. \\
 % Batch normalization (BatchNorm) is another technique used in deep learning to stabilize and accelerate training by normalizing the activations of each layer within a mini-batch. 
-Batch normalization (BatchNorm) is a technique to improve the stability and performance of neural networks by normalizing the activations of each layer. It operates on mini-batches of data and normalizes the input of each layer to have a mean of zero and a standard deviation of one. This is achieved by computing the mean and standard deviation of the activations across the batch, and then scaling and shifting the activations using learned parameters. The batch normalization transformation for a layer with input $x^{(1)}, x^{(2)}, \ldots, x^{(m)}$ is given as,
+Batch normalization \cite{batchnorm} is a technique to improve the stability of neural networks by normalizing the activations of each layer. It operates on mini-batches of data and normalizes the input of each layer to have a mean of zero and a standard deviation of one. This is achieved by computing the mean and standard deviation of the activations across the batch, and then scaling and shifting the activations using learned parameters. The batch normalization transformation for a layer with input $x^{(1)}, x^{(2)}, \ldots, x^{(m)}$ is given as,
 \begin{equation}
 \begin{aligned}
 & \mu_B=\frac{1}{m} \sum_{i=1}^m x^{(i)} \\
@@ -130,7 +128,7 @@ Underfitting occurs when a model is too simple to capture the underlying structu
 Hyperparameters in deep learning are fixed parameters set prior to the training process that are not learned from the data. They control various aspects of the learning process, such as the model architecture, optimization settings and the training procedure itself. Some important hyperparameters are the number of neurons per layer, number of layers, activation function, batch size, number of epochs, optimizer, loss function, weight initialization, dropout rate, and regularization strength. \\
 Hyperparameter tuning is the process of selecting the optimal values for these hyperparameters to maximize the performance of the model on unseen data. It involves systematically searching through a predefined space of hyperparameters and evaluating the model's performance using a validation set or cross-validation. The goal is to find the hyperparameters that result in the best generalization performance, balancing between underfitting and overfitting.
 \subsubsection{k-Fold cross-validation}
-In k-fold cross-validation, the dataset is divided into $k$ subsets or folds, of approximately equal size. The model is trained $k$ times, each time using $k-1$ folds for training and the remaining fold for validation. This process is repeated $k$ times, with each fold used exactly once as the validation set. In the context of hyperparameter tuning, $k$-fold cross-validation helps evaluate the performance of different hyperparameter configurations. Instead of relying on a single validation set, this method averages the performance over multiple folds, providing a more stable estimate of the model's performance.
+In k-fold cross-validation \cite{cv}, the dataset is divided into $k$ subsets or folds, of approximately equal size. The model is trained k times, each time using k-1 folds for training and the remaining fold for validation. This process is repeated k times, with each fold used exactly once as the validation set. In the context of hyperparameter tuning, k-fold cross-validation helps evaluate the performance of different hyperparameter configurations. Instead of relying on a single validation set, this method averages the performance over multiple folds, providing a more stable estimate of the model's performance.
 \section{Model evaluation metrics}
 Model evaluation metrics are essential for assessing the performance of deep learning models. The loss function serves as a crucial metric for evaluating model performance, in addition to optimizing model parameters during training. In regression tasks, where the goal is to predict continuous values, common loss functions include the following:
 \begin{itemize}
@@ -139,8 +137,8 @@ Model evaluation metrics are essential for assessing the performance of deep lea
 \item \textbf{Mean Squared Error (MSE):} MSE measures the average squared difference between the predicted values and the actual values:\[ \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \] MSE penalizes larger errors more heavily than MAE since errors are squared. This makes it more sensitive to outliers. 
 \item \textbf{Root Mean Squared Error (RMSE):} RMSE is the square root of the average squared difference between the predicted values and the actual values: \[ \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} \]RMSE is sensitive to outliers, similar to MSE, but is more interpretable as it is in the same units as the target variable.
 \end{itemize}
-\section{Convolutional Neural Networks (CNNs)}
-CNNs are specialized neural networks designed to process grid-like data, such as images. They utilize convolutional layers and pooling operators to learn spatial hierarchies of features from input data, making them highly effective for tasks like image classification, object detection, and image segmentation.
+\section{Convolutional Neural Networks (CNNs)} \label{cnnse}
+CNNs \cite{lecun1998} are specialized neural networks designed to process grid-like data, such as images. They utilize convolutional layers and pooling operators to learn spatial hierarchies of features from input data, making them highly effective for tasks like image classification, object detection, and image segmentation.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=10cm]{images/Theory-DL/CNN.png}
@@ -169,26 +167,26 @@ The convolutional layer in a CNN consists of a set of learnable filters (kernels
         \label{fig:Unpool2}
     \end{figure}
 \subsection{The U-Net architecture}
-U-Net is a CNN consisting of a U-shaped network structure with a contracting path (encoder) followed by an expanding path (decoder), which enables precise segmentation of structures in medical images, such as cells, organs, or tumors. Some important components of the U-Net architecture are discussed below. 
+U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a contracting path (encoder) followed by an expanding path (decoder), which enables precise segmentation of structures in medical images, such as cells, organs, or tumors. Some important components of the U-Net architecture are discussed below. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Theory-DL/UNet.png}
-    \caption{U-Net Architecture}
+    \caption{U-Net Architecture \cite{unet}}
     \label{fig:UNet}
 \end{figure}
 \begin{enumerate}
   \item The \textbf{encoder} comprises a series of down-convolutional and max pooling layers that gradually reduce the spatial dimensions of the input image while increasing the number of feature channels. This path extracts high-level features from the input image while preserving spatial context.
   \item The \textbf{decoder} consists of up-convolutional (transposed convolution) and concatenation layers that gradually increase the spatial dimensions of the feature maps while reducing the number of feature channels. This path generates segmentation masks by upsampling the low-resolution feature maps obtained from the encoder and combining them with high-resolution feature maps using skip connections.
-  \item \textbf{Skip connections} or residual connections, are direct connections between layers at the same hierarchical level in the network. In the U-Net architecture, skip connections connect the encoder to the corresponding layers in the decoder. This enables the network to retain fine-grained spatial information from the encoder while recovering spatial details lost during downsampling. By directly linking the encoder and decoder layers, skip connections facilitate the flow of information across different scales, improving the model's ability to capture both local and global context.
+  \item \textbf{Skip connections} or residual connections \cite{he2016deep}, are direct connections between layers at the same hierarchical level in the network. In the U-Net architecture, skip connections connect the encoder to the corresponding layers in the decoder. This enables the network to retain fine-grained spatial information from the encoder while recovering spatial details lost during downsampling. By directly linking the encoder and decoder layers, skip connections facilitate the flow of information across different scales, improving the model's ability to capture both local and global context.
 \end{enumerate}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=6cm]{images/Theory-DL/Skip.png}
-    \caption{Skip Connection}
+    \caption{Skip Connection \cite{he2016deep}} 
     \label{fig:Skip}
 \end{figure}
-A notable observation pertinent to our current endeavor is the striking resemblance between the U-Net architecture and the V-cycle multi-grid method. Both employ a hierarchical structure wherein information is exchanged across varying resolutions.
-\section{Graph Neural Networks (GNNs)}
+A notable observation pertinent to our current endeavor is the striking resemblance between the U-Net architecture and the V-cycle multi-grid method, as noted by He and Xu \cite{HeXu2019}. Both employ a hierarchical structure wherein information is exchanged across varying resolutions.
+\section{Graph Neural Networks (GNNs)} \label{gnnse}
 A major limitation of CNNs is their inability to directly operate on irregular data formats, such as social networks, recommender systems, molecular structures, or citation networks. In 2017, Kipf and Welling \cite{kipf} introduced the Graph Convolutional Network (GCN), a foundational architecture that laid the groundwork for modern GNNs. Since then, numerous advancements and variants of GNNs have been proposed. In contrast to CNNs which are well-suited for grid-like structured data such as images, GNNs are tailored for data represented as graphs, which are characterized by non-Euclidean and irregular structures, where entities (nodes) and their relationships (edges) vary in connectivity and structure. GNNs excel in processing unstructured data by leveraging the inherent graph structure by dynamically aggregating information from neighboring nodes based on their connectivity. \\
 Graphs are set up using nodes, edges, adjacency matrices, node attributes, and edge attributes. 
 \begin{enumerate}

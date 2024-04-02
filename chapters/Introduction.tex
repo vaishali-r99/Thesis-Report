@@ -1,109 +1,25 @@
-% % !TEX root = ../main.tex
-% \chapter{Introduction}
-% \label{chapter:Introduction}
-% % This document has been created in order to show you some of the capabilities 
-% % of \LaTeX.  A great resource for an introduction to \LaTeX\xspace is Tobias
-% % Oetiker's ''The Not So Short Introduction to \LaTeXe'' \cite{latex}.  Please
-% % page through that document
-% % before starting with your thesis.
-% % Oh, and let's use the mysterious word \gls{computer} here to give the glossary
-% % a reason to appear.
-% % A third useful option to reference stuff besides citing or glossarying (?) 
-% % is using footnotes. Just like
-% % this\footnote{Properly formatted clickable URL: \url{https://www.tum.de/}}
-% % one.
-% % And: lists! Lists with bullet points are amazing. I mean, just look at this:
-% % \begin{itemize}
-% % 	\item list
-% % 	\item all 
-% % 	\item the 
-% % 	\item things!
-% % \end{itemize}
-% % % use enumerate for numbers instead of points: 
-% % % https://en.wikibooks.org/wiki/LaTeX/List_Structures#List_structures
-% % \par
-% % Anyways your introduction goes here.
+\chapter{Introduction}
+\label{chap:Intro}
+Fluid mechanics, a foundational branch of physics and engineering, underpins technological advancements in numerous critical sectors, including aerospace, automotive engineering, energy systems, environmental science, and biomedical engineering. The predictive modelling of fluid flow is central to the design, optimization, and operational efficiency of countless applications that fuel technological and scientific progress. At the heart of fluid mechanics are the Navier-Stokes Equations (NSE), a set of Partial Differential Equations (PDEs) that describe the motion of fluids in space and time. Despite their foundational importance, these equations pose significant challenges due to their complexity, often defying exact analytical solutions and remaining one of the most perplexing open problems in mathematics. These difficulties ushered in the era of Computational Fluid Dynamics (CFD), a transformative approach employing numerical methods to approximate solutions to the NSE. CFD has become an indispensable tool, leveraging advanced computing algorithms to simulate fluid flow scenarios. Yet, despite its advancements, CFD grapples with computational intensity and a suite of issues ranging from grid dependency to convergence challenges, underscoring a persistent need for innovation.\\
+Turbulence modelling, in particular, stands out as a formidable challenge. Turbulence is characterized by velocity and pressure fluctuations across a diverse range of scales, from large vortices to minute eddies, compounded by numerical instabilities, especially in regions close to walls. While Direct Numerical Simulation (DNS) offers an avenue for precise modelling, its demand for extensive computational resources often renders it impractical for routine applications. Consequently, in many practical scenarios, simplified turbulence models are employed, even though this comes at the expense of accuracy.\\
+Advancements in the dynamically evolving field of CFD have seen substantial efforts channeled into enhancing turbulence models, improving meshing techniques, efficient Reduced Order Modelling (ROM) surrogates, and reducing computational complexity. The pursuit of efficiency and optimization, marked by a growing interest in the areas of Machine Learning (ML) and Deep Learning (DL) in recent times, has led to the application of these technologies for fluid dynamics. Unlike traditional computational methods, which are tethered to the constraints of processing power and simulation time, ML algorithms, once trained, can offer rapid predictions for new data sets. The integration of ML, especially DL, into the field of CFD represents a promising frontier. DL algorithms, once trained, can swiftly predict new data outcomes, offering a significant efficiency boost over traditional numerical methods. The potential for DL to enhance CFD extends beyond mere computational savings; it encompasses the ability to generate novel insights into fluid dynamics, streamline flow control and optimization strategies, and ultimately transform the way we approach fluid mechanics research and applications. \\
+Thus far, DL methods have been employed in fluid dynamics research but have not yet been widely adopted in engineering practice. Some possible explanations for this might be the scarcity of extensive datasets that are openly accessible and the poor generalization performance of ML techniques on previously unseen data. This thesis attempts to tackle the generalization problem by implementing a novel approach that leverages Graph Neural Networks (GNNs) to enable precise and efficient predictive models, specifically tailored for the nuanced application of nozzle flow simulation.
+\section{Literature review}
+In this section, we review significant contributions and advancements in the intersection of ML and CFD, with a particular focus on turbulence modelling. Osborne Reynolds laid the groundwork for turbulence modelling in the late 19th century by establishing the eddy viscosity hypothesis and the Reynolds-averaged Navier-Stokes (RANS). The 1970s saw the introduction of the k-$\epsilon$ model, which improved RANS models by balancing accuracy with computational demands. Increased computational capabilities later enabled the adoption of DNS and Large Eddy Simulation (LES) for more precise flow simulations. Recent trends include refining these models through advanced closure schemes and integrating ML, with hybrid RANS-LES models emerging as a promising approach for accurate simulations.
+ML and DL algorithms have been increasingly deployed to construct surrogate models for complex turbulence systems. These surrogate models, embodying reduced-order representations, offer a streamlined computational alternative to exhaustive simulations. In addition, DL has facilitated the generation of data-driven closure terms for RANS and LES models, significantly elevating the precision of turbulence simulations. Among the spectrum of DL methodologies, Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs) have emerged as particularly potent in modeling turbulence. These networks adeptly capture and learn from the complex patterns inherent in turbulent flows. This capability extends to challenging scenarios such as non-equilibrium and multiphase flows. \\   
+By the early 2010s, the exploration of ML in CFD began, with significant contributions like Brunton's review \cite{brunton} categorizing ML into supervised, semi-supervised, and unsupervised learning. Supervised learning involves training models on well-labeled datasets to predict predefined outcomes, with regression algorithms playing a pivotal role in predicting continuous variables, such as turbulence quantities/ Semi-supervised learning, blending elements of supervised and unsupervised learning, has shown effectiveness in analyzing time-series data and images. Conversely, unsupervised learning focuses on unlabeled data and identifies patterns, clusters, or structures. These data-driven methodologies include ROM and Proper Orthogonal Decomposition (POD).\\
+Beyond traditional classification, ML techniques can be discerned by their optimization goals. Data-driven models aim to reduce the prediction error, relying on supervised learning for specific applications to ensure accuracy. These models are meticulously designed and trained for particular applications to maintain high accuracy. In contrast, Physics Informed Neural Networks (PINNs) integrate physical principles into the training process, harnessing both mathematical models and empirical equations that govern the data. This approach enables PINNs to streamline the model training for physics-centric issues in a computationally efficient manner. \\
+Zhang and Duraisamy’s early exploration (\cite{zhang2015}) of data-driven turbulence closure models via multiscale Gaussian process regression paved the way for enhanced RANS equations. Similarly, Ling, Kurzawski, and Templeton (\cite{ling2016}) significantly advanced RANS models' accuracy by incorporating Galilean invariance through deep neural networks. This period also witnessed the utilization of fully-convolutional neural networks by Guastoni et al. (\cite{guastoni2020}) for predicting velocity fields in turbulent flows, demonstrating the applicability of DL in fluid dynamics.\\
+Subsequent research efforts have further broadened the application of ML in CFD. Milano and Koumoutsakos (\cite{milano2002}) explored the use of neural networks for approximating flow fields around complex geometries, setting a precedent for DL in fluid mechanics. Tracey, Duraisamy, and Alonso (\cite{tracey2013}) introduced machine learning techniques to modify turbulence models, illustrating ML's potential to refine simulation models. More recently, Parish and Duraisamy (\cite{parish2016}) leveraged ML to inform turbulence model discrepancies, enhancing predictive capabilities.\\
+Expanding the scope to unstructured mesh data, recent advancements have explored graph-based and mesh-free techniques for fluid data representation. Trask et al. (\cite{trask2019}) introduced GMLS-Nets for mesh-free data analysis, demonstrating the versatility of ML approaches in handling complex data structures. Furthermore, Ogoke et al. (\cite{ogoke2020}) demonstrated the effectiveness of GCNNs in predicting drag forces around airfoils. Liu et al. (\cite{metalearning}) showcased the effectiveness of GCNNs and meta-learning in predicting flow dynamics and enhancing turbulence models, highlighting the adaptive capabilities of GNNs in fluid dynamics.\\
+In light of these developments, this research proposes a GNN-based surrogate model to analyze turbulent flow within a High-speed Orienting Momentum with Enhanced Reversibility (HOMER) nozzle, developed by Michele Trancossi (\cite{trandum}).
 
+\section{Scope and objectives}
+This thesis focuses on the cutting-edge intersection of Machine Learning (ML), specifically Graph Neural Networks (GNNs), and Computational Fluid Dynamics (CFD) to enhance the predictive modeling of fluid dynamics in nozzle flow simulations. With the increasing complexity of fluid dynamics simulations, particularly in applications requiring precise predictions of flow quantities like velocity and pressure, traditional CFD methods often encounter limitations in terms of computational efficiency and flexibility. By harnessing the power of GNNs, this research aims to transcend these limitations, proposing a novel approach that not only predicts critical simulation quantities but also enhances understanding and control over the simulation processes. The scope of this thesis encompasses the development and validation of a GNN-based model tailored for nozzle flow dynamics, exploring its feasibility as a surrogate model, and employing advanced data analysis techniques to categorize simulations based on velocity ratios and Coanda effect occurrences. The thesis aims to accomplish the following objectives: 
+\begin{enumerate}
+\item \textbf{Develop a GNN model for predicting nozzle flow simulation quantities:} The primary objective is to design and implement a GNN model capable of accurately predicting key nozzle flow quantities, such as velocity and pressure, within a simulation environment. This involves training the model on high-fidelity CFD-generated datasets to learn the complex relationships governing nozzle flow dynamics.
+\item \textbf{Investigate the feasibility and efficiency of the surrogate model:} This research seeks to assess the viability of the developed GNN model as a surrogate to traditional CFD simulations for nozzle flow analysis. The surrogate model's efficiency, in terms of computational resources and time, will be rigorously evaluated against conventional simulation methods to establish its practicality for real-world applications.
 
-% % Below a few \LaTeX examples are included for beginners
-% % \comment{You can also put comments in the margins for you or your advisor}
-% % \begin{figure}[ht]
-% %   \centering
-% %   \includegraphics[width=5cm]{images/swing_function_plot.png}
-% %   \caption{$u(x)$}%{Numerically solved solution}
-% %   \label{fig:swingPlot}
-% % \end{figure}
-
-
-% % Equations can also be labeled
-% % \begin{equation}
-% % 	\pi = \mathrm{e}^{i\cdot\phi}
-% % 	\label{eq:equation1}
-% % \end{equation}
-
-
-% % And later referenced. Even in subfigures.
-% % \begin{figure}[!htb]
-% %   \centering
-% %   \begin{subfigure}[b]{0.3\textwidth}
-% %     \centering
-% %   \includegraphics[width=\textwidth]{images/CircCenter}
-% %   \caption{Equation~\ref{eq:equation1}}\label{fig:circcenter}
-% % \end{subfigure}
-% % \hfill
-% %   \begin{subfigure}[b]{0.3\textwidth}
-% %     \centering
-% %   \includegraphics[width=\textwidth]{images/GeneralOffset}
-% %   \label{fig:generaloffset}
-% %   \caption{Equation~\ref{eq:equation1}}
-% % \end{subfigure}
-% % \end{figure}
-% % \section{Including code}
-
-% % Code can be using the package
-% % \href{https://www.sharelatex.com/learn/Code\_Highlighting\_with\_minted}{Minted}.
-
-% % An exaple of which of can be found below (see Source Code~\ref{lst:nice_listing})
-% % \begin{listing}
-% % 	%the language syntax can be declared here.
-% % 	\begin{minted}{python} 
-% % 	import numpy as np
-	
-% % 	def incmatrix(genl1,genl2):
-% % 	    m = len(genl1)
-% % 	    n = len(genl2)
-% % 	    M = None #to become the incidence matrix
-% % 	    VT = np.zeros((n*m,1), int)  #dummy variable
-	
-% % 	    #compute the bitwise xor matrix
-% % 	    M1 = bitxormatrix(genl1)
-% % 	    M2 = np.triu(bitxormatrix(genl2),1)
-	
-% % 	    for i in range(m-1):
-% % 	        for j in range(i+1, m):
-% % 	            [r,c] = np.where(M2 == M1[i,j])
-% % 	            for k in range(len(r)):
-% % 	                VT[(i)*n + r[k]] = 1;
-% % 	                VT[(i)*n + c[k]] = 1;
-% % 	                VT[(j)*n + r[k]] = 1;
-% % 	                VT[(j)*n + c[k]] = 1;
-	
-% % 	                if M is None:
-% % 	                    M = np.copy(VT)
-% % 	                else:
-% % 	                    M = np.concatenate((M, VT), 1)
-	
-% % 	                VT = np.zeros((n*m,1), int)
-	
-% % 	    return M
-% % 	\end{minted}
-
-% %   \caption{My nice listing}
-% %   \label{lst:nice_listing}
-% % \end{listing}
-% Fluid mechanics plays a pivotal role in the progress of various diverse fields, including aerospace and automotive engineering, energy system optimization, environmental modeling, biomedical research, and countless other critical domains that shape our technological and scientific landscape. Partial Differential Equations (PDEs), in particular the Navier-Stokes equations, which provide the mathematical framework for analyzing the behaviour of fluid flow for these complex problems are often intractable, i.e; they do not have exact analytical solutions. Thus, they still remain an open problem in the world of mathematics. Hence, the solutions to the Navier-Stokes equations are approximated using numerical methods such as the Finite Element or the more commonly used Finite Volume Method (FVM) which rely on spatial and temporal discretization of PDEs. With the advent of software and technology, emerged the field of Computational Fluid Dynamics (CFD), leveraging computer algorithms for numerical simulations of fluid flow problems. However, these simulations are computationally intensive and may take from several hours to several weeks for complex flows and/or geometries. Although advances in high-performance computing and parallel processing have been a game-changer for CFD, there still remain several complications with respect to grid dependency, convergence issues, model assumptions and simplification of underlying physics, numerical errors as well as turbulence modelling. \\
-% The most problematic use-case is turbulence modelling, which is marked by velocity and pressure fluctuations, a wide range of length and time scales - from large vortices down to small eddies and numerical instabilities. In addition, modelling turbulence near walls presents unique problems on its own which requires specialized treatments and techniques in these near-wall regions. Accurately modelling all the intricate phenomena of the turbulent regime, called the Direct Numerical Simulation (DNS), is possible, but at the cost of a huge amount of computational resources, complexity and simultaion times. Consequently, in many practical scenarios, simplified turbulence models are employed, even though this comes at the expense of accuracy. \\
-% Advancements in the dynamic field of CFD over the past had seen substantial efforts channeled into enhancing turbulence models, improving meshing techniques, efficient Reduced Ordered Modelling (ROM) surrogates and reducing computational complexity. While numerous techniques and models exist to address various turbulence-related challenges, there is no universally applicable model that consistently delivers accurate results across all turbulence settings. As a result, the computational bottleneck often remains an unavoidable obstacle. In response to this challenge, in recent times, there has been a growing interest in implementing Machine Learning (ML) algorithms, specifically to enhance the cost-effectiveness of CFD methods. Although training an ML model is often very computationally demanding, a trained model can quickly make predictions on new data, a significant advantage over the commonly used numerical methods. The integration of ML in CFD represents a paradigm shift, enabling simulations to move beyond traditional physics-based models. The synergy between Deep Learning (DL) and CFD offers the potential to uncover novel insights into fluid dynamics, for example, Convolutional Neural Networks (CNNs) can extract relevant features and classify flow regimes whereas Recurrent Neural Networks (RNNs) can predict fluid behaviors based on temporal data for unsteady flows. Incorporating neural networks into fluid dynamics problems not only improves the accuracy and efficiency of simulations, but also opens up new doors for understanding flow behaviours and strategies for flow control and optimization. As neural networks continue to evolve and adapt to the specific challenges of fluid dynamics, they promise to be a pivotal component in the advancement of CFD across various industries and applications. \\
-% So far, ML methods have been employed in fluid dynamics research but have not been in engineering practice. Some possible explanations for this might be the scarcity of huge datasets that are open and can be publicly accessed and the poor generalization performance of ML techniques on previously unseen data. This thesis attempts to tackle the generalization problem by implementing a novel approach that combines GNNs with a meta learning principle for accurate and efficient predictions even on unencountered datasets. 
-% \section{Literature Review}
-% In this section, relevant research and work done with respect to ML in the context of CFD, especially in turbulence modelling is discussed. The evolution of turbulence modeling is a dynamic field with notable milestones and contributions. The pioneering work of Osborne Reynolds in the late 19th century laid the foundation for turbulence research, leading to the eddy viscosity hypothesis and the rise of Reynolds-averaged Navier-Stokes (RANS) modeling in the mid-20th century. The K-epsilon model, introduced in the 1970s, significantly enhanced RANS modeling by striking a balance between accuracy and computational efficiency. Parallel to this development, Large Eddy Simulation (LES) emerged as a complementary approach, aiming to capture large-scale turbulent eddies directly while modeling smaller ones. Advances in computational power enabled the feasibility of LES, particularly for complex geometries and higher Reynolds numbers. Direct Numerical Simulation (DNS), which resolves all turbulent scales, became increasingly attainable due to further advancements in computational resources. Recent research has focused on improving existing models, developing advanced closure schemes, and exploring the use of machine learning techniques. The combination of RANS and LES techniques in hybrid models has also gained traction, offering a promising path towards more efficient and accurate simulations. \\
+\item \textbf{Perform clustering on low-dimensional data to classify simulations:} An innovative aspect of this thesis is the application of clustering techniques to low-dimensional representations of simulation data. The goal is to categorize simulations based on the velocity ratios between the two inlets of the nozzle to determine occurrences of Coanda adhesion and identify the specific wall (bottom or top) where adhesion takes place. This objective aims to provide deeper insights into the simulation outcomes, facilitating more effective analysis and optimization of nozzle designs.
+\end{enumerate}
+By achieving these objectives, the thesis intends to contribute significantly to the field of CFD by integrating ML techniques to improve simulation accuracy and efficiency. Moreover, it aims to offer novel methodologies for analyzing and interpreting complex fluid dynamics simulations, ultimately guiding future research and application developments in nozzle flow dynamics and beyond.

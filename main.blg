@@ -3,46 +3,57 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography/literature.bib
+Warning--can't use both volume and number fields in adagrad
+Warning--empty journal in he2015
+Warning--empty journal in batchnorm
+Warning--empty journal in metalearning
 Warning--empty journal in pnpp
-You've used 5 entries,
+Warning--empty journal in unet
+Warning--empty chapter and pages in tracey2013
+Warning--empty publisher in tracey2013
+Warning--empty year in tracey2013
+Warning--empty journal in trask2019
+Warning--empty journal in zhang2015
+Warning--empty year in zhang2015
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            525 strings with 4762 characters,
-and the built_in function-call counts, 1324 in all, are:
-= -- 123
-> -- 69
-< -- 0
-+ -- 28
-- -- 22
-* -- 79
-:= -- 248
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 26
+            661 strings with 8869 characters,
+and the built_in function-call counts, 9265 in all, are:
+= -- 872
+> -- 492
+< -- 5
++ -- 195
+- -- 162
+* -- 640
+:= -- 1585
+add.period$ -- 88
+call.type$ -- 29
+change.case$ -- 165
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 51
-empty$ -- 95
-format.name$ -- 22
-if$ -- 260
+cite$ -- 41
+duplicate$ -- 342
+empty$ -- 687
+format.name$ -- 162
+if$ -- 1895
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 5
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 26
+int.to.str$ -- 29
+missing$ -- 30
+newline$ -- 148
+num.names$ -- 60
+pop$ -- 192
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 138
 quote$ -- 0
-skip$ -- 38
+skip$ -- 249
 stack$ -- 0
-substring$ -- 47
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 462
+swap$ -- 57
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
-warning$ -- 1
-while$ -- 11
-width$ -- 6
-write$ -- 52
-(There was 1 warning)
+type$ -- 110
+warning$ -- 12
+while$ -- 79
+width$ -- 31
+write$ -- 302
+(There were 12 warnings)

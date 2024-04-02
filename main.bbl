@@ -1,4 +1,74 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{sgd}
+L{\'e}on Bottou.
+\newblock Large scale online learning.
+\newblock {\em Advances in neural information processing systems}, 22:217--224,
+  2010.
+
+\bibitem{brunton}
+Steven~L. Brunton, Bernd~R. Noack, and Petros Koumoutsakos.
+\newblock Machine learning for fluid mechanics.
+\newblock {\em Annual Review of Fluid Mechanics}, 52(1):477--508, 2020.
+
+\bibitem{adagrad}
+John Duchi, Elad Hazan, and Yoram Singer.
+\newblock Adaptive subgradient methods for online learning and stochastic
+  optimization.
+\newblock In {\em Journal of Machine Learning Research}, volume~12, pages
+  2121--2159, 2011.
+
+\bibitem{FreeCAD}
+{FreeCAD Community}.
+\newblock Freecad 0.19: An open source parametric 3d cad modeler, 2021.
+\newblock Accessed: 22.12.2023.
+
+\bibitem{glorot}
+Xavier Glorot and Yoshua Bengio.
+\newblock Understanding the difficulty of training deep feedforward neural
+  networks.
+\newblock In Yee~Whye Teh and Mike Titterington, editors, {\em Proceedings of
+  the Thirteenth International Conference on Artificial Intelligence and
+  Statistics}, volume~9 of {\em Proceedings of Machine Learning Research},
+  pages 249--256, Chia Laguna Resort, Sardinia, Italy, 13--15 May 2010. PMLR.
+
+\bibitem{guastoni2020}
+Luca Guastoni, Alejandro Güemes, Andrea Ianiro, Stefano Discetti, Philipp
+  Schlatter, Hossein Azizpour, and Ricardo Vinuesa.
+\newblock Convolutional-network models to predict wall-bounded turbulence from
+  wall quantities.
+\newblock {\em Journal of Fluid Mechanics}, 928, 2021.
+
+\bibitem{cv}
+Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
+\newblock {\em The Elements of Statistical Learning: Data Mining, Inference,
+  and Prediction}.
+\newblock Springer, 2 edition, 2009.
+\newblock Discussion on k-fold cross-validation.
+
+\bibitem{HeXu2019}
+Juncai He and Jinchao Xu.
+\newblock Mgnet: A unified framework of multigrid and convolutional neural
+  network.
+\newblock {\em Science China Mathematics}, 62(7):1331–1354, May 2019.
+
+\bibitem{he2015}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Delving deep into rectifiers: Surpassing human-level performance on
+  imagenet classification.
+\newblock 2015.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\bibitem{batchnorm}
+Sergey Ioffe and Christian Szegedy.
+\newblock Batch normalization: Accelerating deep network training by reducing
+  internal covariate shift.
+\newblock 2015.
 
 \bibitem{kara}
 Emre Kara and Hüdai Erpulat.
@@ -7,15 +77,53 @@ Emre Kara and Hüdai Erpulat.
 \newblock {\em International Advanced Researches and Engineering Journal},
   5:72–78, 2021.
 
+\bibitem{adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
 \bibitem{kipf}
 Thomas~N Kipf and Max Welling.
 \newblock Semi-supervised classification with graph convolutional networks.
 \newblock {\em arXiv preprint arXiv:1609.02907}, 2016.
 
+\bibitem{lecun1998}
+Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, 1998.
+
+\bibitem{ling2016}
+Julia Ling, Andrew Kurzawski, and Jeremy Templeton.
+\newblock Reynolds averaged turbulence modelling using deep neural networks
+  with embedded invariance.
+\newblock {\em Journal of Fluid Mechanics}, 807:155–166, 2016.
+
+\bibitem{metalearning}
+Wenzhuo Liu, Mouadh Yagoubi, and Marc Schoenauer.
+\newblock Meta-learning for airflow simulations with graph neural networks.
+\newblock 2023.
+
+\bibitem{milano2002}
+Michele Milano and Petros Koumoutsakos.
+\newblock Neural network modeling for near wall turbulent flow.
+\newblock {\em Journal of Computational Physics}, 182(1):1--26, 2002.
+
 \bibitem{newman}
 BG~Newman.
 \newblock The deflection of plane jets by adjacent boundaries-coanda effect.
 \newblock {\em Boundary layer and flow control}, 1961.
+
+\bibitem{ogoke2020}
+Francis Ogoke, Kazem Meidani, Amirreza Hashemi, and Amir~Barati Farimani.
+\newblock Graph convolutional networks applied to unstructured flow field data.
+\newblock {\em Machine Learning: Science and Technology}, 2(4):045020, sep
+  2021.
+
+\bibitem{parish2016}
+Eric~J. Parish and Karthik Duraisamy.
+\newblock A paradigm for data-driven predictive modeling using field inversion
+  and machine learning.
+\newblock {\em Journal of Computational Physics}, 305:758--774, 2016.
 
 \bibitem{pnpp}
 Charles~R. Qi, Li~Yi, Hao Su, and Leonidas~J. Guibas.
@@ -23,9 +131,41 @@ Charles~R. Qi, Li~Yi, Hao Su, and Leonidas~J. Guibas.
   metric space.
 \newblock 2017.
 
+\bibitem{unet}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock 2015.
+
+\bibitem{rumel}
+David~E Rumelhart, Geoffrey~E Hinton, and Ronald~J Williams.
+\newblock {\em Parallel Distributed Processing: Explorations in the
+  Microstructure of Cognition, Vol. 1: Foundations}.
+\newblock MIT Press, 1986.
+
+\bibitem{rmsprop}
+Tijmen Tieleman and Geoffrey Hinton.
+\newblock Lecture 6.5-rmsprop: Divide the gradient by a running average of its
+  recent magnitude.
+\newblock COURSERA: Neural networks for machine learning, 2012.
+\newblock Available online: \url{https://www.coursera.org/course/neuralnets}.
+
+\bibitem{tracey2013}
+Brendan~D. Tracey, Karthikeyan Duraisamy, and Juan~J. Alonso.
+\newblock {\em A Machine Learning Strategy to Assist Turbulence Model
+  Development}.
+
 \bibitem{trandum}
 Michele Trancossi and Antonio Dumas.
 \newblock A.c.h.e.o.n.: Aerial coanda high efficiency orienting-jet nozzle.
 \newblock {\em SAE Technical Papers}, 10 2011.
+
+\bibitem{trask2019}
+Nathaniel Trask, Ravi~G. Patel, Ben~J. Gross, and Paul~J. Atzberger.
+\newblock Gmls-nets: A framework for learning from unstructured data.
+\newblock 2019.
+
+\bibitem{zhang2015}
+Ze~Jia Zhang and Karthikeyan Duraisamy.
+\newblock Machine learning methods for data-driven turbulence modeling.
 
 \end{thebibliography}
