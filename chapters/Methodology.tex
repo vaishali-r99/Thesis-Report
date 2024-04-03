@@ -1,4 +1,4 @@
-\chapter{Implementation}
+\chapter{GNN implementation, results and discussion}
 \label{chap:Method}
 \section{Data pre-processing}
 \subsection{Dataset generation}
@@ -10,13 +10,13 @@ Conventional RANS solvers require substantial distances from domain boundaries t
 \begin{figure}[ht]
     \centering
     \includegraphics[width=11cm]{images/Methodology/Clipped.png}
-    \caption{Region of interest}
+    \caption{Depiction of the area of focus for deep learning - the original CFD mesh (left) is clipped and transformed into the region of interest (right)}
     \label{clipmesh}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=6cm]{images/Methodology/AdjMatrix.png}
-    \caption{Adjacency Matrix}
+    \caption{Visualization of the adjacency matrix representing graph connectivity of the clipped CFD mesh with 7329 nodes.}
     \label{adjmat}
 \end{figure}
 \subsection{Model inputs and outputs}
@@ -59,7 +59,7 @@ Here, we introduce the Graph U-Net architecture, a foundational framework for th
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Methodology/GraphUNet.png}
-    \caption{Graph U-Net architecture}
+    \caption{Detailed view of the Graph U-Net architecture applied to fluid dynamics, showcasing an encoder-decoder structure with skip connections. Each layer’s application is annotated with the resultant dimensions, illustrating the feature reduction or expansion throughout the network. Here, L is the number of hidden layers, N is the number of nodes in the graph, and F$_X$ and F$_Y$ denote the number of input and output features respectively.}
     \label{fig:GraphUnet}
 \end{figure}
 \subsection{GCNConv layer}
@@ -91,7 +91,7 @@ Top k-Pooling selects the $k$ nodes with the highest scores based on a specified
         X^{\prime} = (X \odot \tanh(\mathbf{\tilde{y}}))_{\mathbf{\overrightarrow{i}}}, \quad A^{\prime} = A_{\mathbf{\overrightarrow{i}},\mathbf{\overrightarrow{i}}}
        \]
 \end{enumerate}
-Here, $||.||_2$ represents the L2 norm, top-k selects the top-k indices, $\odot$ denotes element-wise multiplication, and $\cdot_{\mathbf{\overrightarrow{i}}}$ represents an indexing operation that extracts slices at indices specified by $\mathbf{\overrightarrow{i}}$. 
+Here, $||.||_2$ represents the L$_2$ norm, top-k selects the top-k indices, $\odot$ denotes element-wise multiplication, and $\cdot_{\mathbf{\overrightarrow{i}}}$ represents an indexing operation that extracts slices at indices specified by $\mathbf{\overrightarrow{i}}$. 
 \subsection{Upsampling}
 In the Graph U-Net architecture, unpooling is not a distinct operation like in traditional U-Nets. Instead, skip connections are used to implicitly perform unpooling. During decoding, downsampled features from the encoder are combined with zeros or empty features in the decoder using skip connections. This integration effectively restores spatial details and contextual information from the original input graph, ensuring that important features are retained and allowing for the recovery of detailed graph structures. Therefore, unpooling in Graph U-Net is seamlessly integrated into the skip connection mechanism, facilitating the reconstruction of the original graph resolution during decoding.
 \subsection{Results and Discussions}
@@ -101,7 +101,7 @@ There are several limitations to this architecture and each case is outlined bel
     \item \textbf{Poor Reconstruction:} Graph U-Net lacks explicit unpooling layers, which can lead to inadequate reconstruction of the original graph structure during decoding. This omission may result in loss of detailed information and suboptimal performance in tasks requiring precise graph reconstruction.
     \item \textbf{Limited Scalability:} Originally designed for small graphs with around 100 nodes, Graph U-Net relies on dense matrix multiplications, which are memory-intensive and not scalable. This leads to memory constraints and slower training times, thus making it impractical for complex, large-scale graph data.
     \item \textbf{Computational Overhead:} Graph U-Net conducts dense adjacency matrix multiplication in the forward pass, resulting in longer training and inference times.
-    \item \textbf{Limited Expressiveness:} GCNConv layers may have limited expressiveness in capturing higher-order graph structures and capturing long-range dependencies in the graph. Its optimal depth is found to be 2 or 3 layers. (CITE) Deeper models beyond 7 layers can encounter training difficulties due to increased context size per node and heightened risk of overfitting with a larger number of parameters.
+    \item \textbf{Limited Expressiveness:} GCNConv layers may have limited expressiveness in capturing higher-order graph structures and capturing long-range dependencies in the graph. Its optimal depth is found to be 2 or 3 layers \cite{kipf}. Deeper models beyond 7 layers can encounter training difficulties due to increased context size per node and heightened risk of overfitting with a larger number of parameters.
 \end{enumerate}
 Due to these disadvantages, Graph U-Net may exhibit poor performance in terms of both accuracy and efficiency, particularly for complex geometries or large-scale datasets. Hence, there is a paramount necessity to rely on a modified GNN architectures for our work.
 \section{Proposed architecture}

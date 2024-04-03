@@ -1,10 +1,33 @@
 \begin{thebibliography}{10}
 
+\bibitem{cnnimage}
+Saleh Albelwi and Ausif Mahmood.
+\newblock A framework for designing the architectures of deep convolutional
+  neural networks.
+\newblock {\em Entropy}, 19(6), 2017.
+
+\bibitem{benner2015survey}
+Peter Benner, Serkan Gugercin, and Karen Willcox.
+\newblock A survey of projection-based model reduction methods for parametric
+  dynamical systems.
+\newblock {\em SIAM Review}, 57(4):483--531, 2015.
+
+\bibitem{berkooz1993proper}
+Gal Berkooz, Philip Holmes, and John~L. Lumley.
+\newblock The proper orthogonal decomposition in the analysis of turbulent
+  flows.
+\newblock {\em Annual Review of Fluid Mechanics}, 25(1):539--575, 1993.
+
 \bibitem{sgd}
 L{\'e}on Bottou.
 \newblock Large scale online learning.
 \newblock {\em Advances in neural information processing systems}, 22:217--224,
   2010.
+
+\bibitem{brenner2019perspective}
+Michael~P. Brenner, Jeff~D. Eldredge, and Jonathan~B. Freund.
+\newblock Perspective on machine learning for advancing fluid mechanics.
+\newblock {\em Physical Review Fluids}, 4(10):100501, 2019.
 
 \bibitem{brunton}
 Steven~L. Brunton, Bernd~R. Noack, and Petros Koumoutsakos.
@@ -17,6 +40,17 @@ John Duchi, Elad Hazan, and Yoram Singer.
   optimization.
 \newblock In {\em Journal of Machine Learning Research}, volume~12, pages
   2121--2159, 2011.
+
+\bibitem{fefferman2006existence}
+Charles~L. Fefferman.
+\newblock Existence and smoothness of the navier-stokes equation.
+\newblock {\em The Clay Mathematics Institute}, 2006.
+\newblock Millennium Prize Problems.
+
+\bibitem{ferziger2002computational}
+Joel~H. Ferziger and Milovan Perić.
+\newblock {\em Computational Methods for Fluid Dynamics}.
+\newblock Springer, 2002.
 
 \bibitem{FreeCAD}
 {FreeCAD Community}.
@@ -87,6 +121,17 @@ Thomas~N Kipf and Max Welling.
 \newblock Semi-supervised classification with graph convolutional networks.
 \newblock {\em arXiv preprint arXiv:1609.02907}, 2016.
 
+\bibitem{kutz2017deep}
+J.~Nathan Kutz.
+\newblock Deep learning in fluid dynamics.
+\newblock {\em Journal of Fluid Mechanics}, 814:1--4, 2017.
+
+\bibitem{launder1974application}
+B.~E. Launder and D.~B. Spalding.
+\newblock The numerical computation of turbulent flows.
+\newblock {\em Computer Methods in Applied Mechanics and Engineering},
+  3(2):269--289, 1974.
+
 \bibitem{lecun1998}
 Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
 \newblock Gradient-based learning applied to document recognition.
@@ -108,6 +153,11 @@ Michele Milano and Petros Koumoutsakos.
 \newblock Neural network modeling for near wall turbulent flow.
 \newblock {\em Journal of Computational Physics}, 182(1):1--26, 2002.
 
+\bibitem{moin1998direct}
+Parviz Moin and Krishnan Mahesh.
+\newblock {\em Direct Numerical Simulation: A Tool in Turbulence Research}.
+\newblock Annual Review of Fluid Mechanics, Annual Reviews, 1998.
+
 \bibitem{newman}
 BG~Newman.
 \newblock The deflection of plane jets by adjacent boundaries-coanda effect.
@@ -125,11 +175,30 @@ Eric~J. Parish and Karthik Duraisamy.
   and machine learning.
 \newblock {\em Journal of Computational Physics}, 305:758--774, 2016.
 
+\bibitem{pope2000turbulent}
+Stephen~B. Pope.
+\newblock {\em Turbulent Flows}.
+\newblock Cambridge University Press, 2000.
+
 \bibitem{pnpp}
 Charles~R. Qi, Li~Yi, Hao Su, and Leonidas~J. Guibas.
 \newblock Pointnet++: Deep hierarchical feature learning on point sets in a
   metric space.
 \newblock 2017.
+
+\bibitem{raissi2019physics}
+Maziar Raissi, Paris Perdikaris, and George~Em Karniadakis.
+\newblock Physics-informed neural networks: A deep learning framework for
+  solving forward and inverse problems involving nonlinear partial differential
+  equations.
+\newblock {\em Journal of Computational Physics}, 378:686--707, 2019.
+
+\bibitem{reynolds1895dynamical}
+O.~Reynolds.
+\newblock On the dynamical theory of incompressible viscous fluids and the
+  determination of the criterion.
+\newblock {\em Philosophical Transactions of the Royal Society of London. A},
+  186:123--164, 1895.
 
 \bibitem{unet}
 Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
@@ -141,6 +210,22 @@ David~E Rumelhart, Geoffrey~E Hinton, and Ronald~J Williams.
 \newblock {\em Parallel Distributed Processing: Explorations in the
   Microstructure of Cognition, Vol. 1: Foundations}.
 \newblock MIT Press, 1986.
+
+\bibitem{schmid2010dynamic}
+Peter~J. Schmid.
+\newblock Dynamic mode decomposition of numerical and experimental data.
+\newblock {\em Journal of Fluid Mechanics}, 656:5--28, 2010.
+
+\bibitem{smagorinsky1963general}
+Joseph Smagorinsky.
+\newblock General circulation experiments with the primitive equations: I. the
+  basic experiment.
+\newblock {\em Monthly Weather Review}, 91(3):99--164, 1963.
+
+\bibitem{thompson1998automatic}
+Joe~F. Thompson, Bharat~K. Soni, and Nigel~P. Weatherill.
+\newblock Automatic and adaptive mesh generation for curved domains.
+\newblock {\em Applied Mechanics Reviews}, 51(11):669--704, 1998.
 
 \bibitem{rmsprop}
 Tijmen Tieleman and Geoffrey Hinton.

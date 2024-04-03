@@ -8,43 +8,43 @@
 \contentsline {chapter}{\numberline {2}Nozzle simulation and fluid mechanics primer}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Jet deflection in the HOMER nozzle}{9}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Coanda effect}{9}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Governing equations}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Governing equations}{11}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Numerical analysis}{13}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Simulation setup}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Simulation setup}{14}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Mesh generation}{14}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Boundary conditions and solver settings}{14}{subsection.2.4.2}%
 \contentsline {chapter}{\numberline {3}Deep learning primer}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction to machine learning and deep learning}{17}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Fundamentals of neural networks}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Training and optimization}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Loss function}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Backpropagation}{20}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Learning rate}{21}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Optimizer}{21}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Training of neural networks}{22}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Data partitioning}{22}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Feature scaling}{22}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Weight initialization}{23}{subsection.3.4.3}%
-\contentsline {subsubsection}{\nonumberline Xavier-Glorot initialization}{23}{subsubsection*.12}%
-\contentsline {subsubsection}{\nonumberline Kaiming-He initialization}{23}{subsubsection*.14}%
-\contentsline {subsection}{\numberline {3.4.4}Regularization}{24}{subsection.3.4.4}%
-\contentsline {subsubsection}{\nonumberline Dropout}{24}{subsubsection*.16}%
-\contentsline {subsection}{\numberline {3.4.5}Batch training and batch normalization}{24}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Overfitting and underfitting}{25}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}Hyperparameters}{26}{subsection.3.4.7}%
-\contentsline {subsubsection}{\nonumberline k-Fold cross-validation}{26}{subsubsection*.18}%
-\contentsline {section}{\numberline {3.5}Model evaluation metrics}{26}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Convolutional Neural Networks (CNNs)}{27}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Convolutional layer}{28}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Pooling and unpooling}{28}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}The U-Net architecture}{28}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Graph Neural Networks (GNNs)}{30}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Graph convolutions}{32}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Graph pooling}{33}{subsection.3.7.2}%
-\contentsline {subsection}{\numberline {3.7.3}Hierarchical multi-resolution approach}{34}{subsection.3.7.3}%
-\contentsline {subsubsection}{\nonumberline Sampling operator}{35}{subsubsection*.27}%
+\contentsline {section}{\numberline {3.3}Training of neural networks}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Data partitioning}{20}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Feature scaling}{21}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Weight initialization}{21}{subsection.3.3.3}%
+\contentsline {subsubsection}{\nonumberline Xavier-Glorot initialization}{22}{subsubsection*.12}%
+\contentsline {subsubsection}{\nonumberline Kaiming-He initialization}{22}{subsubsection*.14}%
+\contentsline {subsection}{\numberline {3.3.4}Regularization}{22}{subsection.3.3.4}%
+\contentsline {subsubsection}{\nonumberline Dropout}{23}{subsubsection*.16}%
+\contentsline {subsection}{\numberline {3.3.5}Batch training and batch normalization}{23}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Overfitting and underfitting}{24}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Hyperparameters}{24}{subsection.3.3.7}%
+\contentsline {subsubsection}{\nonumberline k-Fold cross-validation}{24}{subsubsection*.18}%
+\contentsline {subsection}{\numberline {3.3.8}Optimization}{25}{subsection.3.3.8}%
+\contentsline {subsubsection}{\nonumberline Loss function}{25}{subsubsection*.20}%
+\contentsline {subsubsection}{\nonumberline Backpropagation}{25}{subsubsection*.22}%
+\contentsline {subsubsection}{\nonumberline Learning rate}{26}{subsubsection*.24}%
+\contentsline {subsubsection}{\nonumberline Optimizer}{26}{subsubsection*.26}%
+\contentsline {section}{\numberline {3.4}Model evaluation metrics}{27}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Convolutional Neural Networks (CNNs)}{28}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Convolutional layer}{28}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Pooling and unpooling}{28}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}The U-Net architecture}{29}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Graph Neural Networks (GNNs)}{30}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Graph convolutions}{32}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Graph pooling}{34}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Hierarchical multi-resolution approach}{35}{subsection.3.6.3}%
+\contentsline {subsubsection}{\nonumberline Sampling operator}{35}{subsubsection*.35}%
 \contentsline {part}{\numberline {III}Methodology}{37}{part.3}%
-\contentsline {chapter}{\numberline {4}Implementation}{39}{chapter.4}%
+\contentsline {chapter}{\numberline {4}GNN implementation, results and discussion}{39}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Data pre-processing}{39}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Dataset generation}{39}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Transformation of mesh data to graph data}{39}{subsection.4.1.2}%
@@ -53,7 +53,7 @@
 \contentsline {section}{\numberline {4.2}Graph U-Net}{42}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}GCNConv layer}{42}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Top-k pooling layer}{43}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Upsampling}{43}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.3}Upsampling}{44}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Results and Discussions}{44}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}Limitations of Graph U-Net}{44}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Proposed architecture}{44}{section.4.3}%
@@ -63,6 +63,6 @@
 \contentsline {chapter}{\numberline {5}Model Evaluation, Results and Discussions}{49}{chapter.5}%
 \contentsline {part}{\numberline {V}Conclusion}{51}{part.5}%
 \contentsline {chapter}{\numberline {6}Conclusion}{53}{chapter.6}%
-\contentsline {part}{Appendix}{57}{part*.32}%
-\contentsline {chapter}{Bibliography}{57}{part*.32}%
+\contentsline {part}{Appendix}{57}{part*.40}%
+\contentsline {chapter}{Bibliography}{57}{part*.40}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

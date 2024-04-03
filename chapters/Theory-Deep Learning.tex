@@ -1,6 +1,6 @@
 \chapter{Deep learning primer}
 \label{chap:Theory-Deep Learning}
-This chapter provides a comprehensive explanation of foundational concepts and methodologies in deep learning, with a particular emphasis on Graph Neural Networks (GNNs). It begins by introducing deep learning and elucidating the basics of neural networks, focusing on their architecture and operational principles. Section \ref{optrain} delves into optimization techniques, addressing essential elements such as loss functions, backpropagation, learning rates, and optimizers. Subsequently, it navigates through the intricacies of training neural networks with topics including data partitioning, feature scaling, weights initialization, regularization, batch training, and hyperparameter tuning. Furthermore, this chapter examines model evaluation metrics and explores advanced neural network architectures such as Convolutional Neural Networks (CNNs) in Section \ref{cnnse} and Graph Neural Networks (GNNs) in Section \ref{gnnse}, highlighting their important features and components. 
+This chapter provides a comprehensive explanation of foundational concepts and methodologies in deep learning, with a particular emphasis on Graph Neural Networks (GNNs). It begins by introducing deep learning and elucidating the basics of neural networks, focusing on their architecture and operational principles. Section \ref{optrain} navigates through the intricacies of training neural networks with topics including data partitioning, feature scaling, weights initialization, regularization, batch training, and hyperparameter tuning. Subsequently, it delves into optimization techniques, addressing essential elements such as loss functions, backpropagation, learning rates, and optimizers. Furthermore, this chapter examines model evaluation metrics and explores advanced neural network architectures such as Convolutional Neural Networks (CNNs) in Section \ref{cnnse} and Graph Neural Networks (GNNs) in Section \ref{gnnse}, highlighting their important features and components. 
 
 \section{Introduction to machine learning and deep learning}
 Machine learning, a dynamic subset of artificial intelligence, is dedicated to developing algorithms that extract insights and patterns from data. This enables systems to enhance their accuracy and decision-making capabilities without being explicitly programmed for each task. The learning process utilizes statistical models and optimization algorithms to iteratively adjust parameters and improve performance. Machine learning approaches are broadly categorized into supervised learning and unsupervised learning based on learning objectives. \\
@@ -16,14 +16,14 @@ A \textbf{perceptron} or an artificial neuron, is the fundamental building block
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Theory-DL/ActFn.png}
-    \caption{Perceptron}
+    \caption{Schematic representation of a perceptron - the basic computational unit of artificial neural networks, illustrating input connections, weights, bias, and an activation function.}
     \label{fig:Perceptron}
   \end{figure}
 \textbf{Activation functions} are usually non-linear functions to introduce non-linearity within the layers of neural networks, allowing them to learn and represent complex relationships in data. Common activation functions include sigmoid, tanh, ReLU (Rectified Linear Unit), and leaky ReLU. Activation functions transform the weighted sum of inputs $\mathbf{z}$ into the output signal $\mathbf{y}$, typically in the range between 0 and 1 (for sigmoid) or -1 and 1 (for tanh). Without the nonlinear transformation via the activation function, the network would be confined to solving merely linear problems. \\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=8cm]{images/Theory-DL/ActGraphs.png}
-    \caption{Activation functions: (a) Sigmoid, (b) Tanh, (c) ReLU, and (d) Leaky ReLU}
+    \caption{Comparative visualization of common activation functions used in neural networks: (a) Sigmoid, (b) Tanh, (c) ReLU, and (d) Leaky ReLU}
     \label{fig:ActGraphs}
   \end{figure}
 \textbf{Weights} in a neural network represent the strength of connections between neurons. They are learned parameters to adjust the influence of input signals on the neuron's output. \textbf{Biases} allow neural networks to model the offset from zero output, influencing the activation of neurons regardless of the input.\\
@@ -31,51 +31,13 @@ A \textbf{perceptron} or an artificial neuron, is the fundamental building block
 \begin{figure}[ht]
     \centering
     \includegraphics[width=10cm]{images/Theory-DL/MLP.png}
-    \caption{Architecture of a Multi Layer Perceptron}
+    \caption{Architecture of a Multi-Layer Perceptron (MLP) showcasing an input layer, multiple hidden layers, and an output layer, demonstrating the flow of information in feed-forward neural networks.}
     \label{fig:MLP}
   \end{figure}
-\section{Training and optimization} \label{optrain}
-Optimization involves adjusting the parameters of the neural network, such as weights and biases, to minimize a predefined objective function, typically referred to as the loss function. The optimization process iteratively updates the parameters based on the gradients of the loss function with respect to the network's parameters, aiming to converge to a set of optimal parameters that yield the best performance on the given task. Some important aspects of the optimization process are discussed in the following subsections. 
-\subsection{Loss function}
-The loss function quantifies the difference between the model's predictions and the actual target values. It represents the measure of how well the model is performing on the training data. Common loss functions include mean squared error (MSE) for regression tasks and categorical cross-entropy for classification tasks. The loss function $\mathcal{L}(\theta)$ is defined as: 
-\begin{equation}
-    \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N L\left(y_i, \hat{y}_i ; \theta\right)
-    \end{equation}
-Here, $\theta$ represents the parameters of the neural network being optimized, such as weights and biases, $y_i$ is the ground truth and $\hat{y}_i $ is the model prediction. The loss function $\mathcal{L}(\theta)$ depends on these parameters, and it is computed as the average of the individual loss $L\left(y_i, \hat{y}_i ; \theta\right)$ over all training examples.
-\subsection{Backpropagation}
-Backpropagation is a fundamental algorithm used to compute the gradients of the loss function with respect to the parameters (weights and biases) of the neural network. It involves propagating the error backward from the output layer to the input layer, updating the parameters along the way to minimize the loss. The gradients are computed using the chain rule of calculus, enabling efficient optimization of the network's parameters. Mathematically, the gradients $\nabla_\theta \mathcal{L}(\theta)$ of the loss function are computed as,
-\begin{equation}
-    \nabla_\theta \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N \nabla_\theta L\left(y_i, \hat{y}_i ; \theta\right)
-    \end{equation}
-\subsection{Learning rate}
-The learning rate is a hyperparameter that controls the size of the parameter updates, that is, the step-size in the direction of the gradients computed by backpropagation. A higher learning rate may lead to faster convergence but risks overshooting the optimal solution, while a lower learning rate may result in slower convergence but more stable training. The parameter update rule with learning rate $\eta$ is given by:
-\begin{equation}
-    \theta_{t+1}=\theta_t-\eta \nabla_\theta \mathcal{L}(\theta)
-    \end{equation}
-Here, $\theta_{t+1}$ and $\theta_t$ represent the parameters at time step $t$ and $t+1$ respectively. Learning rate decay is often used to gradually reduce the learning rate during training with the help of learning rate schedulers such as,
-\begin{itemize}
-\item \textbf{Step decay} reduces the learning rate by a factor (typically constant) after a fixed number of epochs or iterations.
-\item \textbf{Exponential decay} reduces the learning rate exponentially over time.
-\end{itemize}
-% \begin{figure}[ht]
-%   \centering
-%   \includegraphics[width=10cm]{images/Theory-DL/LR.png}
-%   \caption{Effect of Learning Rates}
-%   \label{fig:LR}
-%   \end{figure}
-\subsection{Optimizer} 
-The optimizer is responsible for updating the parameters of the neural network based on the gradients computed during backpropagation. It determines the direction and magnitude of parameter updates to minimize the loss function efficiently. Popular optimizers include stochastic gradient descent (SGD) \cite{sgd}, Adam \cite{adam}, RMSProp \cite{rmsprop}, and AdaGrad \cite{adagrad}. We use the Adam optimizer in the training and testing phases of our work. \\
- \textbf{Adam (Adaptive Moment Estimation)} is an algorithm for stochastic optimization that combines the ideas of SGD with momentum and RMSProp. It maintains exponentially decaying moving averages of past gradients and past squared gradients for each parameter. These moving averages serve as estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. Adam also incorporates bias correction terms to compensate for the initial bias towards zero at the beginning of training. The parameter update rules at time step $t$ are given by,
- \begin{enumerate}
-  \item Compute the gradient of the loss function with respect to the parameters, \(\theta_t\).
-  \item Update biased first moment estimate: \(m_t = \beta_1 m_{t-1} + (1 - \beta_1)\theta_t\).
-  \item Update biased second raw moment estimate: \(v_t = \beta_2 v_{t-1} + (1 - \beta_2)\theta_t^2\).
-  \item Compute bias-corrected first moment estimate: \(\hat{m}_t = \frac{m_t}{(1 - \beta_1^t)}\).
-  \item Compute bias-corrected second raw moment estimate: \(\hat{v}_t = \frac{v_t}{(1 - \beta_2^t)}\).
-  \item Update the parameters: \(\theta_{t+1} = \theta_t - \alpha \cdot \frac{\hat{m}_t}{(\sqrt{\hat{v}_t} + \epsilon)}\).
-\end{enumerate}
-Here, \(m_t\) and \(v_t\) are estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. \(\beta_1\) and \(\beta_2\) are exponential decay rates for these moment estimates, typically close to 1. $\hat{m}_t$ and $\hat{v}_t$ refer to the bias-corrected estimates of the first and second moments (uncentered variance) of the gradients, and $\epsilon$ is a small constant to prevent division by zero.
-\section{Training of neural networks}
+\section{Training of neural networks}\label{optrain}
+In this section, we delve into the training practices of neural networks, highlighting the optimization of model parameters to enhance task performance. We particularly focus on the methodologies for data handling like data partitioning, feature scaling, and regularization techniques that address model generalization as well as batch training and weight initialization.
+% , critical for achieving predictive accuracy across diverse datasets.
+The process of training neural networks is fundamentally aimed at optimizing a model's parameters to improve its performance on given tasks. Thus, we also talk about optimization strategies, which leverage algorithms like backpropagation to calculate gradients and apply updates via optimizers such as SGD or Adam.
 \subsection{Data partitioning}Data partitioning is a crucial step in deep learning in which the dataset is divided into separate subsets for training, validation, and testing. The data partitioned into training data is used to train the model, and validation data is used to tune hyperparameters and monitor performance. The testing data is used to evaluate the final model's generalization performance. The partitioning process ensures that the model's performance is assessed accurately on unseen data and provides independent datasets for training and evaluation. 
 \subsection{Feature scaling}Feature scaling or normalization, is a preprocessing step aimed at bringing all input features to a similar scale. Features with large magnitudes can lead to large gradients during training, which may cause unstable behavior and make it challenging for the optimizer to find the optimum. Feature scaling mitigates this issue by reducing the range of feature values, thus preventing gradient instability and ensuring more reliable optimization. Common feature scaling techniques include,
 \begin{enumerate}
@@ -129,6 +91,47 @@ Hyperparameters in deep learning are fixed parameters set prior to the training 
 Hyperparameter tuning is the process of selecting the optimal values for these hyperparameters to maximize the performance of the model on unseen data. It involves systematically searching through a predefined space of hyperparameters and evaluating the model's performance using a validation set or cross-validation. The goal is to find the hyperparameters that result in the best generalization performance, balancing between underfitting and overfitting.
 \subsubsection{k-Fold cross-validation}
 In k-fold cross-validation \cite{cv}, the dataset is divided into $k$ subsets or folds, of approximately equal size. The model is trained k times, each time using k-1 folds for training and the remaining fold for validation. This process is repeated k times, with each fold used exactly once as the validation set. In the context of hyperparameter tuning, k-fold cross-validation helps evaluate the performance of different hyperparameter configurations. Instead of relying on a single validation set, this method averages the performance over multiple folds, providing a more stable estimate of the model's performance.
+\subsection{Optimization} 
+Optimization involves adjusting the parameters of the neural network, such as weights and biases, to minimize a predefined objective function, typically referred to as the loss function. The optimization process iteratively updates the parameters based on the gradients of the loss function with respect to the network's parameters, aiming to converge to a set of optimal parameters that yield the best performance on the given task. Some important aspects of the optimization process are discussed in the following subsections. 
+\subsubsection{Loss function}
+The loss function quantifies the difference between the model's predictions and the actual target values. It represents the measure of how well the model is performing on the training data. Common loss functions include mean squared error (MSE) for regression tasks and categorical cross-entropy for classification tasks. The loss function $\mathcal{L}(\theta)$ is defined as: 
+\begin{equation}
+    \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N L\left(y_i, \hat{y}_i ; \theta\right)
+    \end{equation}
+Here, $\theta$ represents the parameters of the neural network being optimized, such as weights and biases, $y_i$ is the ground truth and $\hat{y}_i $ is the model prediction. The loss function $\mathcal{L}(\theta)$ depends on these parameters, and it is computed as the average of the individual loss $L\left(y_i, \hat{y}_i ; \theta\right)$ over all training examples.
+\subsubsection{Backpropagation}
+Backpropagation is a fundamental algorithm used to compute the gradients of the loss function with respect to the parameters (weights and biases) of the neural network. It involves propagating the error backward from the output layer to the input layer, updating the parameters along the way to minimize the loss. The gradients are computed using the chain rule of calculus, enabling efficient optimization of the network's parameters. Mathematically, the gradients $\nabla_\theta \mathcal{L}(\theta)$ of the loss function are computed as,
+\begin{equation}
+    \nabla_\theta \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N \nabla_\theta L\left(y_i, \hat{y}_i ; \theta\right)
+    \end{equation}
+\subsubsection{Learning rate}
+The learning rate is a hyperparameter that controls the size of the parameter updates, that is, the step-size in the direction of the gradients computed by backpropagation. A higher learning rate may lead to faster convergence but risks overshooting the optimal solution, while a lower learning rate may result in slower convergence but more stable training. The parameter update rule with learning rate $\eta$ is given by:
+\begin{equation}
+    \theta_{t+1}=\theta_t-\eta \nabla_\theta \mathcal{L}(\theta)
+    \end{equation}
+Here, $\theta_{t+1}$ and $\theta_t$ represent the parameters at time step $t$ and $t+1$ respectively. Learning rate decay is often used to gradually reduce the learning rate during training with the help of learning rate schedulers such as,
+\begin{itemize}
+\item \textbf{Step decay} reduces the learning rate by a factor (typically constant) after a fixed number of epochs or iterations.
+\item \textbf{Exponential decay} reduces the learning rate exponentially over time.
+\end{itemize}
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=10cm]{images/Theory-DL/LR.png}
+%   \caption{Effect of Learning Rates}
+%   \label{fig:LR}
+%   \end{figure}
+\subsubsection{Optimizer} 
+The optimizer is responsible for updating the parameters of the neural network based on the gradients computed during backpropagation. It determines the direction and magnitude of parameter updates to minimize the loss function efficiently. Popular optimizers include stochastic gradient descent (SGD) \cite{sgd}, Adam \cite{adam}, RMSProp \cite{rmsprop}, and AdaGrad \cite{adagrad}. We use the Adam optimizer in the training and testing phases of our work. \\
+ \textbf{Adam (Adaptive Moment Estimation)} is an algorithm for stochastic optimization that combines the ideas of SGD with momentum and RMSProp. It maintains exponentially decaying moving averages of past gradients and past squared gradients for each parameter. These moving averages serve as estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. Adam also incorporates bias correction terms to compensate for the initial bias towards zero at the beginning of training. The parameter update rules at time step $t$ are given by,
+ \begin{enumerate}
+  \item Compute the gradient of the loss function with respect to the parameters, \(\theta_t\).
+  \item Update biased first moment estimate: \(m_t = \beta_1 m_{t-1} + (1 - \beta_1)\theta_t\).
+  \item Update biased second raw moment estimate: \(v_t = \beta_2 v_{t-1} + (1 - \beta_2)\theta_t^2\).
+  \item Compute bias-corrected first moment estimate: \(\hat{m}_t = \frac{m_t}{(1 - \beta_1^t)}\).
+  \item Compute bias-corrected second raw moment estimate: \(\hat{v}_t = \frac{v_t}{(1 - \beta_2^t)}\).
+  \item Update the parameters: \(\theta_{t+1} = \theta_t - \alpha \cdot \frac{\hat{m}_t}{(\sqrt{\hat{v}_t} + \epsilon)}\).
+\end{enumerate}
+Here, \(m_t\) and \(v_t\) are estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. \(\beta_1\) and \(\beta_2\) are exponential decay rates for these moment estimates, typically close to 1. $\hat{m}_t$ and $\hat{v}_t$ refer to the bias-corrected estimates of the first and second moments (uncentered variance) of the gradients, and $\epsilon$ is a small constant to prevent division by zero.
 \section{Model evaluation metrics}
 Model evaluation metrics are essential for assessing the performance of deep learning models. The loss function serves as a crucial metric for evaluating model performance, in addition to optimizing model parameters during training. In regression tasks, where the goal is to predict continuous values, common loss functions include the following:
 \begin{itemize}
@@ -142,7 +145,7 @@ CNNs \cite{lecun1998} are specialized neural networks designed to process grid-l
 \begin{figure}[ht]
     \centering
     \includegraphics[width=10cm]{images/Theory-DL/CNN.png}
-    \caption{Convolutional Neural Network}
+    \caption{Diagram illustrating the typical structure of a CNN consisting of convolutional, pooling, and fully connected layers. Image taken from \cite{cnnimage}.}
     \label{fig:CNN}
   \end{figure}
 \subsection{Convolutional layer}
@@ -150,20 +153,20 @@ The convolutional layer in a CNN consists of a set of learnable filters (kernels
 \begin{figure}[ht]
     \centering
     \includegraphics[width=14cm]{images/Theory-DL/Conv1.png}
-    \caption{Convolutional Layer}
+    \caption{Detailed view of a convolutional layer's operation in a CNN, depicting the convolution process over an input matrix with a specified kernel to produce feature maps.}
     \label{fig:Conv1}
   \end{figure}
 \subsection{Pooling and unpooling} Pooling and unpooling operators perform effective downsampling and upsampling operations respectively, enabling hierarchical feature extraction while preserving spatial information. Pooling is a down-sampling operation commonly used in CNNs to reduce the spatial dimensions of feature maps. Max pooling and average pooling are popular pooling techniques that select the maximum or average value within each pooling region, respectively. These operations are depicted in Figure \ref{fig:Pool}. Conversely, unpooling layers, often used in upsampling, aim to reconstruct the original input resolution from the lower-dimensional representations generated by pooling. These layers typically store the indices of the maximum values during pooling and use them for upsampling. Nearest neighbor interpolation is a simpler upsampling method where each pixel in the input is replicated multiple times to form the output as can be seen in Figure \ref{fig:Unpool2}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=8cm]{images/Theory-DL/Pool.png}
-    \caption{Pooling}
+    \caption{Visualization of pooling operations for downsampling spatial dimensions in CNNs, with examples of (a) max pooling, and (b) average pooling}
     \label{fig:Pool}
 \end{figure}
 \begin{figure}[ht]
         \centering
         \includegraphics[width=8cm]{images/Theory-DL/NNUnpool.png}
-        \caption{Unpooling}
+        \caption{Illustration of the unpooling process of nearest neighbor interpolation, used for upsampling in CNNs}
         \label{fig:Unpool2}
     \end{figure}
 \subsection{The U-Net architecture}
@@ -171,7 +174,7 @@ U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a con
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Theory-DL/UNet.png}
-    \caption{U-Net Architecture \cite{unet}}
+    \caption{Structure of the U-Net architecture, demonstrating its U-shaped design with contracting and expanding paths \cite{unet}}.
     \label{fig:UNet}
 \end{figure}
 \begin{enumerate}
@@ -182,7 +185,7 @@ U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a con
 \begin{figure}[ht]
     \centering
     \includegraphics[width=6cm]{images/Theory-DL/Skip.png}
-    \caption{Skip Connection \cite{he2016deep}} 
+    \caption{Diagram demonstrating the concept of skip connections within neural network architectures. Skip connections bypass one or more layers by directly feeding the output from an earlier layer to a later layer.} 
     \label{fig:Skip}
 \end{figure}
 A notable observation pertinent to our current endeavor is the striking resemblance between the U-Net architecture and the V-cycle multi-grid method, as noted by He and Xu \cite{HeXu2019}. Both employ a hierarchical structure wherein information is exchanged across varying resolutions.
@@ -206,7 +209,7 @@ where \( x_i \) represents the feature vector associated with node \(v_i \).
 \begin{figure}[ht]
   \centering
   \includegraphics[width=12cm]{images/Theory-DL/AdjMat.png}
-  \caption{Adjacency Matrix}
+  \caption{Demonstration of an adjacency matrix representing graph connectivity and the binary representation of node relationships in graph-structured data.}
   \label{fig:AdjMat}
 \end{figure}
 GNNs leverage these components to perform message passing and aggregation operations across the graph structure, which are discussed below. \\

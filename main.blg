@@ -15,45 +15,45 @@ Warning--empty year in tracey2013
 Warning--empty journal in trask2019
 Warning--empty journal in zhang2015
 Warning--empty year in zhang2015
-You've used 29 entries,
+You've used 44 entries,
             2118 wiz_defined-function locations,
-            661 strings with 8869 characters,
-and the built_in function-call counts, 9265 in all, are:
-= -- 872
-> -- 492
+            750 strings with 11218 characters,
+and the built_in function-call counts, 13679 in all, are:
+= -- 1316
+> -- 676
 < -- 5
-+ -- 195
-- -- 162
-* -- 640
-:= -- 1585
-add.period$ -- 88
-call.type$ -- 29
-change.case$ -- 165
++ -- 272
+- -- 220
+* -- 943
+:= -- 2344
+add.period$ -- 134
+call.type$ -- 44
+change.case$ -- 236
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 342
-empty$ -- 687
-format.name$ -- 162
-if$ -- 1895
+cite$ -- 56
+duplicate$ -- 508
+empty$ -- 1045
+format.name$ -- 220
+if$ -- 2793
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 30
-newline$ -- 148
-num.names$ -- 60
-pop$ -- 192
+int.to.str$ -- 44
+missing$ -- 48
+newline$ -- 224
+num.names$ -- 90
+pop$ -- 255
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 197
 quote$ -- 0
-skip$ -- 249
+skip$ -- 356
 stack$ -- 0
-substring$ -- 462
-swap$ -- 57
+substring$ -- 760
+swap$ -- 72
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
+type$ -- 164
 warning$ -- 12
-while$ -- 79
-width$ -- 31
-write$ -- 302
+while$ -- 128
+width$ -- 46
+write$ -- 465
 (There were 12 warnings)
