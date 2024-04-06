@@ -87,7 +87,11 @@
 
  \clearemptydoublepage
 
- \printglossaries
+% Print the list of acronyms
+\printglossary[type=acronym,title=List of Acronyms]
+
+% Print the list of symbols
+\printglossary[type=symbol,title=List of Symbols]
 
  \addcontentsline{toc}{chapter}{Bibliography}
  \bibliography{bibliography/literature}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  3 APR 2024 13:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  6 APR 2024 03:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -587,7 +587,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks36
 \@floatcapt=\box64
 )
-Package scrhack Info: loading float hack on input line 72.
+Package scrhack Info: loading float hack on input line 79.
 
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/float.hak
 File: float.hak 2023/04/24 v3.40 KOMA-Script scrhack part (hacking package floa
@@ -827,6 +827,13 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@vleads=\box78
 \tabu@cellskip=\skip91
 )
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip92
+\multirow@cntb=\count358
+\multirow@dima=\skip93
+\bigstrutjot=\dimen263
+)
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
@@ -859,15 +866,15 @@ Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
 (/usr/share/texlive/texmf-dist/tex/latex/media9/pdfbase.sty
 Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF fe
 atures
-\g_pbs_page_int=\count358
-\g_pbs_oc_int=\count359
+\g_pbs_page_int=\count359
+\g_pbs_oc_int=\count360
 )
-\g_ocgbase_nd_int=\count360
+\g_ocgbase_nd_int=\count361
 )
-\l_ocgxii_vp_cnt_int=\count361
-\l_ocgxii_ve_cnt_int=\count362
-\g_ocgxii_page_int=\count363
-\g_ocgxii_widcount_int=\count364
+\l_ocgxii_vp_cnt_int=\count362
+\l_ocgxii_ve_cnt_int=\count363
+\g_ocgxii_page_int=\count364
+\g_ocgxii_widcount_int=\count365
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperxmp/hyperxmp.sty
 Package: hyperxmp 2022/10/16 v5.11 Store hyperref metadata in XMP format
@@ -880,7 +887,7 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 (/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 )
-\@hyxmp@count=\count365
+\@hyxmp@count=\count366
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/ifdraft.sty
 Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
@@ -889,13 +896,17 @@ Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 (./components/commands.tex
-\c@theorem=\count366
+\c@theorem=\count367
 ) (./components/glossary.tex)
 \glswrite=\write5
-\glo@main@file=\write6
-\openout6 = `main.glo'.
+\glo@acronym@file=\write6
+\openout6 = `main.acn'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 62.
+Package glossaries Info: Writing glossary file main.acn on input line 62.
+\glo@symbol@file=\write7
+\openout7 = `main.sbn'.
+
+Package glossaries Info: Writing glossary file main.sbn on input line 62.
 runsystem(which pygmentize && touch main.aex)...executed.
 
 runsystem(rm main.aex)...executed.
@@ -939,16 +950,16 @@ Package scrbase Info: activating english \indexname on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count367
-\scratchdimen=\dimen263
+\scratchcounter=\count368
+\scratchdimen=\dimen264
 \scratchbox=\box79
-\nofMPsegments=\count368
-\nofMParguments=\count369
+\nofMPsegments=\count369
+\nofMParguments=\count370
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count370
-\MPscratchDim=\dimen264
-\MPnumerator=\count371
-\makeMPintoPDFobject=\count372
+\MPscratchCnt=\count371
+\MPscratchDim=\dimen265
+\MPnumerator=\count372
+\makeMPintoPDFobject=\count373
 \everyMPtoPDFconversion=\toks43
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -962,8 +973,8 @@ e
 Package hyperref Info: Link coloring ON on input line 64.
 
 (./main.out) (./main.out)
-\@outlinefile=\write7
-\openout7 = `main.out'.
+\@outlinefile=\write8
+\openout8 = `main.out'.
 
 Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           Using `bookmark' together with `hyperref' is recommended,
@@ -979,13 +990,13 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count373
+\BKM@id=\count374
 ))
+(./main.glsdefs)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package newfloat Info: `float' package detected.
-
-(./components/cover.tex
+ (./components/cover.tex
 <styles/tum_logo.pdf, id=6, 54.02504pt x 28.452pt>
 File: styles/tum_logo.pdf Graphic file (type pdf)
 <use styles/tum_logo.pdf>
@@ -1049,8 +1060,8 @@ Package pdftex.def Info: styles/cse_logo.pdf  used on input line 41.
 
 ]
 (./main.toc [11])
-\tf@toc=\write8
-\openout8 = `main.toc'.
+\tf@toc=\write9
+\openout9 = `main.toc'.
 
  [12] (./components/text.tex
 part I.
@@ -1083,12 +1094,12 @@ Package scrkbase Info: You've told me to use the font selection of the element
 
 ] [8] (./chapters/Theory-CFD.tex
 chapter 2.
-<images/Theory-CFD/nozzle.png, id=318, 665.8476pt x 538.4115pt>
+<images/Theory-CFD/nozzle.png, id=330, 665.8476pt x 538.4115pt>
 File: images/Theory-CFD/nozzle.png Graphic file (type png)
 <use images/Theory-CFD/nozzle.png>
 Package pdftex.def Info: images/Theory-CFD/nozzle.png  used on input line 8.
 (pdftex.def)             Requested size: 227.62204pt x 184.05156pt.
-<images/Theory-CFD/Coanda-effect.png, id=324, 860.21375pt x 314.17375pt>
+<images/Theory-CFD/Coanda-effect.png, id=336, 860.21375pt x 314.17375pt>
 File: images/Theory-CFD/Coanda-effect.png Graphic file (type png)
 <use images/Theory-CFD/Coanda-effect.png>
 Package pdftex.def Info: images/Theory-CFD/Coanda-effect.png  used on input lin
@@ -1098,7 +1109,7 @@ e 17.
 
 
 ]
-<images/Theory-CFD/Flow Domain.png, id=335, 783.92876pt x 556.0775pt>
+<images/Theory-CFD/Flow Domain.png, id=348, 783.92876pt x 556.0775pt>
 File: images/Theory-CFD/Flow Domain.png Graphic file (type png)
 <use images/Theory-CFD/Flow Domain.png>
 Package pdftex.def Info: images/Theory-CFD/Flow Domain.png  used on input line 
@@ -1115,8 +1126,11 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [13] [14])
-(./chapters/Theory-Deep Learning.tex [15] [16
+)
+Underfull \vbox (badness 1881) has occurred while \output is active []
+
+ [13]
+[14]) (./chapters/Theory-Deep Learning.tex [15] [16
 
 
 ]
@@ -1137,18 +1151,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
  []
 
 [17]
-<images/Theory-DL/ActFn.png, id=405, 591.4095pt x 320.397pt>
+<images/Theory-DL/ActFn.png, id=423, 591.4095pt x 320.397pt>
 File: images/Theory-DL/ActFn.png Graphic file (type png)
 <use images/Theory-DL/ActFn.png>
 Package pdftex.def Info: images/Theory-DL/ActFn.png  used on input line 18.
 (pdftex.def)             Requested size: 341.43306pt x 184.96994pt.
-<images/Theory-DL/ActGraphs.png, id=406, 677.53125pt x 664.4825pt>
+<images/Theory-DL/ActGraphs.png, id=424, 677.53125pt x 664.4825pt>
 File: images/Theory-DL/ActGraphs.png Graphic file (type png)
 <use images/Theory-DL/ActGraphs.png>
 Package pdftex.def Info: images/Theory-DL/ActGraphs.png  used on input line 25.
 
 (pdftex.def)             Requested size: 227.62204pt x 223.23418pt.
-<images/Theory-DL/MLP.png, id=408, 1015.795pt x 689.57625pt>
+<images/Theory-DL/MLP.png, id=426, 1015.795pt x 689.57625pt>
 File: images/Theory-DL/MLP.png Graphic file (type png)
 <use images/Theory-DL/MLP.png>
 Package pdftex.def Info: images/Theory-DL/MLP.png  used on input line 33.
@@ -1166,42 +1180,51 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ) [26]
-<images/Theory-DL/CNN.png, id=516, 568.1225pt x 225.84375pt>
+<images/Theory-DL/CNN.png, id=534, 568.1225pt x 225.84375pt>
 File: images/Theory-DL/CNN.png Graphic file (type png)
 <use images/Theory-DL/CNN.png>
 Package pdftex.def Info: images/Theory-DL/CNN.png  used on input line 147.
 (pdftex.def)             Requested size: 284.52756pt x 113.11111pt.
  [27]
-<images/Theory-DL/Conv1.png, id=525, 1064.97874pt x 419.5675pt>
+./chapters/Theory-Deep Learning.tex:154: Undefined control sequence.
+l.154     \centeringflo
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<images/Theory-DL/Conv1.png, id=544, 1064.97874pt x 419.5675pt>
 File: images/Theory-DL/Conv1.png Graphic file (type png)
 <use images/Theory-DL/Conv1.png>
 Package pdftex.def Info: images/Theory-DL/Conv1.png  used on input line 155.
 (pdftex.def)             Requested size: 398.33858pt x 156.92769pt.
-<images/Theory-DL/Pool.png, id=528, 573.14125pt x 387.4475pt>
+<images/Theory-DL/Pool.png, id=547, 573.14125pt x 387.4475pt>
 File: images/Theory-DL/Pool.png Graphic file (type png)
 <use images/Theory-DL/Pool.png>
 Package pdftex.def Info: images/Theory-DL/Pool.png  used on input line 162.
 (pdftex.def)             Requested size: 227.62204pt x 153.87662pt.
-<images/Theory-DL/NNUnpool.png, id=529, 501.875pt x 260.975pt>
+<images/Theory-DL/NNUnpool.png, id=548, 501.875pt x 260.975pt>
 File: images/Theory-DL/NNUnpool.png Graphic file (type png)
 <use images/Theory-DL/NNUnpool.png>
 Package pdftex.def Info: images/Theory-DL/NNUnpool.png  used on input line 168.
 
 (pdftex.def)             Requested size: 227.62204pt x 118.36551pt.
-<images/Theory-DL/UNet.png, id=531, 1560.83125pt x 1039.885pt>
+<images/Theory-DL/UNet.png, id=550, 1560.83125pt x 1039.885pt>
 File: images/Theory-DL/UNet.png Graphic file (type png)
 <use images/Theory-DL/UNet.png>
 Package pdftex.def Info: images/Theory-DL/UNet.png  used on input line 176.
 (pdftex.def)             Requested size: 341.43306pt x 227.47427pt.
- [28 <./images/Theory-DL/CNN.png>]
-<images/Theory-DL/Skip.png, id=547, 477.785pt x 425.59pt>
+[28 <./images/Theory-DL/CNN.png>]
+<images/Theory-DL/Skip.png, id=567, 477.785pt x 425.59pt>
 File: images/Theory-DL/Skip.png Graphic file (type png)
 <use images/Theory-DL/Skip.png>
 Package pdftex.def Info: images/Theory-DL/Skip.png  used on input line 187.
 (pdftex.def)             Requested size: 170.71652pt x 152.06284pt.
  [29 <./images/Theory-DL/Conv1.png>] [30 <./images/Theory-DL/Pool.png> <./image
 s/Theory-DL/NNUnpool.png>] [31 <./images/Theory-DL/UNet.png>]
-<images/Theory-DL/AdjMat.png, id=581, 915.42pt x 246.9225pt>
+<images/Theory-DL/AdjMat.png, id=601, 915.42pt x 246.9225pt>
 File: images/Theory-DL/AdjMat.png Graphic file (type png)
 <use images/Theory-DL/AdjMat.png>
 Package pdftex.def Info: images/Theory-DL/AdjMat.png  used on input line 211.
@@ -1233,89 +1256,155 @@ Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)              on input line 30.
 [37] [38] (./chapters/Methodology.tex
 chapter 4.
-<images/Methodology/Clipped.png, id=638, 750.805pt x 552.0625pt>
+<images/Methodology/Clipped.png, id=659, 750.805pt x 552.0625pt>
 File: images/Methodology/Clipped.png Graphic file (type png)
 <use images/Methodology/Clipped.png>
-Package pdftex.def Info: images/Methodology/Clipped.png  used on input line 12.
+Package pdftex.def Info: images/Methodology/Clipped.png  used on input line 13.
 
 (pdftex.def)             Requested size: 312.9803pt x 230.13779pt.
-<images/Methodology/AdjMatrix.png, id=639, 400.49625pt x 374.39874pt>
+<images/Methodology/AdjMatrix.png, id=660, 400.49625pt x 374.39874pt>
 File: images/Methodology/AdjMatrix.png Graphic file (type png)
 <use images/Methodology/AdjMatrix.png>
 Package pdftex.def Info: images/Methodology/AdjMatrix.png  used on input line 1
-8.
+9.
 (pdftex.def)             Requested size: 170.71652pt x 159.59438pt.
 [39
 
 
 ] [40 <./images/Methodology/Clipped.png>] [41 <./images/Methodology/AdjMatrix.p
 ng>]
-<images/Methodology/GraphUNet.png, id=667, 974.64125pt x 633.36626pt>
+<images/Methodology/GraphUNet.png, id=688, 974.64125pt x 633.36626pt>
 File: images/Methodology/GraphUNet.png Graphic file (type png)
 <use images/Methodology/GraphUNet.png>
 Package pdftex.def Info: images/Methodology/GraphUNet.png  used on input line 6
-1.
+2.
 (pdftex.def)             Requested size: 341.43306pt x 221.8748pt.
- [42 <./images/Methodology/GraphUNet.png>] [43] [44]) [45] [46
+ [42 <./images/Methodology/GraphUNet.png>] [43]
+<images/Methodology/Baselinereconstruct.png, id=714, 1065.9825pt x 420.57124pt>
+
+File: images/Methodology/Baselinereconstruct.png Graphic file (type png)
+<use images/Methodology/Baselinereconstruct.png>
+Package pdftex.def Info: images/Methodology/Baselinereconstruct.png  used on in
+put line 164.
+(pdftex.def)             Requested size: 398.33858pt x 157.15552pt.
+ [44]
+<images/Methodology/Baselineprediction.png, id=727, 890.32625pt x 626.34pt>
+File: images/Methodology/Baselineprediction.png Graphic file (type png)
+<use images/Methodology/Baselineprediction.png>
+Package pdftex.def Info: images/Methodology/Baselineprediction.png  used on inp
+ut line 173.
+(pdftex.def)             Requested size: 398.33858pt x 280.22566pt.
+
+Overfull \hbox (17.81816pt too wide) in paragraph at lines 182--191
+ [][] 
+ []
+
+[45] [46 <./images/Methodology/Baselinereconstruct.png>] [47 <./images/Methodol
+ogy/Baselineprediction.png>]
+Overfull \hbox (20.21036pt too wide) in paragraph at lines 219--242
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `case10' on page 48 undefined on input line 244.
+
+
+LaTeX Warning: Reference `case110' on page 48 undefined on input line 244.
+
+
+LaTeX Warning: Reference `case31' on page 48 undefined on input line 244.
+
+
+LaTeX Warning: Reference `case80' on page 48 undefined on input line 244.
+
+) (./chapters/Cluster.tex [48] [49] [50
+
+
+]
+chapter 5.
+) [51] [52
 
 
 ]
 part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 38.
-[47] [48] (./chapters/Results.tex
-chapter 5.
-) [49
-
-
-] [50
+(scrkbase)              on input line 48.
+[53] [54] (./chapters/Conclusion.tex
+chapter 6.
+[55
 
 
 ]
-part V.
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 46.
-[51] [52] (./chapters/Conclusion.tex
-chapter 6.
-) [53
+
+./chapters/Conclusion.tex:24: Package glossaries Error: Glossary entry `omega' 
+has not been defined.
+
+See the glossaries package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 ... specific rate of dissipation \gls{omega}.
+                                                   These quantities are fund...
+
+You need to define a glossary entry before you can use it.
+
+[56]) [57] [58
 
 
-] [54
+] [59] [60] (./chapters/Appendix.tex)) (./main.acr
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 2
+8.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)) (./main.sbl
+[61
 
 
-] [55] [56] (./chapters/Appendix.tex))
-No file main.gls.
-(./main.bbl [57
 
 
-] [58
 
 
-] [59] [60] [61])
+] [62
+
+
+]) (./main.bbl [63
+
+
+] [64
+
+
+] [65] [66] [67])
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [62]
+) [68]
 (./main.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27505 strings out of 477695
- 520468 string characters out of 5831648
- 1871759 words of memory out of 5000000
- 47233 multiletter control sequences out of 15000+600000
- 538980 words of font info for 101 fonts, out of 8000000 for 9000
+ 27986 strings out of 477695
+ 527831 string characters out of 5831648
+ 1874759 words of memory out of 5000000
+ 47655 multiletter control sequences out of 15000+600000
+ 541219 words of font info for 104 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,20n,134p,10899b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,134p,10899b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -1327,15 +1416,16 @@ blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf
+/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/z
-apfding/uzdr.pfb>
-Output written on main.pdf (74 pages, 1806857 bytes).
+type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
+latino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr
+.pfb>
+Output written on main.pdf (80 pages, 2186214 bytes).
 PDF statistics:
- 1116 PDF objects out of 1200 (max. 8388607)
- 946 compressed objects within 10 object streams
- 277 named destinations out of 1000 (max. 500000)
- 575 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1236 PDF objects out of 1440 (max. 8388607)
+ 1053 compressed objects within 11 object streams
+ 316 named destinations out of 1000 (max. 500000)
+ 585 words of extra memory for PDF output out of 10000 (max. 10000000)
 

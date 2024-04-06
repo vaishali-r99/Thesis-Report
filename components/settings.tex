@@ -40,7 +40,14 @@
 % Create glossaries and lists of acronyms
 % depending on how many packages were shipped with your TeX distribution,
 % you might need to install xindy. On Linux: sudo apt install xindy
-\usepackage[toc, xindy]{glossaries}
+\usepackage[toc,section=chapter, xindy, nomain]{glossaries}
+
+% Define a glossary for acronyms
+\newglossary[alg]{acronym}{acr}{acn}{Acronyms}
+
+% Define a glossary for symbols
+\newglossary[slg]{symbol}{sbl}{sbn}{Symbols}
+
 
 % Standard LaTeX package for creating indexes
 \usepackage{makeidx}
@@ -126,7 +133,7 @@
 % \usepackage{colortbl}
 
 % Create tabular cells spanning multiple rows (optional)
-% \usepackage{multirow}
+\usepackage{multirow}
 
 
 %--------------------------------------------------

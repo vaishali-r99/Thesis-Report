@@ -98,7 +98,7 @@ The loss function quantifies the difference between the model's predictions and 
 \begin{equation}
     \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N L\left(y_i, \hat{y}_i ; \theta\right)
     \end{equation}
-Here, $\theta$ represents the parameters of the neural network being optimized, such as weights and biases, $y_i$ is the ground truth and $\hat{y}_i $ is the model prediction. The loss function $\mathcal{L}(\theta)$ depends on these parameters, and it is computed as the average of the individual loss $L\left(y_i, \hat{y}_i ; \theta\right)$ over all training examples.
+Here, $\theta$ represents the parameters of the neural network being optimized, such as weights and biases, $y_i$ is the ground truth and $\hat{y}_i $ is the model prediction. The loss function $\mathcal{L}(\theta)$ depends on these parameters, and it is computed as the average of the individual loss $L\left(y_i, \hat{y}_i ; \theta\right)$ over all training examples of size $N$.
 \subsubsection{Backpropagation}
 Backpropagation is a fundamental algorithm used to compute the gradients of the loss function with respect to the parameters (weights and biases) of the neural network. It involves propagating the error backward from the output layer to the input layer, updating the parameters along the way to minimize the loss. The gradients are computed using the chain rule of calculus, enabling efficient optimization of the network's parameters. Mathematically, the gradients $\nabla_\theta \mathcal{L}(\theta)$ of the loss function are computed as,
 \begin{equation}
@@ -128,17 +128,17 @@ The optimizer is responsible for updating the parameters of the neural network b
   \item Update biased first moment estimate: \(m_t = \beta_1 m_{t-1} + (1 - \beta_1)\theta_t\).
   \item Update biased second raw moment estimate: \(v_t = \beta_2 v_{t-1} + (1 - \beta_2)\theta_t^2\).
   \item Compute bias-corrected first moment estimate: \(\hat{m}_t = \frac{m_t}{(1 - \beta_1^t)}\).
-  \item Compute bias-corrected second raw moment estimate: \(\hat{v}_t = \frac{v_t}{(1 - \beta_2^t)}\).
-  \item Update the parameters: \(\theta_{t+1} = \theta_t - \alpha \cdot \frac{\hat{m}_t}{(\sqrt{\hat{v}_t} + \epsilon)}\).
+  \item Compute bias-corrected second moment estimate: \(\hat{v}_t = \frac{v_t}{(1 - \beta_2^t)}\).
+  \item Update the parameters: \(\theta_{t+1} = \theta_t - \eta \cdot \frac{\hat{m}_t}{(\sqrt{\hat{v}_t} + \epsilon)}\).
 \end{enumerate}
-Here, \(m_t\) and \(v_t\) are estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. \(\beta_1\) and \(\beta_2\) are exponential decay rates for these moment estimates, typically close to 1. $\hat{m}_t$ and $\hat{v}_t$ refer to the bias-corrected estimates of the first and second moments (uncentered variance) of the gradients, and $\epsilon$ is a small constant to prevent division by zero.
+Here, \(m_t\) and \(v_t\) are estimates of the first moment (the mean) and the second moment (the uncentered mean and variance) of the gradients, respectively. \(\beta_1\) and \(\beta_2\) are exponential decay rates for these moment estimates, typically close to 1. $\hat{m}_t$ and $\hat{v}_t$ refer to the bias-corrected estimates of the first and second moments (uncentered variance) of the gradients, and $\epsilon$ is a small constant to prevent division by zero.
 \section{Model evaluation metrics}
 Model evaluation metrics are essential for assessing the performance of deep learning models. The loss function serves as a crucial metric for evaluating model performance, in addition to optimizing model parameters during training. In regression tasks, where the goal is to predict continuous values, common loss functions include the following:
 \begin{itemize}
-\item \textbf{Mean Absolute Error (MAE):} MAE measures the average absolute difference between the predicted values and the actual values:\[ \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \] Here, $y_i$ are the ground truth values, $\hat{y}_i$ are the predicted values, and $n$ is the number of samples. MAE is robust to outliers and does not penalize large errors heavily.
+\item \textbf{Mean Absolute Error (MAE):} MAE measures the average absolute difference between the predicted values and the actual values:\[ \text{MAE} = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat{y}_i| \] Here, $y_i$ are the ground truth values, $\hat{y}_i$ are the predicted values, and $n$ is the number of samples. MAE is robust to outliers and does not penalize large errors heavily.
 % \textbf{Mean Relative Error (MRE)}
-\item \textbf{Mean Squared Error (MSE):} MSE measures the average squared difference between the predicted values and the actual values:\[ \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \] MSE penalizes larger errors more heavily than MAE since errors are squared. This makes it more sensitive to outliers. 
-\item \textbf{Root Mean Squared Error (RMSE):} RMSE is the square root of the average squared difference between the predicted values and the actual values: \[ \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} \]RMSE is sensitive to outliers, similar to MSE, but is more interpretable as it is in the same units as the target variable.
+\item \textbf{Mean Squared Error (MSE):} MSE measures the average squared difference between the predicted values and the actual values:\[ \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 \] MSE penalizes larger errors more heavily than MAE since errors are squared. This makes it more sensitive to outliers. 
+\item \textbf{Root Mean Squared Error (RMSE):} RMSE is the square root of the average squared difference between the predicted values and the actual values: \[ \text{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2} \]RMSE is sensitive to outliers, similar to MSE, but is more interpretable as it is in the same units as the target variable.
 \end{itemize}
 \section{Convolutional Neural Networks (CNNs)} \label{cnnse}
 CNNs \cite{lecun1998} are specialized neural networks designed to process grid-like data, such as images. They utilize convolutional layers and pooling operators to learn spatial hierarchies of features from input data, making them highly effective for tasks like image classification, object detection, and image segmentation.
@@ -149,9 +149,9 @@ CNNs \cite{lecun1998} are specialized neural networks designed to process grid-l
     \label{fig:CNN}
   \end{figure}
 \subsection{Convolutional layer}
-The convolutional layer in a CNN consists of a set of learnable filters (kernels) that slide over the input data, performing element-wise multiplication and summing to produce feature maps. The convolution operation preserves the spatial relationship between pixels and learns local patterns like edges, textures, and shapes. Figure \ref{fig:Conv1} shows the working of a convolution kernel. 
+The convolutional layer in a \gls{CNN} consists of a set of learnable filters (kernels) that slide over the input data, performing element-wise multiplication and summing to produce feature maps. The convolution operation preserves the spatial relationship between pixels and learns local patterns like edges, textures, and shapes. Figure \ref{fig:Conv1} shows the working of a convolution kernel. 
 \begin{figure}[ht]
-    \centering
+    \centeringflo
     \includegraphics[width=14cm]{images/Theory-DL/Conv1.png}
     \caption{Detailed view of a convolutional layer's operation in a CNN, depicting the convolution process over an input matrix with a specified kernel to produce feature maps.}
     \label{fig:Conv1}

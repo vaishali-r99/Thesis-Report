@@ -73,6 +73,11 @@ Luca Guastoni, Alejandro Güemes, Andrea Ianiro, Stefano Discetti, Philipp
   wall quantities.
 \newblock {\em Journal of Fluid Mechanics}, 928, 2021.
 
+\bibitem{SAGE}
+William~L. Hamilton, Rex Ying, and Jure Leskovec.
+\newblock Inductive representation learning on large graphs.
+\newblock {\em CoRR}, abs/1706.02216, 2017.
+
 \bibitem{cv}
 Trevor Hastie, Robert Tibshirani, and Jerome Friedman.
 \newblock {\em The Elements of Statistical Learning: Data Mining, Inference,
@@ -157,6 +162,13 @@ Michele Milano and Petros Koumoutsakos.
 Parviz Moin and Krishnan Mahesh.
 \newblock {\em Direct Numerical Simulation: A Tool in Turbulence Research}.
 \newblock Annual Review of Fluid Mechanics, Annual Reviews, 1998.
+
+\bibitem{MoNet}
+Federico Monti, Davide Boscaini, Jonathan Masci, Emanuele Rodola, Jan Svoboda,
+  and Michael~M. Bronstein.
+\newblock Geometric deep learning on graphs and manifolds using mixture model
+  cnns.
+\newblock {\em CoRR}, abs/1611.08402, 2016.
 
 \bibitem{newman}
 BG~Newman.
