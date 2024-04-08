@@ -1,2 +1,3 @@
 (indexentry :tkey (("nu_t" "\\glossentry{nut}") ) :locref "{}{14}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("nu_t" "\\glossentry{nut}") ) :locref "{}{56}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("nu_t" "\\glossentry{nut}") ) :locref "{}{64}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("omega" "\\glossentry{omega}") ) :locref "{}{64}" :attr "pageglsnumberformat" ) 

@@ -1,6 +1,6 @@
 \chapter{Deep learning primer}
 \label{chap:Theory-Deep Learning}
-This chapter provides a comprehensive explanation of foundational concepts and methodologies in deep learning, with a particular emphasis on Graph Neural Networks (GNNs). It begins by introducing deep learning and elucidating the basics of neural networks, focusing on their architecture and operational principles. Section \ref{optrain} navigates through the intricacies of training neural networks with topics including data partitioning, feature scaling, weights initialization, regularization, batch training, and hyperparameter tuning. Subsequently, it delves into optimization techniques, addressing essential elements such as loss functions, backpropagation, learning rates, and optimizers. Furthermore, this chapter examines model evaluation metrics and explores advanced neural network architectures such as Convolutional Neural Networks (CNNs) in Section \ref{cnnse} and Graph Neural Networks (GNNs) in Section \ref{gnnse}, highlighting their important features and components. 
+This chapter provides a comprehensive explanation of foundational concepts and methodologies in deep learning, with a particular emphasis on Graph Neural Networks (GNNs). It begins by introducing deep learning and elucidating the basics of neural networks, focusing on their architecture and operational principles. Section \ref{optrain} navigates through the intricacies of training neural networks with topics including data partitioning, feature scaling, weights initialization, regularization, batch training, and hyperparameter tuning. Subsequently, it delves into optimization techniques, addressing essential elements such as loss functions, backpropagation, learning rates, and optimizers. Furthermore, this chapter examines model evaluation metrics and explores advanced neural network architectures such as CNNs in Section \ref{cnnse} and GNNs in Section \ref{gnnse}, highlighting their important features and components. 
 
 \section{Introduction to machine learning and deep learning}
 Machine learning, a dynamic subset of artificial intelligence, is dedicated to developing algorithms that extract insights and patterns from data. This enables systems to enhance their accuracy and decision-making capabilities without being explicitly programmed for each task. The learning process utilizes statistical models and optimization algorithms to iteratively adjust parameters and improve performance. Machine learning approaches are broadly categorized into supervised learning and unsupervised learning based on learning objectives. \\
@@ -11,7 +11,7 @@ Machine learning, a dynamic subset of artificial intelligence, is dedicated to d
 
 Deep learning is a subset of machine learning that has gained significant attention due to its remarkable performance in various tasks, ranging from image and speech recognition to autonomous driving. It utilizes neural networks consisting of multiple layers of interconnected neurons to learn representations of data through iterative processing of input data to make predictions or decisions. Henceforth, when we mention machine learning or deep learning, it refers to supervised learning in this context, unless otherwise specified.
 \section{Fundamentals of neural networks}
-Artificial Neural Networks (ANNs) are computational models inspired by the structure and function of biological neural networks \cite{rumel}. They consist of interconnected nodes organized into layers, typically including an input layer, one or more hidden layers, and an output layer. \\ 
+\gls{ANN} are computational models inspired by the structure and function of biological neural networks \cite{rumel}. They consist of interconnected nodes organized into layers, typically including an input layer, one or more hidden layers, and an output layer. \\ 
 A \textbf{perceptron} or an artificial neuron, is the fundamental building block of ANNs. It takes multiple input signals $\mathbf{x}= \left(x_1, x_2 ...x_n\right)$, each weighted by a connection weight $w_1,w_2,...w_n$, sums them up, and applies an activation function $\sigma$ to produce an output $\mathbf{y} = \sigma \left(\mathbf{w}^T\mathbf{x} + \mathbf{b} \right)$, where $\mathbf{b}$ is the bias. Perceptrons are arranged in layers to build complex neural network architectures.\\
 \begin{figure}[ht]
     \centering
@@ -19,15 +19,15 @@ A \textbf{perceptron} or an artificial neuron, is the fundamental building block
     \caption{Schematic representation of a perceptron - the basic computational unit of artificial neural networks, illustrating input connections, weights, bias, and an activation function.}
     \label{fig:Perceptron}
   \end{figure}
-\textbf{Activation functions} are usually non-linear functions to introduce non-linearity within the layers of neural networks, allowing them to learn and represent complex relationships in data. Common activation functions include sigmoid, tanh, ReLU (Rectified Linear Unit), and leaky ReLU. Activation functions transform the weighted sum of inputs $\mathbf{z}$ into the output signal $\mathbf{y}$, typically in the range between 0 and 1 (for sigmoid) or -1 and 1 (for tanh). Without the nonlinear transformation via the activation function, the network would be confined to solving merely linear problems. \\
+\textbf{Activation functions} are usually non-linear functions to introduce non-linearity within the layers of neural networks, allowing them to learn and represent complex relationships in data. Common activation functions include sigmoid, tanh, \gls{ReLU}, and leaky ReLU. Activation functions transform the weighted sum of inputs $\mathbf{z}$ into the output signal $\mathbf{y}$, typically in the range between 0 and 1 (for sigmoid) or -1 and 1 (for tanh). Without the nonlinear transformation via the activation function, the network would be confined to solving merely linear problems. \\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=8cm]{images/Theory-DL/ActGraphs.png}
-    \caption{Comparative visualization of common activation functions used in neural networks: (a) Sigmoid, (b) Tanh, (c) ReLU, and (d) Leaky ReLU}
+    \caption{Comparative visualization of common activation functions used in neural networks: (a) Sigmoid, (b) Tanh, (c) ReLU, and (d) Leaky ReLU.}
     \label{fig:ActGraphs}
   \end{figure}
 \textbf{Weights} in a neural network represent the strength of connections between neurons. They are learned parameters to adjust the influence of input signals on the neuron's output. \textbf{Biases} allow neural networks to model the offset from zero output, influencing the activation of neurons regardless of the input.\\
-\textbf{Neural Networks (NNs)} consist of interconnected layers of perceptrons that process input data to produce output predictions. NNs can be represented as directed graphs, where nodes correspond to perceptrons, and edges depict connections between them. These connections typically carry weighted signals from one neuron's output to another neuron's input. In particular, we are interested in \textbf{feed-forward neural networks}, in which, information flows only in one direction, from the input layer through one or more hidden layers to the output layer. Each layer processes the input data independently, and the output of one layer serves as the input to the next layer. The connections between neurons do not form directed cycles, ensuring that the network architecture is acyclic. Multi Layer Perceptrons (MLPs) are the simplest feed-forward neural networks, and their architecture is described in Figure \ref{fig:MLP}. 
+\textbf{Neural networks} consist of interconnected layers of perceptrons that process input data to produce output predictions. \gls{NN} can be represented as directed graphs, where nodes correspond to perceptrons, and edges depict connections between them. These connections typically carry weighted signals from one neuron's output to another neuron's input. In particular, we are interested in \textbf{feed-forward neural networks}, in which, information flows only in one direction, from the input layer through one or more hidden layers to the output layer. Each layer processes the input data independently, and the output of one layer serves as the input to the next layer. The connections between neurons do not form directed cycles, ensuring that the network architecture is acyclic. \gls{MLP} are the simplest feed-forward neural networks, and their architecture is described in Figure \ref{fig:MLP}. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=10cm]{images/Theory-DL/MLP.png}
@@ -57,7 +57,7 @@ Random initialization with small weights is a common practice in deep learning. 
 \subsubsection{Xavier-Glorot initialization}
 This technique \cite{glorot} initializes weights from a normal or uniform distribution with a zero mean. The variance of the distribution is adjusted based on the number of input neurons (fan-in) and output neurons (fan-out) as $\text{Var}(W) = \frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}$. Xavier initialization is commonly used in shallow networks with symmetric activation functions, ensuring balanced weight initialization and stable training dynamics. 
 \subsubsection{Kaiming-He initialization}
-Kaiming initialization \cite{he2015} is designed for networks using non-linear activations like ReLU as seen in modern deep learning architectures. It initializes weights from a normal distribution with zero mean, adjusting the variance based on fan-in as $ \text{Var}(W) = \frac{2}{\text{fan}_{\text{in}}}$. Kaiming initialization helps mitigate the issue of vanishing gradients associated with ReLU activations, ensuring stable training and faster convergence.
+Kaiming initialization \cite{he2015} is designed for networks using non-linear activations like ReLU as seen in modern deep learning architectures. It initializes weights from a normal distribution with zero mean, adjusting the variance based on fan-in as $ \text{Var}(W) = \frac{2}{\text{fan}_{\text{in}}}$. Kaiming initialization helps mitigate the issue of vanishing gradients associated with \gls{ReLU} activations, ensuring stable training and faster convergence.
 \subsection{Regularization}
 Regularization broadly refers to techniques used to prevent overfitting by imposing additional constraints on the model's parameters, i.e; by adding penalties to the loss function, thus discouraging complex models. Regularization penalizes large weights in the model, thereby promoting simpler models that generalize better to unseen data. Two common forms of regularization are L$_2$ regularization (Lasso) and L$_1$ regularization (Ridge). \\
 L$_1$ regularization encourages sparsity in the weights, performing feature selection by setting irrelevant weights to zero, making the model simpler and more interpretable. 
@@ -90,7 +90,13 @@ Underfitting occurs when a model is too simple to capture the underlying structu
 Hyperparameters in deep learning are fixed parameters set prior to the training process that are not learned from the data. They control various aspects of the learning process, such as the model architecture, optimization settings and the training procedure itself. Some important hyperparameters are the number of neurons per layer, number of layers, activation function, batch size, number of epochs, optimizer, loss function, weight initialization, dropout rate, and regularization strength. \\
 Hyperparameter tuning is the process of selecting the optimal values for these hyperparameters to maximize the performance of the model on unseen data. It involves systematically searching through a predefined space of hyperparameters and evaluating the model's performance using a validation set or cross-validation. The goal is to find the hyperparameters that result in the best generalization performance, balancing between underfitting and overfitting.
 \subsubsection{k-Fold cross-validation}
-In k-fold cross-validation \cite{cv}, the dataset is divided into $k$ subsets or folds, of approximately equal size. The model is trained k times, each time using k-1 folds for training and the remaining fold for validation. This process is repeated k times, with each fold used exactly once as the validation set. In the context of hyperparameter tuning, k-fold cross-validation helps evaluate the performance of different hyperparameter configurations. Instead of relying on a single validation set, this method averages the performance over multiple folds, providing a more stable estimate of the model's performance.
+In k-fold cross-validation \cite{cv}, the dataset is divided into $k$ subsets or folds, of approximately equal size. The model is trained k times, each time using k-1 folds for training and the remaining fold for validation. This process is repeated k times, with each fold used exactly once as the validation set. In the context of hyperparameter tuning, k-fold cross-validation helps evaluate the performance of different hyperparameter configurations. Instead of relying on a single validation set, this method averages the performance over multiple folds, providing a more stable estimate of the model's performance. Figure \ref{fig:crossval} represents \gls{LOOCV} - a variant of k-fold cross-validation. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=10cm]{images/Theory-DL/crossval.png}
+  \caption{Schematic Representation of LOOCV - Here, the training and validation datasets are taken together and split into k folds. The model is trained k times and in each iteration, exactly one fold is subsequently chosen as the validation fold (depicted in red) while the remaining (k-1) folds (depicted in blue) are combined to become the training dataset.}
+  \label{fig:crossval}
+\end{figure}
 \subsection{Optimization} 
 Optimization involves adjusting the parameters of the neural network, such as weights and biases, to minimize a predefined objective function, typically referred to as the loss function. The optimization process iteratively updates the parameters based on the gradients of the loss function with respect to the network's parameters, aiming to converge to a set of optimal parameters that yield the best performance on the given task. Some important aspects of the optimization process are discussed in the following subsections. 
 \subsubsection{Loss function}
@@ -98,7 +104,7 @@ The loss function quantifies the difference between the model's predictions and 
 \begin{equation}
     \mathcal{L}(\theta)=\frac{1}{N} \sum_{i=1}^N L\left(y_i, \hat{y}_i ; \theta\right)
     \end{equation}
-Here, $\theta$ represents the parameters of the neural network being optimized, such as weights and biases, $y_i$ is the ground truth and $\hat{y}_i $ is the model prediction. The loss function $\mathcal{L}(\theta)$ depends on these parameters, and it is computed as the average of the individual loss $L\left(y_i, \hat{y}_i ; \theta\right)$ over all training examples of size $N$.
+Here, $\theta$ represents the parameters of the neural network being optimized, such as weights and biases, $y_i$ is the ground truth and $\hat{y}_i $ is the model prediction. The loss function $\mathcal{L}(\theta)$ depends on these parameters, and it is computed as the average of the individual loss $L\left(y_i, \hat{y}_i ; \theta\right)$ over all the training examples, of size $N$.
 \subsubsection{Backpropagation}
 Backpropagation is a fundamental algorithm used to compute the gradients of the loss function with respect to the parameters (weights and biases) of the neural network. It involves propagating the error backward from the output layer to the input layer, updating the parameters along the way to minimize the loss. The gradients are computed using the chain rule of calculus, enabling efficient optimization of the network's parameters. Mathematically, the gradients $\nabla_\theta \mathcal{L}(\theta)$ of the loss function are computed as,
 \begin{equation}
@@ -121,7 +127,7 @@ Here, $\theta_{t+1}$ and $\theta_t$ represent the parameters at time step $t$ an
 %   \label{fig:LR}
 %   \end{figure}
 \subsubsection{Optimizer} 
-The optimizer is responsible for updating the parameters of the neural network based on the gradients computed during backpropagation. It determines the direction and magnitude of parameter updates to minimize the loss function efficiently. Popular optimizers include stochastic gradient descent (SGD) \cite{sgd}, Adam \cite{adam}, RMSProp \cite{rmsprop}, and AdaGrad \cite{adagrad}. We use the Adam optimizer in the training and testing phases of our work. \\
+The optimizer is responsible for updating the parameters of the neural network based on the gradients computed during backpropagation. It determines the direction and magnitude of parameter updates to minimize the loss function efficiently. Popular optimizers include \gls{SGD} \cite{sgd}, \gls{Adam} \cite{adam}, \gls{RMSProp} \cite{rmsprop}, and \gls{AdaGrad} \cite{adagrad}. We use the Adam optimizer in the training and testing phases of our work. \\
  \textbf{Adam (Adaptive Moment Estimation)} is an algorithm for stochastic optimization that combines the ideas of SGD with momentum and RMSProp. It maintains exponentially decaying moving averages of past gradients and past squared gradients for each parameter. These moving averages serve as estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients, respectively. Adam also incorporates bias correction terms to compensate for the initial bias towards zero at the beginning of training. The parameter update rules at time step $t$ are given by,
  \begin{enumerate}
   \item Compute the gradient of the loss function with respect to the parameters, \(\theta_t\).
@@ -135,13 +141,13 @@ Here, \(m_t\) and \(v_t\) are estimates of the first moment (the mean) and the s
 \section{Model evaluation metrics}
 Model evaluation metrics are essential for assessing the performance of deep learning models. The loss function serves as a crucial metric for evaluating model performance, in addition to optimizing model parameters during training. In regression tasks, where the goal is to predict continuous values, common loss functions include the following:
 \begin{itemize}
-\item \textbf{Mean Absolute Error (MAE):} MAE measures the average absolute difference between the predicted values and the actual values:\[ \text{MAE} = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat{y}_i| \] Here, $y_i$ are the ground truth values, $\hat{y}_i$ are the predicted values, and $n$ is the number of samples. MAE is robust to outliers and does not penalize large errors heavily.
+\item \textbf{\gls{MAE}:} MAE measures the average absolute difference between the predicted values and the actual values:\[ \text{MAE} = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat{y}_i| \] Here, $y_i$ are the ground truth values, $\hat{y}_i$ are the predicted values, and $n$ is the number of samples. MAE is robust to outliers and does not penalize large errors heavily.
 % \textbf{Mean Relative Error (MRE)}
-\item \textbf{Mean Squared Error (MSE):} MSE measures the average squared difference between the predicted values and the actual values:\[ \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 \] MSE penalizes larger errors more heavily than MAE since errors are squared. This makes it more sensitive to outliers. 
-\item \textbf{Root Mean Squared Error (RMSE):} RMSE is the square root of the average squared difference between the predicted values and the actual values: \[ \text{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2} \]RMSE is sensitive to outliers, similar to MSE, but is more interpretable as it is in the same units as the target variable.
+\item \textbf{\gls{MSE}:} MSE measures the average squared difference between the predicted values and the actual values:\[ \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 \] MSE penalizes larger errors more heavily than MAE since errors are squared. This makes it more sensitive to outliers. 
+\item \textbf{\gls{RMSE}:} RMSE is the square root of the average squared difference between the predicted values and the actual values: \[ \text{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2} \]RMSE is sensitive to outliers, similar to MSE, but is more interpretable as it is in the same units as the target variable.
 \end{itemize}
 \section{Convolutional Neural Networks (CNNs)} \label{cnnse}
-CNNs \cite{lecun1998} are specialized neural networks designed to process grid-like data, such as images. They utilize convolutional layers and pooling operators to learn spatial hierarchies of features from input data, making them highly effective for tasks like image classification, object detection, and image segmentation.
+\gls{CNN}s \cite{lecun1998} are specialized neural networks designed to process grid-like data, such as images. They utilize convolutional layers and pooling operators to learn spatial hierarchies of features from input data, making them highly effective for tasks like image classification, object detection, and image segmentation.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=10cm]{images/Theory-DL/CNN.png}
@@ -149,7 +155,7 @@ CNNs \cite{lecun1998} are specialized neural networks designed to process grid-l
     \label{fig:CNN}
   \end{figure}
 \subsection{Convolutional layer}
-The convolutional layer in a \gls{CNN} consists of a set of learnable filters (kernels) that slide over the input data, performing element-wise multiplication and summing to produce feature maps. The convolution operation preserves the spatial relationship between pixels and learns local patterns like edges, textures, and shapes. Figure \ref{fig:Conv1} shows the working of a convolution kernel. 
+The convolutional layer in a CNN consists of a set of learnable filters (kernels) that slide over the input data, performing element-wise multiplication and summing to produce feature maps. The convolution operation preserves the spatial relationship between pixels and learns local patterns like edges, textures, and shapes. Figure \ref{fig:Conv1} shows the working of a convolution kernel. 
 \begin{figure}[ht]
     \centeringflo
     \includegraphics[width=14cm]{images/Theory-DL/Conv1.png}
@@ -160,13 +166,13 @@ The convolutional layer in a \gls{CNN} consists of a set of learnable filters (k
 \begin{figure}[ht]
     \centering
     \includegraphics[width=8cm]{images/Theory-DL/Pool.png}
-    \caption{Visualization of pooling operations for downsampling spatial dimensions in CNNs, with examples of (a) max pooling, and (b) average pooling}
+    \caption{Visualization of pooling operations for downsampling spatial dimensions in CNNs, with examples of (a) max pooling, and (b) average pooling.}
     \label{fig:Pool}
 \end{figure}
 \begin{figure}[ht]
         \centering
         \includegraphics[width=8cm]{images/Theory-DL/NNUnpool.png}
-        \caption{Illustration of the unpooling process of nearest neighbor interpolation, used for upsampling in CNNs}
+        \caption{Illustration of the unpooling process of nearest neighbor interpolation, used for upsampling in CNNs.}
         \label{fig:Unpool2}
     \end{figure}
 \subsection{The U-Net architecture}
@@ -174,7 +180,7 @@ U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a con
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Theory-DL/UNet.png}
-    \caption{Structure of the U-Net architecture, demonstrating its U-shaped design with contracting and expanding paths \cite{unet}}.
+    \caption{Structure of the U-Net architecture demonstrating its U-shaped design with contracting and expanding paths. Image taken from \cite{unet}.}
     \label{fig:UNet}
 \end{figure}
 \begin{enumerate}
@@ -190,7 +196,7 @@ U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a con
 \end{figure}
 A notable observation pertinent to our current endeavor is the striking resemblance between the U-Net architecture and the V-cycle multi-grid method, as noted by He and Xu \cite{HeXu2019}. Both employ a hierarchical structure wherein information is exchanged across varying resolutions.
 \section{Graph Neural Networks (GNNs)} \label{gnnse}
-A major limitation of CNNs is their inability to directly operate on irregular data formats, such as social networks, recommender systems, molecular structures, or citation networks. In 2017, Kipf and Welling \cite{kipf} introduced the Graph Convolutional Network (GCN), a foundational architecture that laid the groundwork for modern GNNs. Since then, numerous advancements and variants of GNNs have been proposed. In contrast to CNNs which are well-suited for grid-like structured data such as images, GNNs are tailored for data represented as graphs, which are characterized by non-Euclidean and irregular structures, where entities (nodes) and their relationships (edges) vary in connectivity and structure. GNNs excel in processing unstructured data by leveraging the inherent graph structure by dynamically aggregating information from neighboring nodes based on their connectivity. \\
+A major limitation of CNNs is their inability to directly operate on irregular data formats, such as social networks, recommender systems, molecular structures, or citation networks. In 2017, Kipf and Welling \cite{kipf} introduced the Graph Convolutional Network (GCN), a foundational architecture that laid the groundwork for modern GNNs. Since then, numerous advancements and variants of GNNs have been proposed. In contrast to CNNs which are well-suited for grid-like structured data such as images, GNNs are tailored for data represented as graphs, which are characterized by non-Euclidean and irregular structures, where entities (nodes) and their relationships (edges) vary in connectivity and structure. \gls{GNN}s excel in processing unstructured data by leveraging the inherent graph structure by dynamically aggregating information from neighboring nodes based on their connectivity. \\
 Graphs are set up using nodes, edges, adjacency matrices, node attributes, and edge attributes. 
 \begin{enumerate}
   \item \textbf{Nodes (\(V\))}: Nodes represent entities in a graph, such as users in a social network, atoms in a molecule, or words in a document. Formally, a graph can be denoted as \( G = (V, E) \), where \( V \) is the set of nodes.
@@ -214,7 +220,7 @@ where \( x_i \) represents the feature vector associated with node \(v_i \).
 \end{figure}
 GNNs leverage these components to perform message passing and aggregation operations across the graph structure, which are discussed below. \\
 \subsection{Graph convolutions}
-Graph convolutions update the feature representations of nodes in a graph by aggregating information from their neighboring nodes. There are two ways to perform graph convolution operations. In spectral convolution, graph signals are transformed into the spectral domain using techniques like graph Fourier transforms. Spatial convolution directly operates on the graph's topology and neighborhood structure, aggregating information from neighboring nodes without explicitly transforming the graph. Graph Convolutional Networks (GCNs), Graph Attention Networks (GATs), and GraphSAGE are common types of GNNs that utilize spatial convolutions. In this work, we only deal with spatial convolutions and refer to them as graph convolutions henceforth. The main steps involved in graph convolutions are as follows:
+Graph convolutions update the feature representations of nodes in a graph by aggregating information from their neighboring nodes. There are two ways to perform graph convolution operations. In spectral convolution, graph signals are transformed into the spectral domain using techniques like graph Fourier transforms. Spatial convolution directly operates on the graph's topology and neighborhood structure, aggregating information from neighboring nodes without explicitly transforming the graph. \gls{GCN}, \gls{GAT}, and GraphSAGE are some common classes of GNNs that utilize spatial convolutions. In this work, we only deal with spatial convolutions and refer to them as graph convolutions henceforth. The main steps involved in graph convolutions are as follows:
 \begin{enumerate}
     \item \textbf{Message passing}: Nodes exchange messages with their neighbors, aggregating information from neighboring nodes. The message passed from node $v_j$ to node $v_i$ can be represented as:
         \[ m_{ij} = \frac{1}{c_{ij}} W h_j \]
@@ -273,7 +279,7 @@ Multi-resolution approaches in the context of GNNs involve operating on graphs a
 Unlike CNNs, where downsampling operators automatically coarsen the mesh, in GNNs, we create a hierarchy of meshes with increasing complexity over the domain of interest. Hence, traditional pooling operators may not be suitable for GNNs, as they focus on selecting nodes to construct a coarse graph, which is unnecessary for mesh data. Instead, we can easily define operators that transform features from one mesh to the next, by generating a set of meshes with varying coarseness.\\
 Creating a mesh hierarchy of different levels of coarseness can be performed by well-established techniques in numerical analysis. One commonly used algorithm for mesh construction is Delaunay triangulation, which maximizes the minimum angle of all triangles to avoid sliver triangles. This algorithm gradually inserts new nodes into the triangulation and connects them with their neighbors under specific rules. Incremental decimation is another mesh coarsening method that aims to reduce the number of points while preserving specific properties of the original mesh. It iteratively removes one vertex or edge with minimal changes until certain criteria are met. These techniques offer flexibility in creating mesh hierarchies, making them suitable for GNNs applied to mesh data.\\
 \subsubsection{Sampling operator}
-We introduce a sampling operator for converting data between two meshes, denoted as \(M_1\) and \(M_2\), inspired by the k-nearest interpolation proposed in PointNet++ \cite{pnpp}. Let \(z\) be a node from \(M_1\), and assume its \(k\) nearest neighbors on \(M_2\) are denoted as \(x_1, \ldots, x_k\). For a node feature \(f\), the interpolated feature \(f(z)\) is defined based on the features of \(x_i\) as,
+We introduce a sampling operator for converting data between two meshes, denoted as $M_1$ and $M_2$, inspired by the k-nearest interpolation proposed in PointNet++ \cite{pnpp}. Let \(z\) be a node from \(M_1\), and assume its \(k\) nearest neighbors on \(M_2\) are denoted as \(x_1, \ldots, x_k\). For a node feature \(f\), the interpolated feature \(f(z)\) is defined based on the features of \(x_i\) as,
 \begin{equation}
   \mathbf{f}(\mathbf{z})=\frac{\sum_{i=1}^k w\left(x_i\right) \mathbf{f}\left(x_i\right)}{\sum_{i=1}^k w\left(x_i\right)} \text {, where } w\left(x_i\right)=\frac{1}{\left\|z-x_i\right\|_2}
   \end{equation}

@@ -41,6 +41,12 @@ John Duchi, Elad Hazan, and Yoram Singer.
 \newblock In {\em Journal of Machine Learning Research}, volume~12, pages
   2121--2159, 2011.
 
+\bibitem{ester1996dbscan}
+Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu.
+\newblock A density-based algorithm for discovering clusters in large spatial
+  databases with noise.
+\newblock pages 226--231, 1996.
+
 \bibitem{fefferman2006existence}
 Charles~L. Fefferman.
 \newblock Existence and smoothness of the navier-stokes equation.
@@ -187,6 +193,11 @@ Eric~J. Parish and Karthik Duraisamy.
   and machine learning.
 \newblock {\em Journal of Computational Physics}, 305:758--774, 2016.
 
+\bibitem{pearson1901pca}
+Karl Pearson.
+\newblock On lines and planes of closest fit to systems of points in space.
+\newblock {\em Philosophical Magazine}, 2(11):559--572, 1901.
+
 \bibitem{pope2000turbulent}
 Stephen~B. Pope.
 \newblock {\em Turbulent Flows}.
@@ -260,6 +271,11 @@ Michele Trancossi and Antonio Dumas.
 Nathaniel Trask, Ravi~G. Patel, Ben~J. Gross, and Paul~J. Atzberger.
 \newblock Gmls-nets: A framework for learning from unstructured data.
 \newblock 2019.
+
+\bibitem{vandermaaten2008tsne}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock {\em Journal of Machine Learning Research}, 9:2579--2605, 2008.
 
 \bibitem{zhang2015}
 Ze~Jia Zhang and Karthikeyan Duraisamy.

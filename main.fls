@@ -256,15 +256,21 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
@@ -315,7 +321,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 INPUT ./main.out
 INPUT ./main.out
 INPUT main.out
@@ -450,9 +455,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
-OUTPUT main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplro7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplro8r.tfm
+OUTPUT main.toc
 INPUT ./components/text.tex
 INPUT ./components/text.tex
 INPUT ./components/text.tex
@@ -486,14 +491,22 @@ INPUT ./images/Theory-CFD/Flow Domain.png
 INPUT ./images/Theory-CFD/Flow Domain.png
 INPUT ./images/Theory-CFD/Flow Domain.png
 INPUT ./images/Theory-CFD/Flow Domain.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT ./images/Theory-CFD/cfdvel.png
+INPUT ./images/Theory-CFD/cfdvel.png
+INPUT ./images/Theory-CFD/cfdvel.png
+INPUT ./images/Theory-CFD/cfdvel.png
+INPUT ./images/Theory-CFD/cfdvel.png
+INPUT ./images/Theory-CFD/cfdp.png
+INPUT ./images/Theory-CFD/cfdp.png
+INPUT ./images/Theory-CFD/cfdp.png
+INPUT ./images/Theory-CFD/cfdp.png
+INPUT ./images/Theory-CFD/cfdp.png
 INPUT ./chapters/Theory-Deep Learning.tex
 INPUT ./chapters/Theory-Deep Learning.tex
 INPUT ./chapters/Theory-Deep Learning.tex
@@ -517,10 +530,17 @@ INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
 INPUT ./images/Theory-DL/MLP.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT ./images/Theory-DL/crossval.png
+INPUT ./images/Theory-DL/crossval.png
+INPUT ./images/Theory-DL/crossval.png
+INPUT ./images/Theory-DL/crossval.png
+INPUT ./images/Theory-DL/crossval.png
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
@@ -582,31 +602,61 @@ INPUT ./images/Methodology/GraphUNet.png
 INPUT ./images/Methodology/GraphUNet.png
 INPUT ./images/Methodology/GraphUNet.png
 INPUT ./images/Methodology/GraphUNet.png
-INPUT ./images/Methodology/Baselinereconstruct.png
-INPUT ./images/Methodology/Baselinereconstruct.png
-INPUT ./images/Methodology/Baselinereconstruct.png
-INPUT ./images/Methodology/Baselinereconstruct.png
-INPUT ./images/Methodology/Baselinereconstruct.png
+INPUT ./images/Methodology/allvelrecon.png
+INPUT ./images/Methodology/allvelrecon.png
+INPUT ./images/Methodology/allvelrecon.png
+INPUT ./images/Methodology/allvelrecon.png
+INPUT ./images/Methodology/allvelrecon.png
 INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
+INPUT ./images/Methodology/Asset 18.png
+INPUT ./images/Methodology/Asset 18.png
+INPUT ./images/Methodology/Asset 18.png
+INPUT ./images/Methodology/Asset 18.png
+INPUT ./images/Methodology/Asset 18.png
+INPUT ./images/Methodology/Asset 17.png
+INPUT ./images/Methodology/Asset 17.png
+INPUT ./images/Methodology/Asset 17.png
+INPUT ./images/Methodology/Asset 17.png
+INPUT ./images/Methodology/Asset 17.png
+INPUT ./images/Methodology/Asset 15.png
+INPUT ./images/Methodology/Asset 15.png
+INPUT ./images/Methodology/Asset 15.png
+INPUT ./images/Methodology/Asset 15.png
+INPUT ./images/Methodology/Asset 15.png
+INPUT ./images/Methodology/Asset 14.png
+INPUT ./images/Methodology/Asset 14.png
+INPUT ./images/Methodology/Asset 14.png
+INPUT ./images/Methodology/Asset 14.png
+INPUT ./images/Methodology/Asset 14.png
 INPUT ./chapters/Cluster.tex
 INPUT ./chapters/Cluster.tex
 INPUT ./chapters/Cluster.tex
 INPUT ./chapters/Cluster.tex
 INPUT chapters/Cluster.tex
+INPUT ./images/Clustering/tsne.png
+INPUT ./images/Clustering/tsne.png
+INPUT ./images/Clustering/tsne.png
+INPUT ./images/Clustering/tsne.png
+INPUT ./images/Clustering/tsne.png
+INPUT ./images/Clustering/cluster1.png
+INPUT ./images/Clustering/cluster1.png
+INPUT ./images/Clustering/cluster1.png
+INPUT ./images/Clustering/cluster1.png
+INPUT ./images/Clustering/cluster1.png
+INPUT ./images/Clustering/cluster2.png
+INPUT ./images/Clustering/cluster2.png
+INPUT ./images/Clustering/cluster2.png
+INPUT ./images/Clustering/cluster2.png
+INPUT ./images/Clustering/cluster2.png
 INPUT ./chapters/Conclusion.tex
 INPUT ./chapters/Conclusion.tex
 INPUT ./chapters/Conclusion.tex
 INPUT ./chapters/Conclusion.tex
 INPUT chapters/Conclusion.tex
-INPUT ./chapters/Appendix.tex
-INPUT ./chapters/Appendix.tex
-INPUT ./chapters/Appendix.tex
-INPUT ./chapters/Appendix.tex
-INPUT chapters/Appendix.tex
 INPUT ./main.acr
 INPUT ./main.acr
 INPUT main.acr
@@ -615,11 +665,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT ./main.sbl
 INPUT ./main.sbl
 INPUT main.sbl
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl

@@ -7,10 +7,9 @@
 
 % \newacronym[longplural={Random Walks on Spheres}]{RWoS}{RWoS}{Random Walk on Spheres}
 
-% \newacronym[longplural={graphical processing units}]{GPU}{GPU}{graphical processing unit}
+% \newacronym[longplural={graphical processing units}]{GPU}{GPU}{Graphical Processing Unit}
 
 % \newacronym[longplural={central processing units}]{CPU}{CPU}{central processing unit}
-% \newacronym{hpc}{HPC}{high performance computing}
 
 % \newacronym[longplural={arithmetic logic units}]{ALU}{ALU}{arithmetic logic unit}
 
@@ -32,7 +31,290 @@
   type=symbol,
   sort=nu_t
 }
+\newglossaryentry{rho}
+{
+  name={$\rho$},
+  text={\ensuremath{\rho}},
+  description={Density of the fluid},
+  type=symbol,
+  sort=rho
+}
 
+\newglossaryentry{p}
+{
+  name={$\p$},
+  text={\ensuremath{p}},
+  description={Pressure},
+  type=symbol,
+  sort=p
+}
+
+\newglossaryentry{nu}
+{
+  name={$\nu$},
+  text={\ensuremath{\nu}},
+  description={Kinematic viscosity},
+  type=symbol,
+  sort=nu
+}
+
+\newglossaryentry{mu}
+{
+  name={$\mu$},
+  text={\ensuremath{\mu}},
+  description={Dynamic viscosity},
+  type=symbol,
+  sort=mu
+}
+
+\newglossaryentry{Sij}
+{
+  name={$\S_i_j$},
+  text={\ensuremath{S_i_j}},
+  description={Shear rate},
+  type=symbol,
+  sort=S_i_j
+}
+
+\newglossaryentry{mut}
+{
+  name={$\mu_t$},
+  text={\ensuremath{\mu_t}},
+  description={Turbulent viscosity},
+  type=symbol,
+  sort=mut
+}
+
+\newglossaryentry{k}
+{
+  name={$\k$},
+  text={\ensuremath{k}},
+  description={Turbulent kinetic energy},
+  type=symbol,
+  sort=k
+}
+
+\newglossaryentry{epsilon}
+{
+  name={$\epsilon$},
+  text={\ensuremath{\epsilon}},
+  description={Rate of dissipation of turbulent kinetic energy},
+  type=symbol,
+  sort=epsilon
+}
+
+\newglossaryentry{omega}
+{
+  name={$\omega$},
+  text={\ensuremath{\omega}},
+  description={Specific rate of turbulence dissipation},
+  type=symbol,
+  sort=omega
+}
+
+\newglossaryentry{x}
+{
+  name={$\x$},
+  text={\ensuremath{x}},
+  description={Input signals},
+  type=symbol,
+  sort=x
+}
+
+\newglossaryentry{w}
+{
+  name={$\w$},
+  text={\ensuremath{w}},
+  description={Weight vector},
+  type=symbol,
+  sort=w
+}
+
+\newglossaryentry{sigma}
+{
+  name={$\sigma$},
+  text={\ensuremath{\sigma}},
+  description={Activation function},
+  type=symbol,
+  sort=sigma
+}
+
+\newglossaryentry{b}
+{
+  name={$\b$},
+  text={\ensuremath{b}},
+  description={Bias},
+  type=symbol,
+  sort=x
+}
+
+\newglossaryentry{y}
+{
+  name={$\y$},
+  text={\ensuremath{y}},
+  description={Output},
+  type=symbol,
+  sort=y
+}
+
+\newglossaryentry{lambda}
+{
+  name={$\lambda$},
+  text={\ensuremath{\lambda}},
+  description={Regularization strength},
+  type=symbol,
+  sort=lamda
+}
+
+\newglossaryentry{muB}
+{
+  name={$\mu_B$},
+  text={\ensuremath{\mu_B}},
+  description={Mean of mini-batch B},
+  type=symbol,
+  sort=mu_B
+}
+
+\newglossaryentry{sigma2B}
+{
+  name={$\sigma^2_B$},
+  text={\ensuremath{\sigma^2_B}},
+  description={Variance of mini-batch B},
+  type=symbol,
+  sort=sigma2_B
+}
+
+\newglossaryentry{m}
+{
+  name={$\m$},
+  text={\ensuremath{m}},
+  description={Size of mini-batch},
+  type=symbol,
+  sort=m
+}
+
+\newglossaryentry{hatxi}
+{
+  name={$\hat{x}^i$},
+  text={\ensuremath{\hat{x}^i}},
+  description={Normalized input},
+  type=symbol,
+  sort=hatxi
+}
+
+\newglossaryentry{yi}
+{
+  name={$\y^i$},
+  text={\ensuremath{y^i}},
+  description={Output of batch normalization layer},
+  type=symbol,
+  sort=yi
+}
+
+\newglossaryentry{gamma}
+{
+  name={$\gamma$},
+  text={\ensuremath{\gamma}},
+  description={Scaling parameter},
+  type=symbol,
+  sort=gamma
+}
+
+\newglossaryentry{beta}
+{
+  name={$\beta$},
+  text={\ensuremath{\beta}},
+  description={Shifting parameter},
+  type=symbol,
+  sort=beta
+}
+
+\newglossaryentry{mathcall}
+{
+  name={$\mathcal{L}$},
+  text={\ensuremath{\mathcal{L}}},
+  description={Loss function},
+  type=symbol,
+  sort=mathcall
+}
+
+\newglossaryentry{theta}
+{
+  name={$\theta$},
+  text={\ensuremath{\theta}},
+  description={Parameters of the neural network being optimized},
+  type=symbol,
+  sort=theta
+}
+
+\newglossaryentry{N}
+{
+  name={$\N$},
+  text={\ensuremath{N}},
+  description={Sample size},
+  type=symbol,
+  sort=N
+}
+
+\newglossaryentry{eta}
+{
+  name={$\eta$},
+  text={\ensuremath{\eta}},
+  description={Learning rate},
+  type=symbol,
+  sort=eta
+}
+
+
+\newglossaryentry{hatmt}
+{
+  name={$\hat{m}_t$},
+  text={\ensuremath{\hat{m}_t}},
+  description={Bias-corrected first moment},
+  type=symbol,
+  sort=hatmt
+}
+
+
+\newglossaryentry{hatvt}
+{
+  name={$\hat{v}_t$},
+  text={\ensuremath{\hat{v}_t}},
+  description={Bias-corrected second moment},
+  type=symbol,
+  sort=hatvt
+}
+
+
+\newglossaryentry{X}
+{
+  name={$\X$},
+  text={\ensuremath{X}},
+  description={Node feature matrix},
+  type=symbol,
+  sort=X
+}
+
+\newglossaryentry{xi}
+{
+  name={$\x_i$},
+  text={\ensuremath{x_i}},
+  description={Feature vector},
+  type=symbol,
+  sort=xi
+}
+
+\newglossaryentry{vi}
+{
+  name={$\v_i$},
+  text={\ensuremath{v_i}},
+  description={Node i},
+  type=symbol,
+  sort=vi
+}
+
+
+\newacronym[type=acronym]{CAD}{CAD}{Computer-Aided Design}
 \newacronym[type=acronym]{NSE}{NSE}{Navier-Stokes Equations}
 \newacronym[type=acronym]{PDE}{PDE}{Partial Differential Equations}
 \newacronym[type=acronym]{CFD}{CFD}{Computational Fluid Dynamics}
@@ -40,33 +322,44 @@
 \newacronym[type=acronym]{ROM}{ROM}{Reduced Order Modelling}
 \newacronym[type=acronym]{ML}{ML}{Machine Learning}
 \newacronym[type=acronym]{DL}{DL}{Deep Learning}
-\newacronym[type=acronym]{GNN}{GNN}{Graph Neural Network}
+\newacronym[type=acronym]{GNN}{GNN}{Graph Neural Networks}
 \newacronym[type=acronym]{RANS}{RANS}{Reynolds Averaged Navier-Stokes}
-\newacronym[type=acronym]{LES}{LES}{Large Eddy Simulation}
-\newacronym[type=acronym]{CNN}{CNN}{Convolutional Neural Network}
-\newacronym[type=acronym]{RNN}{RNN}{Recurrent Neural Network}
-\newacronym[type=acronym]{POD}{POD}{Proper Orthogonal Decomposition}
-\newacronym[type=acronym]{PINN}{PINN}{Physics Informed Neural Network}
-\newacronym[type=acronym]{GMLS}{GMLS}{Generalized Moving Least Squares}
-\newacronym[type=acronym]{GCNN}{GCNN}{Graph Convolutional Neural Network}
-\newacronym[type=acronym]{HOMER}{HOMER}{High-speed Orienting Momentum with Enhanced Reversibility}
 \newacronym[type=acronym]{URANS}{URANS}{Unsteady Reynolds Averaged Navier-Stokes}
-\newacronym[type=acronym]{CAD}{CAD}{Computer Aided Modelling}
+\newacronym[type=acronym]{LES}{LES}{Large Eddy Simulation}
+\newacronym[type=acronym]{CNN}{CNN}{Convolutional Neural Networks}
+\newacronym[type=acronym]{RNN}{RNN}{Recurrent Neural Networks}
+\newacronym[type=acronym]{POD}{POD}{Proper Orthogonal Decomposition}
+\newacronym[type=acronym]{PINN}{PINN}{Physics Informed Neural Networks}
+\newacronym[type=acronym]{GMLS}{GMLS}{Generalized Moving Least Squares}
+\newacronym[type=acronym]{GCNN}{GCNN}{Graph Convolutional Neural Networks}
+\newacronym[type=acronym]{GCN}{GCN}{Graph Convolutional Networks}
+\newacronym[type=acronym]{HOMER}{HOMER}{High-speed Orienting Momentum with Enhanced Reversibility}
 \newacronym[type=acronym]{SST}{SST}{Shear Stress Transport}
 \newacronym[type=acronym]{FDM}{FDM}{Finite Difference Method}
 \newacronym[type=acronym]{FEM}{FEM}{Finite Element Method}
 \newacronym[type=acronym]{FVM}{FVM}{Finite Volume Method}
 \newacronym[type=acronym]{SIMPLE}{SIMPLE}{Semi Implicit Method for Pressure Linked Equations}
-\newacronym[type=acronym]{ANN}{ANN}{Artificial Neural Network}
+\newacronym[type=acronym]{ANN}{ANN}{Artificial Neural Networks}
 \newacronym[type=acronym]{ReLU}{ReLU}{Rectified Linear Unit}
-\newacronym[type=acronym]{NN}{NN}{Neural Network}
-\newacronym[type=acronym]{MLP}{MLP}{Multi Layer Perceptron}
+\newacronym[type=acronym]{NN}{NN}{Neural Networks}
+\newacronym[type=acronym]{MLP}{MLP}{Multi Layer Perceptrons}
 \newacronym[type=acronym]{SGD}{SGD}{Stochastic Gradient Descent}
+\newacronym[type=acronym]{LOOCV}{LOOCV}{Leave One Out Cross-Validation}
 \newacronym[type=acronym]{MSE}{MSE}{Mean Squared Error}
 \newacronym[type=acronym]{RMSProp}{RMSProp}{Root Mean Squared Propagation}
 \newacronym[type=acronym]{Adam}{Adam}{Adaptive Moment Estimation}
 \newacronym[type=acronym]{AdaGrad}{AdaGrad}{Adaptive Gradient}
 \newacronym[type=acronym]{MAE}{MAE}{Mean Absolute Error}
 \newacronym[type=acronym]{RMSE}{RMSE}{Root Mean Squared Error}
-\newacronym[type=acronym]{GAT}{GAT}{Graph ATtention Network}
+\newacronym[type=acronym]{GAT}{GAT}{Graph ATtention Networks}
+\newacronym[type=acronym]{COO}{COO}{Co-Ordinate list}
 \newacronym[type=acronym]{MoNet}{MoNet}{Mixture Model Network}
+\newacronym[type=acronym]{PCA}{PCA}{Principal Component Analysis}
+\newacronym[type=acronym]{t-SNE}{t-SNE}{t-Distributed Stochastic Neighbor Embedding}
+\newacronym[type=acronym]{DBSCAN}{DBSCAN}{Density-Based Spatial Clustering of Applications with Noise}
+\newacronym[type=acronym]{k-NN}{k-NN}{k - Nearest Neighbors}
+\newacronym[type=acronym]{HPC}{HPC}{High Performance Computing}
+\newacronym[type=acronym]{GPU}{GPU}{Graphics Processing Unit}
+\newacronym[type=acronym]{CPUs}{CPUs}{Central Processing Units}
+\newacronym[type=acronym]{CPU}{CPU}{Central Processing Unit}
+\newacronym[type=acronym]{SLURM}{SLURM}{Simple Linux Utility for Resource Management}

@@ -1,36 +1,84 @@
 \chapter{Conclusion}
 \label{chap:Conclusion}
-This thesis has effectively demonstrated the viability and efficiency of employing Graph Neural Networks (GNNs) as surrogate models for the prediction of stable, steady-state nozzle flow dynamics, marking a significant advancement in the field of Computational Fluid Dynamics (CFD). Through a methodical approach that leverages transient simulation data, this research has offered a groundbreaking alternative to traditional CFD simulations, which are characterized by their computational intensity and extensive time requirements. The findings from this study provide a concrete foundation for the assertion that GNNs can serve as powerful tools in the simulation and analysis of fluid dynamics, specifically in applications related to nozzle flows.
-\section{Contributions}
+This thesis represents a focused exploration into the integration of deep learning with turbulence modelling, aimed at understanding and evaluating the potential of GNNs as surrogate models for simulating nozzle flow dynamics. Through a series of methodical experiments and analyses, the study navigates the complex interplay between advanced deep learning techniques and traditional fluid dynamics simulations, aiming to gauge the efficacy of GNNs as surrogate models. In this final chapter, we conclude by reviewing the initial objectives of the research described in Chapter \ref{chap:Intro}, and present a summary of our key contributions. Finally, we recommend a roadmap for future work that can address the challenges faced and pave the way for subsequent research efforts. 
+
+% This thesis has effectively demonstrated the viability and efficiency of employing GNNs as surrogate models for the prediction of stable, steady-state nozzle flow dynamics. Through a methodical approach, we leverage transient simulation data, this research has offered a groundbreaking alternative to traditional CFD simulations, which are characterized by their computational intensity and extensive time requirements. 
+
+
+
+%  The contributions of this thesis are multifaceted, spanning dataset generation, methodological innovation, and the development and evaluation of novel machine learning models:
+% \section{Contributions}
+% The primary endeavor of this thesis was to implement GNN-based models for predicting fluid flow phenomena and to evaluate their performance against traditional CFD simulations. 
+% By adapting mesh data into a graph-based structure suitable for GNN processing, and carefully preparing the dataset for training, this work highlights the practical considerations involved in applying machine learning techniques to fluid dynamics problems.
+
+% The exploration of the Graph U-Net architecture, alongside the introduction of three novel surrogate models, provided a foundation for comparative analysis and underscored the potential of iterative model refinement.
+
+
+% %  The contributions of this thesis are multifaceted, spanning dataset generation, methodological innovation, and the development and evaluation of novel machine learning models:
+
+
+% The results obtained from these experiments underscore the nascent potential of GNNs within the realm of CFD, albeit with the acknowledgment that there remains much room for improvement. The process of model evaluation and the insights gained from these comparisons serve as a modest contribution to the broader effort to integrate machine learning techniques with CFD simulations.
+
+% Implementation of GNN Architectures: Implemented the baseline Graph U-Net architecture and introduced three novel surrogate models—Graphknn, SAGEknn, and MoNetknn—each incorporating unique modifications aimed at optimizing model performance. This iterative development and refinement process underscore the adaptability and potential of GNNs in simulating complex fluid flows.
+
+% Comparative Analysis and Model Optimization: Conducted a thorough comparative analysis of the GNN models against traditional CFD simulations, highlighting the predictive accuracy and identifying potential areas for improvement. Extensive hyperparameter tuning was performed to balance computational efficiency with prediction accuracy, demonstrating the critical role of model optimization in machine learning.
+
+
+
+% \begin{enumerate}
+% \item Development of a GNN-Based Surrogate Model: The research successfully developed and optimized a GNN model capable of predicting the velocity and pressure fields in nozzle flow simulations from early, transient states. This surrogate model has proven to effectively use short-term, less computationally demanding simulation results to forecast stable, steady-state flow conditions with remarkable accuracy. This achievement not only demonstrates the technical feasibility of GNNs in fluid dynamics but also positions them as a cornerstone for future CFD simulation methodologies.
+
+% \item Comparative Analysis of Model Efficiency: A thorough investigation into the efficiency and practicality of the surrogate model was conducted, comparing its performance against traditional, long-duration CFD simulations. The GNN model exhibited substantial computational savings while maintaining a high level of prediction accuracy. This comparative analysis provided empirical evidence supporting the surrogate model's capability to serve as a viable and efficient alternative to conventional CFD methods.
+
+% \item Innovative Application of Clustering Techniques: The thesis explored the use of clustering on low-dimensional data to classify nozzle flow simulations effectively. This approach allowed for an enhanced understanding of the simulation data, leading to more precise predictions of Coanda effect occurrences and facilitating better design and optimization of nozzle configurations. This contribution highlights the potential of integrating advanced data analysis techniques with DL models to improve simulation outcomes.
+
+% \item Exploration of Advanced GNN Architectures: The investigation into advanced GNN architectures and training methodologies underscored the potential for further enhancements in model performance. This exploration revealed that incorporating different graph convolutional layers, attention mechanisms, and training strategies could significantly refine the surrogate model's predictive accuracy and efficiency, paving the way for future advancements in the field.
+
+% \end{enumerate}
+\section{Recap of objectives and contributions}
+At the outset of this thesis, we outlined several key objectives aimed at exploring the integration of GNNs for the application of nozzle flow simulations. As we conclude, it is important to revisit these objectives to assess the contributions of this research in addressing the initial goals:
+
 \begin{enumerate}
-\item Development of a GNN-Based Surrogate Model: The research successfully developed and optimized a GNN model capable of predicting the velocity and pressure fields in nozzle flow simulations from early, transient states. This surrogate model has proven to effectively use short-term, less computationally demanding simulation results to forecast stable, steady-state flow conditions with remarkable accuracy. This achievement not only demonstrates the technical feasibility of GNNs in fluid dynamics but also positions them as a cornerstone for future CFD simulation methodologies.
-
-\item Comparative Analysis of Model Efficiency: A thorough investigation into the efficiency and practicality of the surrogate model was conducted, comparing its performance against traditional, long-duration CFD simulations. The GNN model exhibited substantial computational savings while maintaining a high level of prediction accuracy. This comparative analysis provided empirical evidence supporting the surrogate model's capability to serve as a viable and efficient alternative to conventional CFD methods.
-
-\item Innovative Application of Clustering Techniques: The thesis explored the use of clustering on low-dimensional data to classify nozzle flow simulations effectively. This approach allowed for an enhanced understanding of the simulation data, leading to more precise predictions of Coanda effect occurrences and facilitating better design and optimization of nozzle configurations. This contribution highlights the potential of integrating advanced data analysis techniques with DL models to improve simulation outcomes.
-
-\item Exploration of Advanced GNN Architectures: The investigation into advanced GNN architectures and training methodologies underscored the potential for further enhancements in model performance. This exploration revealed that incorporating different graph convolutional layers, attention mechanisms, and training strategies could significantly refine the surrogate model's predictive accuracy and efficiency, paving the way for future advancements in the field.
-
+    \item \textbf{Develop a GNN model for predicting nozzle flow simulation quantities:}
+    \begin{itemize}
+        \item \textit{Contribution:} Successfully developed and implemented various GNN models, including a baseline Graph U-Net and three novel architectures—Graphknn, SAGEknn, and MoNetknn. These models were rigorously trained to predict key simulation quantities, demonstrating GNNs' potential in modeling fluid dynamics.
+    \end{itemize}
+    
+    \item \textbf{Investigate the feasibility and efficiency of the surrogate models:}
+    \begin{itemize}
+        \item \textit{Contribution:} Conducted an extensive analysis comparing the predictions of GNN models with traditional CFD simulations, highlighting the efficiency of these models and their potential in reducing computational time and resources in fluid dynamics simulations.
+    \end{itemize}
+    
+    \item \textbf{Perform clustering on low-dimensional data to classify simulations:}
+    \begin{itemize}
+        \item \textit{Contribution:} Applied clustering techniques on low-dimensional data representations to effectively categorize simulations based on velocity ratios and occurrences of the Coanda effect, enhancing the interpretation of CFD data.
+    \end{itemize}
+    
+    \item \textbf{Investigation of advanced GNN architectures for enhanced model performance:}
+    \begin{itemize}
+        \item \textit{Contribution:} Explored the optimization of GNN architectures using a sampling operator for hierarchical multi-resolution feature learning and improved prediction accuracy.
+    \end{itemize}
 \end{enumerate}
-
+The results obtained from these experiments underscore the nascent potential of GNNs within the realm of CFD, albeit with the acknowledgment that there remains much room for improvement. The process of model evaluation and the insights gained from these comparisons serve as a modest contribution to the broader effort to integrate machine learning techniques with CFD simulations. By systematically addressing each objective, we offer valuable insights into the potential and challenges of GNN applications in fluid dynamics. Through this endeavor, we contribute to the ongoing discourse in the intersection of deep learning and CFD, setting a foundation for future investigations to build upon in pursuit of more efficient, accurate, and broadly applicable models.
 
 \section{Future directions}
 
-The research presented in this thesis unequivocally asserts the transformative potential of GNNs as surrogate models in the domain of CFD. By achieving significant computational efficiency and maintaining high levels of accuracy in predicting nozzle flow dynamics, this study sets a new benchmark for future research in fluid dynamics simulations. Looking forward, it is imperative to expand upon this work by exploring more complex nozzle configurations, integrating multiscale modeling approaches, and further refining GNN architectures to enhance their generalizability and predictive capabilities across a broader spectrum of fluid dynamics applications. Some possible directions of future research could be, 
-\begin{enumerate}
-    % Building upon the significant achievements of this thesis, there are several avenues for future research that promise to further advance the application of Graph Neural Networks (GNNs) in Computational Fluid Dynamics (CFD). The integration of GNNs has proven transformative for predicting nozzle flow dynamics, showcasing the potential for more efficient, accurate simulations. To continue this trajectory of innovation, future work should focus on the following key areas:
+The research presented in this thesis asserts the transformative potential of GNNs as surrogate models in the domain of CFD. Looking forward, it is imperative to expand upon this work by exploring more complex geometries and further refining GNN architectures to enhance their generalizability and predictive capabilities across a broader spectrum of fluid dynamics applications. Several paths for future work emerge, each aimed at advancing our understanding of GNNs in fluid dynamics:
 
-    \item \textbf{Enhancement of GNN architecture for improved accuracy:} One of the primary objectives moving forward is the development of an improved GNN architecture that enhances prediction accuracy. This involves exploring novel graph convolutional layers, attention mechanisms, and network structures that can more effectively capture the complexities of fluid dynamics. Advanced neural network designs that specifically address the challenges of turbulent flow simulations will be critical in achieving higher levels of accuracy in predicting nozzle flow behavior.
-    \item \textbf{Prediction of extended flow quantities of interest:} An additional critical objective for future work is the extension of the GNN model's capabilities to predict a broader array of flow quantities that are crucial for a comprehensive understanding of fluid dynamics. Specifically, the model will be tailored to accurately forecast values such as turbulent viscosity \gls{nut},turbulent kinetic energy k, and the specific rate of dissipation \gls{omega}. These quantities are fundamental in the analysis and modeling of turbulent flows, providing deeper insights into the behavior of fluids in various engineering applications.    
-    \item \textbf{Optimization of model training times:} Another crucial area of research is the optimization of the GNN model to reduce training times without compromising accuracy. Techniques such as pruning, quantization, and knowledge distillation could be employed to streamline the model, making it more computationally efficient. Additionally, leveraging parallel computing and advanced hardware accelerators will be explored to further enhance training efficiency, enabling the model to learn from larger datasets in shorter time frames.
+\begin{enumerate}
+
+    \item \textbf{Enhancement of GNN architecture for improved accuracy:} One of the primary objectives moving forward is the development of  improved GNN architectures that enhances prediction accuracy. This involves exploring novel graph convolutional layers, attention mechanisms, and network structures that can more effectively capture the complexities of fluid dynamics. 
+    % Advanced neural network designs that specifically address the challenges of turbulent flow simulations will be critical in achieving higher levels of accuracy in predicting nozzle flow behavior.
+    \item \textbf{Prediction of extended flow quantities of interest:} An additional critical objective for future work is the extension of the GNN model's capabilities to predict a broader array of flow quantities. Specifically, we can tailor the model to accurately forecast values such as turbulent viscosity \gls{nut},turbulent kinetic energy $k$, and the specific rate of dissipation \gls{omega}. These quantities are fundamental in the analysis and modeling of turbulent flows, providing deeper insights into the behavior of fluids in various engineering applications.    
+    \item \textbf{Optimization of model training times:} Another crucial area of research is the optimization of the GNN model to reduce training times without compromising accuracy. We can leverage parallel computing and advanced hardware accelerators to further enhance training efficiency, enabling the model to learn from larger datasets in shorter time frames.
     
-    \item \textbf{Development of Physics-Informed GNNs:} Incorporating governing equations of fluid dynamics into the model's loss function presents a promising approach to enhance prediction accuracy. By developing a Physics-Informed Graph Neural Network (PI-GNN), the model can leverage both data-driven learning and the inherent physics of fluid flow, ensuring more accurate and physically plausible predictions. This approach not only aids in better capturing the complex phenomena associated with nozzle flows but also in improving the model's interpretability and reliability.
-    
-    \item \textbf{Transfer learning and model generalization:} Future research will also focus on enhancing the model's generalization capabilities through transfer learning. This involves training the GNN model on a diverse set of nozzle flow scenarios and then fine-tuning it for specific applications, enabling the model to adapt to different nozzle geometries and flow boundary conditions effectively. The goal is to validate the model across a wide range of nozzle configurations and operating conditions, ensuring its applicability and robustness in varied fluid dynamics simulations.
+    \item \textbf{Development of physics-informed GNNs:} Incorporating the governing equations of fluid dynamics into the model's loss function presents a promising approach to enhance prediction accuracy. By developing a physics-informed GNN, the model can leverage both data-driven learning and the inherent physics of fluid flow, ensuring more accurate and physically plausible predictions. This approach not only aids in better capturing of complex phenomena associated with turbulent flows but also in improving the model's interpretability and reliability.
+    %%% THIs poiNT IS BULLSHIT
+    \item \textbf{Model generalization and adaptability:} 
+    The key direction for future research is to enhance the generalization and adaptability of GNN models to different nozzle configurations, flow conditions, and novel scenarios. Incorporating transfer learning by leveraging pre-trained models on extensive datasets could aid in generalization across various nozzle flow scenarios. Ultimately, the aim is to develop robust models capable of accurately simulating fluid behavior across a wide range of scenarios with minimal need for retraining. 
+
        
 \end{enumerate}
-In sum, this thesis not only fulfills its objectives but also opens new avenues for research, underscoring the pivotal role of DL in advancing CFD towards more efficient and accurate simulations. The technical achievements documented herein confirm the feasibility of GNNs as powerful surrogate models, signifying a major step forward in our ability to simulate and understand complex fluid dynamics phenomena with unprecedented efficiency and precision.
+The future directions outlined above offer a roadmap for further investigation and reflect the iterative nature of research in integrating deep learning with fluid dynamics. In summary, this thesis not only fulfills its objectives but also opens new avenues for research, underscoring the pivotal role of DL in advancing CFD towards more efficient and accurate simulations. The technical achievements documented herein confirm the feasibility of GNNs as powerful surrogate models, signifying a major step forward in our ability to simulate and understand complex fluid dynamics phenomena.
 
-
-
-
+% These contributions reflect the focused efforts and outcomes of this thesis within the interdisciplinary space of machine learning and computational fluid dynamics. The future direction outlined emphasizes a streamlined approach to advancing the capability and efficiency of GNN models in simulating and understanding complex fluid behaviors.
