@@ -1,6 +1,7 @@
 \chapter{Conclusion}
 \label{chap:Conclusion}
-This thesis represents a focused exploration into the integration of deep learning with turbulence modelling, aimed at understanding and evaluating the potential of GNNs as surrogate models for simulating nozzle flow dynamics. Through a series of methodical experiments and analyses, the study navigates the complex interplay between advanced deep learning techniques and traditional fluid dynamics simulations, aiming to gauge the efficacy of GNNs as surrogate models. In this final chapter, we conclude by reviewing the initial objectives of the research described in Chapter \ref{chap:Intro}, and present a summary of our key contributions. Finally, we recommend a roadmap for future work that can address the challenges faced and pave the way for subsequent research efforts. 
+This thesis undertakes a critical exploration into the application of Graph Neural Networks (GNNs) within turbulence modeling, motivated by the simulation of nozzle flow dynamics on unstructured meshes. Through a series of methodical experiments and analyses, the study attempts to gauge the efficacy of GNNs as surrogate models. 
+In this final chapter, we conclude by reviewing the initial objectives of the research described in Chapter \ref{chap:Intro}, and present a summary of our key contributions. Finally, we recommend a roadmap for future work that can address the challenges faced and pave the way for subsequent research efforts. 
 
 % This thesis has effectively demonstrated the viability and efficiency of employing GNNs as surrogate models for the prediction of stable, steady-state nozzle flow dynamics. Through a methodical approach, we leverage transient simulation data, this research has offered a groundbreaking alternative to traditional CFD simulations, which are characterized by their computational intensity and extensive time requirements. 
 
@@ -37,26 +38,34 @@ This thesis represents a focused exploration into the integration of deep learni
 % \end{enumerate}
 \section{Recap of objectives and contributions}
 At the outset of this thesis, we outlined several key objectives aimed at exploring the integration of GNNs for the application of nozzle flow simulations. As we conclude, it is important to revisit these objectives to assess the contributions of this research in addressing the initial goals:
-
 \begin{enumerate}
-    \item \textbf{Develop a GNN model for predicting nozzle flow simulation quantities:}
+    \item \textbf{Develop a GNN model for predicting nozzle flow simulation quantities:} \\
+    \textit{Contribution:}
     \begin{itemize}
-        \item \textit{Contribution:} Successfully developed and implemented various GNN models, including a baseline Graph U-Net and three novel architectures—Graphknn, SAGEknn, and MoNetknn. These models were rigorously trained to predict key simulation quantities, demonstrating GNNs' potential in modeling fluid dynamics.
+        \item Computational modelling and simulation of the HOMER nozzle and generated a CFD dataset for nozzle flow simulations comprising unstructured mesh data for various flow conditions. 
+        \item Extraction of CFD simulation data and transformation of the raw data from unstructured meshes into graph-structured data.
+        \item Successful development and implementation of various GNN models, including a baseline Graph U-Net and three other architectures — Graphknn, SAGEknn, and MoNetknn. These models were trained to predict key simulation quantities, demonstrating GNNs' potential in modeling fluid dynamics.
     \end{itemize}
     
-    \item \textbf{Investigate the feasibility and efficiency of the surrogate models:}
+    \item \textbf{Investigate the accuracy, efficiency and feasibility of the surrogate models:} \\
+    \textit{Contribution:}
     \begin{itemize}
-        \item \textit{Contribution:} Conducted an extensive analysis comparing the predictions of GNN models with traditional CFD simulations, highlighting the efficiency of these models and their potential in reducing computational time and resources in fluid dynamics simulations.
+        \item Transformation of graph data back to CFD format for visual analysis of predictions with respect to targets, facilitating a clear visual framework to assess the accuracy of the surrogate models.
+        \item Performed comparative analysis across different GNN architectures to evaluate their performance in terms of both training and testing losses, which serves as a measure of accuracy, as well as runtimes, which elucidate the models' efficiency. This also highlights their potential to significantly reduce the computational time and resources required for fluid dynamics simulations. 
+    \end{itemize}
+    \item \textbf{Perform clustering on low-dimensional data to classify simulations:} \\
+    \textit{Contribution:}
+    \begin{itemize}
+        % \item Integration of unsupervised learning techniques - PCA, t-SNE, and DBSCAN clustering, to analyze and extract meaningful insights from complex fluid dynamics simulations.
+        \item Applied dimensionality reduction using PCA and t-SNE, enabling the visualization of fluid dynamics patterns from high-dimensional data as well as categorization of the simulations based on velocity ratios. 
+        \item Applied the DBSCAN clustering technique on low-dimensional data to identify distinct fluid flow behavior clusters. We achieved a 100\% prediction accuracy in clustering steady-state data, accurately distinguishing between complete adhesion to top or bottom Coanda surfaces and the outliers depicting partial adhesion. This highlights the precision of the approach in automating the classification of flow dynamics.
+        % Leveraged the GNN encoder as a dimensionality reduction tool, simplifying graph-based simulation data into insightful low-dimensional representations.
     \end{itemize}
     
-    \item \textbf{Perform clustering on low-dimensional data to classify simulations:}
+    \item \textbf{Investigation of advanced GNN architectures for enhanced model performance:}\\
+    \textit{Contribution:}
     \begin{itemize}
-        \item \textit{Contribution:} Applied clustering techniques on low-dimensional data representations to effectively categorize simulations based on velocity ratios and occurrences of the Coanda effect, enhancing the interpretation of CFD data.
-    \end{itemize}
-    
-    \item \textbf{Investigation of advanced GNN architectures for enhanced model performance:}
-    \begin{itemize}
-        \item \textit{Contribution:} Explored the optimization of GNN architectures using a sampling operator for hierarchical multi-resolution feature learning and improved prediction accuracy.
+        \item Explored the optimization of GNN architectures using a sampling operator for hierarchical multi-resolution feature learning.
     \end{itemize}
 \end{enumerate}
 The results obtained from these experiments underscore the nascent potential of GNNs within the realm of CFD, albeit with the acknowledgment that there remains much room for improvement. The process of model evaluation and the insights gained from these comparisons serve as a modest contribution to the broader effort to integrate machine learning techniques with CFD simulations. By systematically addressing each objective, we offer valuable insights into the potential and challenges of GNN applications in fluid dynamics. Through this endeavor, we contribute to the ongoing discourse in the intersection of deep learning and CFD, setting a foundation for future investigations to build upon in pursuit of more efficient, accurate, and broadly applicable models.
@@ -82,3 +91,6 @@ The research presented in this thesis asserts the transformative potential of GN
 The future directions outlined above offer a roadmap for further investigation and reflect the iterative nature of research in integrating deep learning with fluid dynamics. In summary, this thesis not only fulfills its objectives but also opens new avenues for research, underscoring the pivotal role of DL in advancing CFD towards more efficient and accurate simulations. The technical achievements documented herein confirm the feasibility of GNNs as powerful surrogate models, signifying a major step forward in our ability to simulate and understand complex fluid dynamics phenomena.
 
 % These contributions reflect the focused efforts and outcomes of this thesis within the interdisciplinary space of machine learning and computational fluid dynamics. The future direction outlined emphasizes a streamlined approach to advancing the capability and efficiency of GNN models in simulating and understanding complex fluid behaviors.
+
+
+% This anticipated advancement in GNN model accuracy, combined with their inherent computational efficiency, positions them as a potentially transformative tool in simulation science. With the capacity to deliver rapid predictions once trained, GNN models offer a glimpse into a future where high-fidelity simulations can be conducted in a fraction of the time currently required. This progression stands to significantly accelerate the pace of innovation and discovery in fields reliant on complex simulations.

@@ -582,6 +582,12 @@ INPUT ./images/Theory-DL/AdjMat.png
 INPUT ./images/Theory-DL/AdjMat.png
 INPUT ./images/Theory-DL/AdjMat.png
 INPUT ./images/Theory-DL/AdjMat.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
 INPUT ./chapters/Methodology.tex
 INPUT ./chapters/Methodology.tex
 INPUT ./chapters/Methodology.tex
@@ -612,6 +618,11 @@ INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
 INPUT ./images/Methodology/Baselineprediction.png
+INPUT ./images/Methodology/presvelcomp.png
+INPUT ./images/Methodology/presvelcomp.png
+INPUT ./images/Methodology/presvelcomp.png
+INPUT ./images/Methodology/presvelcomp.png
+INPUT ./images/Methodology/presvelcomp.png
 INPUT ./images/Methodology/Asset 18.png
 INPUT ./images/Methodology/Asset 18.png
 INPUT ./images/Methodology/Asset 18.png
@@ -637,16 +648,41 @@ INPUT ./chapters/Cluster.tex
 INPUT ./chapters/Cluster.tex
 INPUT ./chapters/Cluster.tex
 INPUT chapters/Cluster.tex
-INPUT ./images/Clustering/tsne.png
-INPUT ./images/Clustering/tsne.png
-INPUT ./images/Clustering/tsne.png
-INPUT ./images/Clustering/tsne.png
-INPUT ./images/Clustering/tsne.png
-INPUT ./images/Clustering/cluster1.png
-INPUT ./images/Clustering/cluster1.png
-INPUT ./images/Clustering/cluster1.png
-INPUT ./images/Clustering/cluster1.png
-INPUT ./images/Clustering/cluster1.png
+INPUT ./images/Clustering/tsne_sim_cmap.png
+INPUT ./images/Clustering/tsne_sim_cmap.png
+INPUT ./images/Clustering/tsne_sim_cmap.png
+INPUT ./images/Clustering/tsne_sim_cmap.png
+INPUT ./images/Clustering/tsne_sim_cmap.png
+INPUT ./images/Clustering/pca_sim_cmap.png
+INPUT ./images/Clustering/pca_sim_cmap.png
+INPUT ./images/Clustering/pca_sim_cmap.png
+INPUT ./images/Clustering/pca_sim_cmap.png
+INPUT ./images/Clustering/pca_sim_cmap.png
+INPUT ./images/Clustering/tsne_inlet_cmp.png
+INPUT ./images/Clustering/tsne_inlet_cmp.png
+INPUT ./images/Clustering/tsne_inlet_cmp.png
+INPUT ./images/Clustering/tsne_inlet_cmp.png
+INPUT ./images/Clustering/tsne_inlet_cmp.png
+INPUT ./images/Clustering/dbscan_sim.png
+INPUT ./images/Clustering/dbscan_sim.png
+INPUT ./images/Clustering/dbscan_sim.png
+INPUT ./images/Clustering/dbscan_sim.png
+INPUT ./images/Clustering/dbscan_sim.png
+INPUT ./images/Clustering/dbscan_pca_sim.png
+INPUT ./images/Clustering/dbscan_pca_sim.png
+INPUT ./images/Clustering/dbscan_pca_sim.png
+INPUT ./images/Clustering/dbscan_pca_sim.png
+INPUT ./images/Clustering/dbscan_pca_sim.png
+INPUT ./images/Clustering/pca_tsne_sim_cmap.png
+INPUT ./images/Clustering/pca_tsne_sim_cmap.png
+INPUT ./images/Clustering/pca_tsne_sim_cmap.png
+INPUT ./images/Clustering/pca_tsne_sim_cmap.png
+INPUT ./images/Clustering/pca_tsne_sim_cmap.png
+INPUT ./images/Clustering/dbscan_tsne_pca_sim.png
+INPUT ./images/Clustering/dbscan_tsne_pca_sim.png
+INPUT ./images/Clustering/dbscan_tsne_pca_sim.png
+INPUT ./images/Clustering/dbscan_tsne_pca_sim.png
+INPUT ./images/Clustering/dbscan_tsne_pca_sim.png
 INPUT ./images/Clustering/cluster2.png
 INPUT ./images/Clustering/cluster2.png
 INPUT ./images/Clustering/cluster2.png
@@ -657,6 +693,16 @@ INPUT ./chapters/Conclusion.tex
 INPUT ./chapters/Conclusion.tex
 INPUT ./chapters/Conclusion.tex
 INPUT chapters/Conclusion.tex
+INPUT ./chapters/Appendix.tex
+INPUT ./chapters/Appendix.tex
+INPUT ./chapters/Appendix.tex
+INPUT ./chapters/Appendix.tex
+INPUT chapters/Appendix.tex
+INPUT ./images/Appendix/Asset 28.png
+INPUT ./images/Appendix/Asset 28.png
+INPUT ./images/Appendix/Asset 28.png
+INPUT ./images/Appendix/Asset 28.png
+INPUT ./images/Appendix/Asset 28.png
 INPUT ./main.acr
 INPUT ./main.acr
 INPUT main.acr
