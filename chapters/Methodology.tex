@@ -1,6 +1,6 @@
 \chapter{Implementation, results and discussion}
 \label{chap:Method}
-This chapter begins with the detailed exploration of the processes and methodologies employed to implement GNNs for the predictive analysis of nozzle flows. In the subsequent section, we introduce the Graph U-Net architecture, outline its implementation settings, present the results obtained and corroborate them with the simulation outcomes. This discussion sets the stage for the development of three modified surrogate models with the aim of enhancing model performance, detailed in Section \ref{proparch}. Through quantitative analysis and performance evaluation, we identify the successes and challenges encountered in modeling nozzle flow dynamics with GNNs. Thus, this chapter demonstrates the practical implementation of the proposed methodologies and performs a critical examination of the results and the efficacy of these models.
+This chapter begins with the detailed exploration of the processes and methodologies employed to implement GNNs for the predictive analysis of nozzle flows. In the subsequent section, we introduce the Graph U-Net architecture, outline its implementation settings, present the results obtained and corroborate them with the simulation outcomes. This discussion sets the stage for the development of three modified surrogate models with the aim of enhancing model performance, detailed in Section \ref{proparch}. Through quantitative analysis and performance evaluation, we identify the successes and challenges encountered in modelling nozzle flow dynamics with GNNs. Thus, this chapter demonstrates the practical implementation of the proposed methodologies and performs a critical examination of the results and the efficacy of these models.
 \section{Data pre-processing} \label{prep}
 In this section, we describe the process for dataset preparation, how the data from CFD simulations are extracted and converted into graph-structured formats that facilitate efficient GNN training. It includes dataset generation from nozzle flow simulations at varied conditions, transformation of unstructured mesh data into a graph format for GNN compatibility, and the specification of GNN inputs and outputs. 
 \subsection{Dataset generation}
@@ -150,16 +150,23 @@ As mentioned previously, we prescribe the same steady-state CFD dataset as the i
     \caption{Visualization of velocity fields for four cases from the baseline's reconstruction task, with inlet velocity values prescribed as (Inlet 1, Inlet 2). Here, the first row represents the target data, the second row corresponds to the model predictions, and the last row is the absolute difference between them. The colours signify the magnitude of velocity, mapped by the legend.} 
     \label{blrecon}
 \end{figure}
-Although the model reconstructs the trends of the outflow jet similar to the target data, the scale or the range of velocity magnitude is slightly different for the two cases. The pressure field, though not depicted here, also faces the same problem. Thus, the baseline model fails to accurately capture the steady state fields during reconstruction. The lack of explicit unpooling layers in Graph U-Net can be attributed as the cause of inadequate reconstruction of the original graph structure during decoding. 
+We note down some key observations: 
+\begin{enumerate}
+\item The GNN predictions closely match the CFD results in terms of the general flow patterns around the geometry. Both simulations and predictions show similar large-scale features, such as the location of flow separation and the attachment.
+\item There is a visible discrepancy in the finer details, particularly behind the convergence zone. The GNN predictions seem to smooth out some of the finer features present in the CFD results and faces challenges predicting the fields around the walls of the nozzle.  
+\item The areas of highest error tend to occur in regions with complex flow features, such as sharp gradients, separation and attachment points.
+\item For the cases with high velocity ratios between the inlet velocities (e.g., (35 m/s, 5 m/s)), the GNN model's predictions diverge more from the CFD results than for cases with lower velocity ratios. 
+\item  In regions where the flow is more predictable and less influenced by the geometry, such as the far field away from the object, the GNN predictions have lower errors.
+\end{enumerate}
+Although the model reconstructs the trends of the outflow jet similar to the target data, the scale or the range of velocity magnitude is slightly different for the two cases. The pressure field, though not depicted here, also faces the same problem. The lack of explicit unpooling layers in Graph U-Nets can be attributed as the cause of inadequate reconstruction of the original graph structure during decoding. 
 \subsubsection{Prediction task}
-In this case, we predict the steady-state solutions from the earlier transition state. The CFD results, predictions of the GNN model and the absolute difference between these data for four simulation cases from the test dataset are shown in Figure \ref{blpred}.
+In this case, we predict the steady-state solutions from the earlier transition state. The CFD results, predictions of the GNN model and the absolute difference between these data for four simulation cases from the test dataset are shown in Figure \ref{blpred}. To better comprehend and evaluate the model performance, we estimate the training, validation and test losses of the baseline model for both the tasks in Table \ref{table:perform}. We also note down the absolute difference between the input and target data for the test dataset of the prediction task.   
 \begin{figure}[ht]
     \centering
     \includegraphics[width=14cm]{images/Methodology/Baselineprediction.png}
     \caption{Visualization of velocity fields for four cases from the baseline's prediction task, with inlet velocity values prescribed as (Inlet 1, Inlet 2) presented in four columns. Here, the first row represents results the target data, the second row corresponds to the GNN predictions for the velocity field, and the last row is the absolute difference between the target data and GNN predictions. The colours signify the magnitude of velocity, mapped by the legend.} 
     \label{blpred}
 \end{figure}
-As we can understand from the figure, the behavior of the outflow jet as well as its magnitude vary significantly from the expected target data. Thus, the baseline model is not feasible for the prediction task of nozzle flow dynamics. To better comprehend and evaluate the model performance, we estimate the training, validation and test losses of the baseline model for both the tasks in Table \ref{table:perform}. We also note down the absolute difference between the input and target data for the test dataset of the prediction task.  
 \begin{table}[ht]
     \centering
     \caption{Model evaluation metrics of the Baseline model for the reconstruction and prediction tasks.} 
@@ -173,9 +180,18 @@ As we can understand from the figure, the behavior of the outflow jet as well as
     Baseline - Prediction & 0.1459 & 0.1503 & 0.1635 & 0.2626\\
     \hline
     \end{tabular}
-    \end{table}   
+    \end{table}  
+% As we can understand from the figure, the behavior of the outflow jet as well as its magnitude vary significantly from the expected target data. Thus, the baseline model is not feasible for the prediction task of nozzle flow dynamics.
+Some importatnt observations are: 
+\begin{enumerate}
+    \item  These loss values suggest that the model is generalizing reasonably well, although there's a slight increase in the test loss indicating potential overfitting or high model variance when exposed to new data.
+    \item For the different flow conditions presented, the model has successfully captured the essential flow patterns as indicated by the similarity in the flow structures in CFD results and the predictions.
+    \item The errors are localized to specific areas, particularly around the regions of flow separation and attachment.
+    \item The smoother predictions in the GNN output compared to the sharper features in the CFD results could be indicative of numerical dissipation in the neural network’s processing.
+\end{enumerate}
+Thus, the model generally captures the flow patterns accurately across various conditions, as shown by the similarity in the large-scale flow features in the CFD and GNN results. Moreover, the errors are localized and do not dominate the entire flow field, indicating that the model's predictions are quantitatively close to the actual CFD results. The model has learned to approximate the fluid dynamics involved with a fairly good degree of accuracy given the proximity of the training, validation, and test losses. The slightly higher test loss points to the need for careful evaluation of the model's generalization capabilities. 
 \subsection{Limitations}
-As observed in the previous section, Graph U-Nets are not suitable for predicting steady-state solutions. Originally designed for small graphs with around 100 nodes, Graph U-Net relies on dense matrix multiplications, which are memory-intensive and not scalable. This leads to memory constraints and slower training times, thus making it impractical for complex, large-scale graph data. GCNConv layers used in this architecture may have limited expressiveness in capturing higher-order graph structures and capturing long-range dependencies in the graph. Its optimal depth is found to be 2 or 3 layers \cite{kipf}. Deeper models beyond 7 layers can encounter training difficulties from risk of overfitting. Apart from these issues, there is also a lack of a dedicated upsampling layer in the architecture which leads to poor reconstruction of the latent space. Due to these disadvantages, Graph U-Net may exhibit poor performance in terms of both accuracy and efficiency, particularly for complex geometries or large datasets. Hence, there is a paramount necessity to rely on modified GNN architectures for our work.
+Originally designed for small graphs with around 100 nodes, Graph U-Nets relies on dense matrix multiplications, which are memory-intensive and not scalable. This leads to memory constraints and slower training times, thus making it impractical for complex, large-scale graph data. GCNConv layers used in this architecture may have limited expressiveness in capturing higher-order graph structures and capturing long-range dependencies in the graph. Its optimal depth is found to be 2 or 3 layers \cite{kipf}. Deeper models beyond 7 layers can encounter training difficulties from risk of overfitting. Apart from these issues, there is also a lack of a dedicated upsampling layer in the architecture which leads to poor reconstruction of the latent space. Due to these disadvantages, Graph U-Net may exhibit poor performance in terms of both accuracy and efficiency, particularly for complex geometries or large datasets. Hence, there is a paramount necessity to rely on modified GNN architectures for our work.
 \section{Proposed architecture}
 \label{proparch}
 In this section, we propose three GNN surrogate models and elucidate the architecture and improvements made on the original Graph U-Net framework. Then, we proceed to provide details on the hyperparameters and other implementation specifics of the proposed models. Finally, we demonstrate the training process and share the predictions results obtained for the CFD application. The models are developed on the Pytorch deep learning framework using the Pytorch Geometric (PyG) library. Training and testing are performed on a compute node of the \gls{HPC} cluster Loewenburg, using a single nVidia Tesla V100 GPU. \\
@@ -227,7 +243,7 @@ We perform hyperparameter tuning for each of the architectures to arrive at the 
 We perform a 9-fold cross-validation on the training and validation datasets. Figures \ref{2vel1} and \ref{2vel2} depict the predicted velocity fields and the associated absolute errors obtained from the three surrogates for four different flow conditions. Figure \ref{aloop} provides an overview of the predicted pressure and velocity fields for all the surrogate models discussed here for a case showing Coanda adhesion. \\
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=16cm]{images/Methodology/presvelcomp.png}
+    \includegraphics[width=15cm]{images/Methodology/presvelcomp.png}
     \caption{Predicted velocity and pressure fields for the case with (Inlet 1, Inlet 2) = (35 m/s, 5 m/s). The leftmost column represents simulation results whereas every other column corresponds to the predictions of the respective architectures.} 
     \label{aloop}
 \end{figure}
@@ -269,7 +285,9 @@ We perform a 9-fold cross-validation on the training and validation datasets. Fi
     \caption{Visualization of velocity fields for two cases with inlet velocities (Inlet 1, Inlet 2): the first row depicts the predictions and the second row shows the absolute difference between the target and predictions. The top left corner presents the simulation results.}
     \label{2vel2}
 \end{figure}
-To discern the performance of these models, we compute the RMSE loss over the training, validation and test datasets, observed in Table \ref{t:predloss}. We observe that the \textit{MoNetknn} architecture performs slightly better than \textit{SAGEknn} which is marginally superior to \textit{Graphknn} in terms of training loss. While \textit{Graphknn} surpasses the other two models in terms of test loss, \textit{SAGEknn} proves to be the relatively better model to \textit{MoNetknn} on the test dataset. Furthermore, we also monitor the training and test times of the three models along with the time taken to batch execute the CFD simulations, presented in Table \ref{t:times}. 
+We note that the duration of steady-state simulations is extremely long, about 8.5 hours. Note that roughly eight cases are concurrently processed on the Loewenburg HPC cluster with \gls{CPU} with the hardware specified as Intel Xeon Gold 6130F, running at a base frequency of 2.10 GHz. Subsequent simulation cases queued and initiated as prior ones conclude using the \gls{SLURM} scheduler. A simulation takes around 32 minutes on average in the parallel configuration of \verb |OpenFOAM|, amounting to around 8.5 hours for the cumulative simulations of 120 cases. \\
+Investigating further into the test cases, we compute the test loss of each sample in the test dataset and tabulate them in Table \ref{t:}.
+% To discern the performance of these models, we compute the RMSE loss over the training, validation and test datasets, observed in Table \ref{t:predloss}. We observe that the \textit{MoNetknn} architecture performs slightly better than \textit{SAGEknn} which is marginally superior to \textit{Graphknn} in terms of training loss. While \textit{Graphknn} surpasses the other two models in terms of test loss, \textit{SAGEknn} proves to be the relatively better model to \textit{MoNetknn} on the test dataset. Furthermore, we also monitor the training and test times of the three models along with the time taken to batch execute the CFD simulations, presented in Table \ref{t:times}. 
 \begin{table}[ht]
     \centering
     \caption{Evaluation metrics of  1. \textit{Graphknn}, 2. \textit{SAGEknn}, and 3. \textit{MoNetknn} architectures. } 
@@ -278,11 +296,11 @@ To discern the performance of these models, we compute the RMSE loss over the tr
     \hline
     \textbf{Model} & \textbf{Training Loss} & \textbf{Validation Loss} & \textbf{Test Loss}\\
     \hline
-     \textit{Graphknn} & 0.134412& 0.143149 & 0.143952   \\
+     \textit{Graphknn} & 0.134412& 0.143149 & 0.136981   \\
     \hline
-    \textit{SAGEknn}& 0.123704 & 0.138665 & 0.149408 \\
+    \textit{SAGEknn}& 0.123704 & 0.138665 & 0.133959 \\
     \hline
-    \textit{MoNetknn} & 0.110712  & 0.143189& 0.15305  \\
+    \textit{MoNetknn} & 0.110712  & 0.138896 & 0.146817  \\
     \hline
     \end{tabular}
 \end{table}
@@ -320,11 +338,49 @@ To discern the performance of these models, we compute the RMSE loss over the tr
     \hline
     \end{tabular}
 \end{table}
-The duration of steady-state simulations is extremely long, about 8.5 hours. Note that roughly eight cases are concurrently processed on the Loewenburg HPC cluster with \gls{CPU} with the hardware specified as Intel Xeon Gold 6130F, running at a base frequency of 2.10 GHz. Subsequent simulation cases queued and initiated as prior ones conclude using the \gls{SLURM} scheduler. A simulation takes around 32 minutes on average in the parallel configuration of \verb |OpenFOAM|, amounting to around 8.5 hours for the cumulative simulations of 120 cases. \\
-Out of the surrogate models, \textit{SAGEknn} takes the least amount of time for training, whereas \textit{MoNetknn} takes the longest. The time taken for testing is extremely short and remains approximately the same across all the surrogate models. The comparative analysis reveals a positive trend: all three surrogate models exhibit superior performance over the baseline model in predicting steady-state solutions. Among them, \textit{SAGEknn} stands out, demonstrating both efficiency and precision. While there is room for enhancement in accurately capturing the complex physics of turbulent steady-state solutions, \textit{SAGEknn} emerges as the better alternative as the successor for Graph U-Net in this scenario. \\
+% From the visual inspection of each of the s
+\begin{table}[ht]
+    \centering
+    \caption{Individual test loss estimation in 1. \textit{Graphknn}, 2. \textit{SAGEknn}, 3. \textit{MoNetknn} models and identification of noisy data.}
+    \label{t:}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Case No. (Inlet 1, Inlet 2) & \textit{Graphknn} & \textit{SAGEknn} & \textit{MoNetknn} \\
+        \hline
+        10 (18 m/s, 27 m/s)& 0.1627682& \textbf{0.141760} & 0.161019\\
+        \hline
+        \rowcolor{red!30}\textbf{85 (45 m/s, 20 m/s)} & 0.227854 & \textbf{0.294137} & 0.256933\\
+        \hline
+        96 (45 m/s, 10 m/s)& 0.146616 & 0.153643 & 0.158489 \\
+        \hline
+        115 (27 m/s, 3 m/s)& 0.111698& \textbf{0.100347} & 0.116409 \\
+        \hline
+        93 (32 m/s, 8 m/s)& 0.1099330 & \textbf{0.095786} & 0.125213 \\
+        \hline
+        31 (6 m/s, 24 m/s) & 0.115487& \textbf{0.073103} & 0.108589 \\
+        \hline
+        94 (36 m/s, 9 m/s)& 0.130061 & \textbf{0.120798} & 0.152372 \\
+        \hline
+        88 (15 m/s, 5 m/s)& \textbf{0.123582} & 0.133565 & 0.128406 \\
+        \hline
+        97 (15 m/s, 3 m/s)& 0.134011 & \textbf{0.122433} & 0.144798 \\
+        \hline
+        110 (35 m/s, 5 m/s)& 0.111097 & \textbf{0.0962448} & 0.122681 \\
+        \hline
+        48 (3 m/s, 21 m/s)& \textbf{0.124982}& 0.135190 & 0.140194 \\
+        \hline
+        80 (20 m/s, 10 m/s)& 0.145688 & \textbf{0.140505} & 0.146698 \\
+        \hline
+        \textbf{Test Loss} & 0.136981 & \textbf{0.133959}& 0.146817\\
+        \hline
+        \textbf{Test Loss (w/o noise)} & 0.128720 & \textbf{0.119398} & 0.136806\\
+        \hline
+        \textbf{Best Case} & Case 93 & Case 31& Case 31\\
+        \hline
+    \end{tabular}
+\end{table}
 % This insight paves the way for targeted advancements in the \textit{SAGEknn} architecture, bolstering its potential to become a more precise tool for modeling nozzle flow dynamics. \\
-When combined with transitional simulations, properly trained and fine-tuned GNN models can offer a more time-efficient alternative to standalone steady-state simulations. The transitional simulations provide necessary intermediate data, which, alongside the predictive power of the GNN models, can yield accurate results in significantly less time. This approach leverages the quick prediction capabilities of the GNN models to complement the transitional simulation data, reducing the overall runtime required to achieve the desired outputs. Thus, this combined method can replace lengthy steady-state simulations, delivering similar results with improved efficiency.\\
-The current suite of steady-state simulations sets a high benchmark in terms of accuracy for modeling complex physical phenomena. However, the GNN models — Graphknn, SAGEknn, and MoNetknn — while not yet matching this level of precision, hold substantial promise for the future. As these models undergo further refinement and enhancement, there is considerable optimism that they will only approach and potentially match the accuracy of steady-state simulations.\\
+
 
 
 
@@ -337,32 +393,52 @@ The current suite of steady-state simulations sets a high benchmark in terms of 
 % The empirical results from the surrogate models demonstrate an enhanced predictive capability for steady-state solutions compared to the baseline model. Notably, the SAGEknn model distinguishes itself through its superior performance metrics, emerging as the most effective and precise in our comparative analysis. While all surrogate models exhibit limitations in fully encapsulating the turbulent physics characteristic of steady-state nozzle flows, SAGEknn offers the most promising framework for refinement.
 % It is evident that the SAGEknn architecture, with its advanced graph convolution techniques, provides a strong foundation for further research. Future work will involve a deeper dive into the SAGEknn model's architecture to fine-tune and enhance its capacity to model the intricacies of turbulence. 
 % Optimizations in areas such as convolutional layer design, activation functions,
+\section{Key observations and inference}
+We make the following key observations in regard to the evaluation metrics obtained: 
+\begin{enumerate}
+    \item  The comparative analysis reveals a positive trend: all three surrogate models exhibit superior performance over the baseline model in predicting steady-state solutions.
+    \item \textit{SAGEknn} exhibits superior test accuracy relative to its counterparts. It also has the advantage of having the shortest training time, which reflects an optimal blend of computational efficiency and model precision.
+    \item Test times for all models are impressively short, indicating that once trained, any of the models can make predictions quickly.
+    \item \textit{MoNetknn} has the lowest training loss but does not maintain this performance on the test set, indicating possible overfitting. \textit{Graphknn}, while consistent, does not excel in any particular area compared to the other two models. 
+    \item As highlighted in the table, Case 85 has significantly higher error values across all three models compared to the other cases, which is flagged as potential noise or an outlier. This suggests that there's something inherently different or problematic with this particular case, which the models are struggling to predict accurately.
+    \item The test loss of the models shows a decrease when potentially noisy data is removed, suggesting that outliers like Case 85 are adversely affecting the model's performance. This is especially significant for \textit{SAGEknn}, where the test loss drops from 0.1339 to 0.1193, a substantial reduction.
+    \item \textit{SAGEknn} not only has the lowest test loss but also shows the greatest improvement when noise is removed, suggesting it has a better noise handling or generalization capability compared to the other two models. 
+    \item Case 31 seems to be the overall best scenario for all models, indicating this particular case is well-represented in the training data.
+\end{enumerate}
+\subsection{Checkerboard artifacts}
+An important observation that is consistent with all three models and flow conditions is the occurrence of a checkerboard pattern in the visualization of velocity fields. \text{MoNetknn} seems to have the least pronounced checkerboard effect, suggesting a better handling of spatial information. \textit{SAGEknn}, while slightly exhibiting this pattern, still maintains a good approximation of the flow, balancing the artifact against accurate flow prediction. The checkerboard pattern observed is usually seen in CNNs, due to factors like strided convolutions, which are not inherent to GNNs. Since GNNs operate on graph data and perform convolutions directly on the graph structure, the appearance of a checkerboard pattern suggests a different underlying issue. A potential cause could be the upsampling of the graph back to its original fine resolution, i.e; the k-NN interpolation. This process may introduce regular, grid-like patterns if the interpolation points are evenly spaced or if there is a scale mismatch between the graph's resolution and the visualization grid. It is to be noted that the checkerboard pattern is not observed in the baseline models, which do not implement k-NN interpolation. Hence, we can assert the source of this discrepancy to k-NN interpolation. Additionally, the value chosen for 'k' in the k-NN algorithm might not sufficiently capture the data's continuity, leading to abrupt changes in interpolated values that manifest as checkerboard artifacts. \\
 
-\section{Inference}
+We proceed to make further observations based on visual inspection, 
+\begin{enumerate}
+    \item All the models are able to capture key physical flow features such as jet deflection and adhesion to Coanda surfaces, indicating that they have learned significant aspects of the flow dynamics.
+    \item It is noticeable that while qualitative features of the flow are predicted, the quantitative aspects such as the exact speed or pressure within the flow field may not be as accurately captured, indicated by differences in the color intensity between the CFD and model predictions.
+    \item While comparing the models, \textit{SAGEknn} appears to most closely match the CFD results in terms of capturing the flow direction and adherence to surfaces, which is consistent with the earlier noted superior performance in terms of test loss.
+    % \item \textit{Graphknn} seems to show less precision in flow boundary definition compared to \textit{SAGEknn} and \textit{MoNetknn}, which could be critical in applications where boundary layer characteristics are vital.
+    \item The CFD results display sharper gradients near the jet and the Coanda surface while the predicted results tend to show a smoother gradient, resulting in less accurate predictions.
+    \item \textit{SAGEknn} and \textit{MoNetknn}, maintain a uniformity in the predicted flow field that closely resembles the CFD results, although with some over-smoothing which can obscure finer flow features.
+\end{enumerate}
+Case 85 appears to be an anomaly that disproportionately affects model performance. The impact of Case 85 on the test loss underscores the importance of robust outlier detection and handling in the training process to improve model accuracy and reliability. In summary, these observations suggest that all models are reasonably well-calibrated, with \textit{SAGEknn} slightly outperforming the others. While there is room for enhancement in accurately capturing the complex physics of turbulent steady-state solutions, \textit{SAGEknn} emerges as the better alternative as the successor for Graph U-Net in this scenario. \\
+When combined with transitional simulations, properly trained and fine-tuned GNN models can offer a more time-efficient alternative to standalone steady-state simulations.
+The current suite of steady-state simulations sets a high benchmark in terms of accuracy for modelling complex physical phenomena. However, the GNN models - \textit{Graphknn}, \textit{SAGEknn}, and \textit{MoNetknn} - while not yet matching this level of precision, hold substantial promise for the future. As these models undergo further refinement and enhancement, there is considerable optimism that they will only approach and potentially match the accuracy of steady-state simulations.\\
+\section{Challenges}
 The endeavor to enhance the performance of Graph U-net architectures through the development of Graphknn, SAGEknn, and MoNetknn models has provided significant insights, albeit alongside challenges reflected in the predictive accuracy of steady state nozzle pressure and velocity fields. Thus, it remains crucial to reflect upon and recognize the factors affecting the models' performance. 
 \begin{itemize}
 \item \textbf{Training data diversity:} The variety of scenarios and varied parameters in the training data critically influences the model's robustness. Since the model is trained on a limited range of data, it may not generalize well to new, unseen scenarios, leading to poor predictive performance.
-\item \textbf{Boundary conditions:} In the context of simulations for fluid dynamics, the accuracy in modeling boundary conditions is essential. Inaccuracies in how these are modeled or fed into the neural network may have led to significant errors in predictions.
+\item \textbf{Boundary conditions:} In the context of simulations for fluid dynamics, the accuracy in modelling boundary conditions is essential. Inaccuracies or inadequate modelling may have led to significant errors in predictions.
 \item \textbf{Data imbalance:} The inlet velocity ratios for the simulations were sampled from the range [1,10] and based on the ratios, the velocities are fixed. By not sampling from a well-defined probability distribution, the model might be missing out on learning the nuances of more complex inlet velocity profiles, which are often encountered in practical applications.
 % Without a distribution-based sampling, the diversity of the training data might not capture the full complexity of the problem space, leading to predictions that don't accurately reflect varied real-world scenarios.
 \item \textbf{Training adequacy:} The extent of training can dictate the model's ability to learn from the data and is influenced by factors such as dataset size and training duration. For the models, a limitation to only 500 epochs of training and a limited dataset of merely 120 cases might not suffice to converge to a robust solution. This restricted scope of training could hinder the generalization and learning of complex patterns particularly for complex domains like fluid dynamics.
 \end{itemize}
-Despite the aforementioned factors, the top-k pooling approach used in all the surrogate architectures for downsampling operations deserves a focused analysis. Top-k pooling was chosen for its computational efficiency and its capacity to reduce the dimensionality of the feature space in a structured manner. However, this method has been observed to discard potentially vital information by retaining only a select few nodes based on their features, which may not correlate with the intricacies of physical phenomena being modeled. The key concerns are outlined below: 
-\begin{enumerate}
-\item Feature selection bias: The criterion for selecting the top 'k' nodes may not align with the domain-specific physical attributes, which could be a contributing factor to the subpar predictive outcomes observed.
-\item Spatial hierarchy distortion and loss of information: Important local spatial relationships could be disrupted, affecting model fidelity. Critical nodes may be discarded, leading to loss of pivotal data, given the intricacies of steady state nozzle dynamics.
-\item Hyperparameter sensitivity: The performance is highly sensitive to the choice of 'k', making it challenging to tune.
-\item Generalization: Potential overfitting or underfitting can occur due to inadequate representation of the graph's complexity.
-\end{enumerate}
-Given the aforementioned challenges, alternative strategies are proposed to potentially alleviate the models' performance:
-\begin{enumerate}
-\item Hierarchical pooling: These strategies offer a more nuanced approach to downsampling, allowing for the preservation of graph topology and essential node interactions. By considering the graph structure more holistically, these methods could enhance the models' ability to capture the underlying physical properties.
-\item Differentiable pooling: Such methods provide a learning-based approach to pooling, which could enable the model to discern and retain the most informative nodes and edges for the prediction task.
-\item Attention mechanisms: Incorporating attention mechanisms could allow the model to dynamically focus on the most relevant nodes during pooling, based on the task at hand, potentially improving the retention of pertinent information.
-\end{enumerate}
-In conclusion, while top-k pooling offers practical advantages, its application in the context of modeling physical systems such as steady state dynamics suggests a need for further refinement. Future work could also involve employing a more representative sampling strategy, such as sampling from a probability distribution that better captures the variability of real-world conditions. Extensive datasets with different flow scenarios together with longer training periods could offer promising solutions. These considerations serve as a foundation for future research to enhance the performance of GNN architectures in this domain, ensuring that the essential characteristics of the data are captured and effectively utilized for prediction tasks.
+Despite the aforementioned factors and the checkerboard pattern arising from k-NN interpolation, the downsampling operation using top-k pooling may also be a contributing factor for the suboptimal predictions. Feature selection bias, spatial hierarchy distortion, loss of information, and hyperparameter sensitivity are areas of concern regarding this approach. Alternative strategies such as hierarchical pooling, differential pooling or attention mechanisms can be used to tackle the challenges faced by top-k pooling. Future work could also involve employing a more representative sampling strategy, such as sampling from a probability distribution that better captures the variability of real-world conditions. Extensive datasets with different flow scenarios together with longer training periods could offer promising solutions. These considerations serve as a foundation for future research to enhance the performance of GNN architectures in this domain, ensuring that the essential characteristics of the data are captured and effectively utilized for prediction tasks.
+% \begin{enumerate}
+% \item Feature selection bias: The criterion for selecting the top 'k' nodes may not align with the domain-specific physical attributes, which could be a contributing factor to the subpar predictive outcomes observed.
+% \item Spatial hierarchy distortion and loss of information: Important local spatial relationships could be disrupted, affecting model fidelity. Critical nodes may be discarded, leading to loss of pivotal data, given the intricacies of steady state nozzle dynamics.
+% \item Hyperparameter sensitivity: The performance is highly sensitive to the choice of 'k', making it challenging to tune.
+% \item Generalization: Potential overfitting or underfitting can occur due to inadequate representation of the graph's complexity.
+% \end{enumerate}
+% While top-k pooling offers practical advantages, its application in the context of modeling physical systems such as steady state dynamics suggests a need for further refinement. 
 \section{Hierarchical multi-resolution pooling mechanism in GNN architecture}
-As part of our continuous effort to enhance the performance and applicability of GNNs, we also embarked on an ambitious endeavor aimed at integrating a hierarchical multi-resolution pooling operator within our GNN architecture, moving beyond the traditional top-k pooling approach. This method has been carried out by Liu et al \cite{metalearning} and is directly ideated from the k-NN interpolation technique. 
+As part of our continuous effort to enhance the performance and applicability of GNNs, we also embarked on an ambitious endeavor aimed at integrating a hierarchical multi-resolution sampling operator within our GNN architecture, moving beyond the traditional top-k pooling approach. This method has been carried out by Liu et al \cite{metalearning} and is directly ideated from the k-NN interpolation technique. 
 Multi-resolution approaches in the context of GNNs involve operating on graphs at multiple levels of granularity, similar to the multigrid method in numerical analysis. Unlike CNNs, where downsampling operators automatically coarsen the structured mesh, in GNNs, we create a hierarchy of meshes with increasing complexity over the domain of interest. Hence, traditional pooling operators may not be suitable for GNNs, as they focus on selecting nodes to construct a coarse graph, which is unnecessary for mesh data. Instead, we can easily define operators that transform features from one mesh to the next, by generating a set of meshes with varying coarseness.\\
 Creating a mesh hierarchy of different levels of coarseness can be performed by well-established techniques in numerical analysis. One commonly used algorithm for mesh construction is Delaunay triangulation, which maximizes the minimum angle of all triangles to avoid sliver triangles. This algorithm gradually inserts new nodes into the triangulation and connects them with their neighbors under specific rules. Incremental decimation is another mesh coarsening method that aims to reduce the number of points while preserving specific properties of the original mesh. It iteratively removes one vertex or edge with minimal changes until certain criteria are met. These techniques offer flexibility in creating mesh hierarchies, making them suitable for GNNs applied to mesh data.\\
 We then introduce the sampling operator for converting data between two meshes, denoted as $M_1$ (downsampled mesh)and $M_2$ (mesh to be downsampled), from the k-NN interpolation proposed in PointNet++ \cite{pnpp}. The same operator can be used for both upsampling and downsampling operations for developing multi-resolution architectures for mesh-based problems. \\

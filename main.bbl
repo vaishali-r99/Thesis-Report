@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{cnnimage}
-Saleh Albelwi and Ausif Mahmood.
-\newblock A framework for designing the architectures of deep convolutional
-  neural networks.
-\newblock {\em Entropy}, 19(6), 2017.
-
 \bibitem{benner2015survey}
 Peter Benner, Serkan Gugercin, and Karen Willcox.
 \newblock A survey of projection-based model reduction methods for parametric
