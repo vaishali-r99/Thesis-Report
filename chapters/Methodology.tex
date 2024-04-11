@@ -7,7 +7,7 @@ In this section, we describe the process for dataset preparation, how the data f
 Nozzle simulations are carried out for 120 cases, each with a different set of Inlet 1 and Inlet 2 velocities. The velocity ratio between the two velocities lies in the range of [1,10]. Velocity ratio in our case refers to the ratio of higher velocity to that of lower velocity.
 %  such that the velocity ratios between the inlets range from 1 to 9.  (Velocity ratio in our case refers to the ratio of higher velocity to that of lower velocity) 
 % The simulation results, i.e; the steady-state fields are logged after 1000 and 30000 time-steps. The \gls{CFD} results at 1000 time-steps are still developing and are unstable whereas those at 30000 steps are observed to be stable solutions. Hence, the simulation results after 30000 steps are taken as the ground truth values or target data, while the input to the surrogate model are the results after 1000 steps. The input and target datasets are then transformed into graph data, normalized, and passed to the network. 
-Simulation data are obtained at two intervals: 1000 and 30000 time-steps. The results at 1000 time-steps, which are still developing and unstable, serve as inputs to the surrogate model. Whereas, the results at 30000 time-steps, which represent stable solutions, are considered the ground truth or target data for model training. These results are then transformed into graph data, which encapsulate spatial relationships and properties of flow fields. The GNN architecture is designed to learn these features and predict the stable, steady-state fields from the early, unstable simulation results.
+Simulation data are obtained at two intervals: after 1000 and 30000 iterations or steps. The results at 1000 iterations, which are still developing and unstable, serve as inputs to the surrogate model. Whereas, the results at 30000 iterations, which represent stable solutions, are considered the ground truth or target data for model training. These results are then transformed into graph data, which encapsulate spatial relationships and properties of flow fields. The GNN architecture is designed to learn these features and predict the stable, steady-state fields from the early, unstable simulation results.
 \subsection{Transformation of mesh data to graph data}
 Conventional RANS solvers require substantial distances from domain boundaries to mitigate adverse effects on solutions around the region of interest. However, this is not required for the deep learning task. Hence, we narrow our attention to a small region just enclosing the nozzle as seen in Figure \ref{clipmesh}. We clip the CFD mesh appropriately and resample the velocity and pressure fields to this mesh with reduced spatial extent. We define the cell-centers on the clipped mesh and assign them as the nodes of the graph. Two adjacent cells $i$ and $j$ (cells that share an edge) in this resulting unstructured mesh are represented as nodes $v_i$ and $v_j$ on the graph and are connected by an edge $e_{ij}$. The graph connectivity is then given by the edge index data structure which comprises two lists - one stores the source node indices and the other has the destination node indices. CFD solvers typically assign pressure, velocity and other fields to each cell of the mesh, whereas graphs require node features, i.e; fields defined on each node. Therefore, the cell data (fields) are converted to point data at the cell centers making it suitable for graph representation. The simulation data is then saved in a \verb|hdf5| format. This is then directly used to read pressure, velocity and co-ordinate information at cell centers. 
 % $u_{x}$, $u_{y}$, $p$, $c_x$, $c_y$, and $\gamma_{\operatorname{tag}}$. 
@@ -130,7 +130,7 @@ Out of the various architectures, we select the model that gives the lowest trai
     \hline
     Hidden layers    & 4                          \\
     \hline
-    Pooling ratios             & [0.5,0.5,0.5,0.5,0.5]                       \\
+    Pooling ratios             & [0.5,0.5,0.5,0.5]                       \\
     \hline
     Batch size                 & 4                         \\
     \hline
@@ -152,7 +152,7 @@ As mentioned previously, we prescribe the same steady-state CFD dataset as the i
 \end{figure}
 Although the model reconstructs the trends of the outflow jet similar to the target data, the scale or the range of velocity magnitude is slightly different for the two cases. The pressure field, though not depicted here, also faces the same problem. Thus, the baseline model fails to accurately capture the steady state fields during reconstruction. The lack of explicit unpooling layers in Graph U-Net can be attributed as the cause of inadequate reconstruction of the original graph structure during decoding. 
 \subsubsection{Prediction task}
-In this case, we predict the steady-state solutions from the earlier time step. The CFD results, predictions of the GNN model and the absolute difference between these data for four simulation cases from the test dataset are shown in Figure \ref{blpred}.
+In this case, we predict the steady-state solutions from the earlier transition state. The CFD results, predictions of the GNN model and the absolute difference between these data for four simulation cases from the test dataset are shown in Figure \ref{blpred}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=14cm]{images/Methodology/Baselineprediction.png}
@@ -189,39 +189,42 @@ There are 3 different surrogate models proposed and each of them tackle the unpo
     % \item \textit{BL + SAGE + crsn + knn:} Similar to the previous model in every detail, the only difference in this model is that it uses GraphSAGE layers instead of the GCNConv layers as convolutions.
     % \item \textit{BL + MoNet + sampl. + knn:} This model is also similar to \textit{BL + crsn + knn}, but it applies MoNet blocks for up convolutions and down convolutions. 
 \end{enumerate}
-We perform hyperparameter tuning for each of the architectures to arrive at the ideal choice of design parameters. The salient features of the three architectures along with their hyperparameters are tabulated in Table \ref{prophp}. 
-% \subsection{Multi-Resolution Graph Net Architecture}
-% \section{Model hyperparameters and training parameters}
-\begin{table}[ht]
-    \centering
-    \caption{Features and hyperparameters comparison of 1. \textit{Graphknn}, 2. \textit{SAGEknn}, and 3. \textit{MoNetknn} architectures.}
-    \label{prophp}
-    \begin{tabular}{|l|l|l|l|}
-    \hline
-    \textbf{Feature/Hyperparameter}    & \textit{Graphknn} & \textit{SAGEknn}   & \textit{MoNetknn} \\
-    \hline
-    Channels    & 48 & 48 & 48                           \\
-    \hline
-    Hidden layers    & 3 & 3 & 3                          \\
-    \hline
-    Convolution layer             &     GCNConv & SAGEConv & GMMConv                   \\
-    \hline
-    Pooling operation             &    Top-k &  Top-k &  Top-k                     \\
-    \hline
-    Unpooling operation         &   k-NN&   k-NN &   k-NN               \\
-    \hline
-    Batch size                 & 4 & 4& 4                         \\
-    \hline
-    Activation function        & ReLU  & ReLU  & ReLU                       \\
-    \hline
-    Weight initialization    &  Kaiming &  Kaiming &  Kaiming                        \\
-    \hline
-    Initial learning rate       & 0.0005 & 0.0005 & 0.001                        \\
-    \hline
-    \end{tabular}
-    \end{table}
+We perform hyperparameter tuning for each of the architectures to arrive at the ideal choice of design parameters. All the models showcase their best performance for the same hyperparameter configuration - 48 channels, 3 hidden layers each with a pooling ratio of 0.5, ReLU activations and weights initialized by the Kaiming method. We use a batch size of 4 and set up the initial learning rate as 0.0005, to be used along with a Step LR scheduler similar to the baseline surrogates. We use the Adam optimizer and train on the RMSE loss. 
+
+
+% The salient features of the three architectures along with their hyperparameters are tabulated in Table \ref{prophp}. 
+% % \subsection{Multi-Resolution Graph Net Architecture}
+% % \section{Model hyperparameters and training parameters}
+% \begin{table}[ht]
+%     \centering
+%     \caption{Features and hyperparameters comparison of 1. \textit{Graphknn}, 2. \textit{SAGEknn}, and 3. \textit{MoNetknn} architectures.}
+%     \label{prophp}
+%     \begin{tabular}{|l|l|l|l|}
+%     \hline
+%     \textbf{Feature/Hyperparameter}    & \textit{Graphknn} & \textit{SAGEknn}   & \textit{MoNetknn} \\
+%     \hline
+%     Channels    & 48 & 48 & 48                           \\
+%     \hline
+%     Hidden layers    & 3 & 3 & 3                          \\
+%     \hline
+%     Convolution layer             &     GCNConv & SAGEConv & GMMConv                   \\
+%     \hline
+%     Pooling operation             &    Top-k &  Top-k &  Top-k                     \\
+%     \hline
+%     Unpooling operation         &   k-NN&   k-NN &   k-NN               \\
+%     \hline
+%     Batch size                 & 4 & 4& 4                         \\
+%     \hline
+%     Activation function        & ReLU  & ReLU  & ReLU                       \\
+%     \hline
+%     Weight initialization    &  Kaiming &  Kaiming &  Kaiming                        \\
+%     \hline
+%     Initial learning rate       & 0.0005 & 0.0005 & 0.001                        \\
+%     \hline
+%     \end{tabular}
+%     \end{table}
 \section{Results and discussion}
-Similar to the baseline surrogates, we perform a 9-fold cross-validation on the training and validation datasets. The optimizer, scheduler, and the loss metric remain the same as the baseline experiments.  Figures \ref{2vel1} and \ref{2vel2} depict the predicted velocity fields and the associated absolute errors obtained from the three surrogates for four different flow conditions. Figure \ref{aloop} provides an overview of the predicted pressure and velocity fields for all the surrogate models discussed here for a case showing Coanda adhesion. \\
+We perform a 9-fold cross-validation on the training and validation datasets. Figures \ref{2vel1} and \ref{2vel2} depict the predicted velocity fields and the associated absolute errors obtained from the three surrogates for four different flow conditions. Figure \ref{aloop} provides an overview of the predicted pressure and velocity fields for all the surrogate models discussed here for a case showing Coanda adhesion. \\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=16cm]{images/Methodology/presvelcomp.png}

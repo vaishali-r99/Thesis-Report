@@ -12,11 +12,11 @@ Deep learning is a subset of machine learning that has gained significant attent
 A \textbf{perceptron} or an artificial neuron, is the fundamental building block of ANNs. It takes multiple input signals $\mathbf{x}= \left(x_1, x_2 ...x_n\right)$, each weighted by a connection weight $w_1,w_2,...w_n$, sums them up, and applies an activation function $\sigma$ to produce an output $\mathbf{y} = \sigma \left(\mathbf{w}^T\mathbf{x} + \mathbf{b} \right)$, where $\mathbf{b}$ is the bias. Perceptrons are arranged in layers to build complex neural network architectures.\\
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=12cm]{images/Theory-DL/ActFn.png}
+    \includegraphics[width=10cm]{images/Theory-DL/ActFn.png}
     \caption{Schematic representation of a perceptron - the basic computational unit of artificial neural networks, illustrating input connections, weights, bias, and an activation function.}
     \label{fig:Perceptron}
   \end{figure}
-\textbf{Activation functions} are usually non-linear functions to introduce non-linearity within the layers of neural networks, allowing them to learn and represent complex relationships in data. Common activation functions include sigmoid, tanh, \gls{ReLU}, and leaky ReLU and these are plotted in Figure \ref{fig:ActGraphs}. Activation functions transform the weighted sum of inputs $\mathbf{z}$ into the output signal $\mathbf{y}$, typically in the range between 0 and 1 (for sigmoid) or -1 and 1 (for tanh). Without the nonlinear transformation via the activation function, the network would be confined to solving merely linear problems. \\
+\textbf{Activation functions} are usually non-linear functions to introduce non-linearity within the layers of neural networks, allowing them to learn and represent complex relationships in data. Common activation functions include sigmoid, tanh, and \gls{ReLU} and these are plotted in Figure \ref{fig:ActGraphs}. Without the nonlinear transformation via the activation function, the network would be confined to solving only linear problems. \\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=8cm]{images/Theory-DL/ActGraphs.png}
@@ -27,7 +27,7 @@ A \textbf{perceptron} or an artificial neuron, is the fundamental building block
 \textbf{\gls{NN}} consist of interconnected layers of perceptrons that process input data to produce output predictions. They can be represented as directed graphs, where nodes correspond to perceptrons, and edges depict connections between them. These connections typically carry weighted signals from one neuron's output to another neuron's input. In particular, we are interested in \textbf{feed-forward neural networks}, in which, information flows only in one direction, from the input layer through one or more hidden layers to the output layer. Each layer processes the input data independently, and the output of one layer serves as the input to the next layer. The connections between neurons do not form directed cycles, ensuring that the network architecture is acyclic. \gls{MLP} are the simplest feed-forward neural networks, described in Figure \ref{fig:MLP}. 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=10cm]{images/Theory-DL/MLP.png}
+    \includegraphics[width=9cm]{images/Theory-DL/MLP.png}
     \caption{Architecture of a Multi-Layer Perceptron (MLP) showcasing an input layer, multiple hidden layers, and an output layer, demonstrating the flow of information in feed-forward neural networks.}
     \label{fig:MLP}
   \end{figure}
@@ -51,20 +51,20 @@ Weight initialization sets the initial values for the model's parameters before 
 % \end{enumerate}
 % In summary, weight initialization is crucial for initializing neural networks effectively. 
 Random initialization with small weights is a common practice in deep learning. Initializing weights to random values drawn from a suitable distribution with a zero mean and small variance breaks symmetry and helps prevent both vanishing and exploding gradients. It encourages each neuron to learn different features from the input data, promoting diverse representations and effective learning. Techniques like Xavier \cite{glorot} and Kaiming \cite{he2015} initialization refine this process by adapting to the characteristics of activation functions.
-\subsubsection{Xavier-Glorot initialization}
-This technique initializes weights from a normal or uniform distribution with a zero mean. The variance of the distribution is adjusted based on the number of input neurons (fan-in) and output neurons (fan-out) as $\text{Var}(W) = \frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}$. Xavier initialization is commonly used in shallow networks with symmetric activation functions, ensuring balanced weight initialization and stable training dynamics. 
-\subsubsection{Kaiming-He initialization}
-Kaiming initialization is designed for networks using non-linear activations like ReLU. It initializes weights from a normal distribution with zero mean, adjusting the variance based on fan-in as $ \text{Var}(W) = \frac{2}{\text{fan}_{\text{in}}}$. This method helps mitigate the issue of vanishing gradients associated with ReLU activations, ensuring stable training and faster convergence.
+% \subsubsection{Xavier-Glorot initialization}
+% This technique initializes weights from a normal or uniform distribution with a zero mean. The variance of the distribution is adjusted based on the number of input neurons (fan-in) and output neurons (fan-out) as $\text{Var}(W) = \frac{2}{\text{fan}_{\text{in}} + \text{fan}_{\text{out}}}$. Xavier initialization is commonly used in shallow networks with symmetric activation functions, ensuring balanced weight initialization and stable training dynamics. 
+% \subsubsection{Kaiming-He initialization}
+% Kaiming initialization is designed for networks using non-linear activations like ReLU. It initializes weights from a normal distribution with zero mean, adjusting the variance based on fan-in as $ \text{Var}(W) = \frac{2}{\text{fan}_{\text{in}}}$. This method helps mitigate the issue of vanishing gradients associated with ReLU activations, ensuring stable training and faster convergence.
 \subsection{Regularization}
-Regularization broadly refers to techniques used to prevent overfitting by imposing additional constraints on the model's parameters, i.e; by adding penalties to the loss function, thus discouraging complex models. Regularization penalizes large weights in the model, thereby promoting simpler models that generalize better to unseen data. 
+Regularization broadly refers to techniques used to prevent overfitting by imposing additional constraints on the model's parameters, i.e; by adding penalties to the loss function. Regularization penalizes large weights in the model, thereby promoting simpler models that generalize better to unseen data. 
 % Two common forms of regularization are L$_1$ regularization (Lasso) and L$_2$ regularization (Ridge). \\
 L$_1$ regularization encourages sparsity in the weights, performing feature selection by setting irrelevant weights to zero, making the model simpler and more interpretable. 
 \[ \operatorname{Loss}_{\mathrm{L}_1 \text{Reg}}=\operatorname{Loss}_{\text {original }}+\lambda \sum_{i=1}^n\left|w_i\right| \]
 L$_2$ regularization encourages the weights to be spread out more evenly, preventing individual weights from becoming too large.
 \[ \operatorname{Loss}_{\mathrm{L}_2 \text{Reg}}=\operatorname{Loss}_{\text {original }}+\lambda \sum_{i=1}^n w^2_i \]
-Here, $\lambda$ is the regularization strength and determines the degree of penalty imposed on large weights. A smaller $\lambda$ value results in weaker regularization, allowing the model to fit the training data closely but increasing the risk of overfitting. Conversely, a larger $\lambda$ value results in a simpler model that generalizes better but may underfit the training data.
-\subsubsection{Dropout}
-Dropout is a regularization technique, where a random fraction of neurons is dropped out or ignored during forward and backward propagation. This prevents neurons from co-adapting and overfitting to the training data, promoting robustness and generalization. 
+Here, $\lambda$ is the regularization strength and determines the degree of penalty imposed on large weights. A smaller $\lambda$ value results in weaker regularization, increasing the risk of overfitting. Conversely, a larger $\lambda$ value results in a simpler model that generalizes better but may underfit the training data.
+% \subsubsection{Dropout}
+% Dropout is a regularization technique, where a random fraction of neurons is dropped out or ignored during forward and backward propagation. This prevents neurons from co-adapting and overfitting to the training data, promoting robustness and generalization. 
 \subsection{Batch training and batch normalization}
 Batch training is a technique in deep learning in which the model updates its parameters based on a subset (or batch) of the training data, rather than the entire dataset. The training data is divided into batches of fixed size, and the model computes the gradient updates based on an average over the samples in each batch. This reduces the variance in the gradient estimates, stabilizes the gradients and prevents large fluctuations during training. \\
 Too small a batch size leads to frequent and noisy gradient updates. On the other hand, too large a batch requires more computational resources and memory despite providing precise gradient estimates abd stable optimization. Selecting an optimal batch size requires balancing the trade-off between computational efficiency and the quality of gradients. \\                     
@@ -95,7 +95,7 @@ In k-fold cross-validation \cite{cv}, the dataset is divided into $k$ subsets or
 \begin{figure}[ht]
   \centering
   \includegraphics[width=10cm]{images/Theory-DL/crossval.png}
-  \caption{Schematic Representation of LOOCV - Here, the training and validation datasets are taken together and split into k folds. The model is trained k times and in each iteration, exactly one fold is subsequently chosen as the validation fold (depicted in red) while the remaining (k-1) folds (depicted in blue) are combined to become the training dataset.}
+  \caption{Schematic Representation of LOOCV - In every iteration, exactly one fold is subsequently chosen as the validation fold while the remaining (k-1) folds are combined to become the training dataset.}
   \label{fig:crossval}
 \end{figure}
 \subsection{Optimization} 
@@ -116,11 +116,7 @@ The learning rate is a hyperparameter that controls the size of the parameter up
 \begin{equation}
     \theta_{t+1}=\theta_t-\eta \nabla_\theta \mathcal{L}(\theta)
     \end{equation}
-Here, $\theta_{t+1}$ and $\theta_t$ represent the parameters at time step $t$ and $t+1$ respectively. Learning rate decay is often used to gradually reduce the learning rate during training with the help of learning rate schedulers such as,
-\begin{itemize}
-\item \textbf{Step decay} reduces the learning rate by a factor (typically constant) after a fixed number of epochs or iterations.
-\item \textbf{Exponential decay} reduces the learning rate exponentially over time.
-\end{itemize}
+Here, $\theta_{t+1}$ and $\theta_t$ represent the parameters at time step $t$ and $t+1$ respectively. Learning rate decay is often used to gradually reduce the learning rate during training with the help of learning rate schedulers .
 % \begin{figure}[ht]
 %   \centering
 %   \includegraphics[width=10cm]{images/Theory-DL/LR.png}
@@ -149,12 +145,12 @@ Model evaluation metrics are essential for assessing the performance of deep lea
 \end{itemize}
 \section{Convolutional Neural Networks (CNNs)} \label{cnnse}
 CNNs \cite{lecun1998} are specialized neural networks designed to process grid-like data, such as images. They utilize convolutional layers and pooling operators to learn spatial hierarchies of features from input data, making them highly effective for tasks like image classification, object detection, and image segmentation. In this section, we outline the major components of CNNs such as convolutional layers, pooling and unpooling operations. 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=10cm]{images/Theory-DL/CNN.png}
-    \caption{Diagram illustrating the typical structure of a CNN consisting of convolutional, pooling, and fully connected layers. Image taken from \cite{cnnimage}.}
-    \label{fig:CNN}
-  \end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=10cm]{images/Theory-DL/CNN.png}
+%     \caption{Diagram illustrating the typical structure of a CNN consisting of convolutional, pooling, and fully connected layers. Image taken from \cite{cnnimage}.}
+%     \label{fig:CNN}
+%   \end{figure}
 \subsection{Convolutional layer}
 The convolutional layer in a CNN consists of a set of learnable filters (kernels) that slide over the input data, performing element-wise multiplication and summing to produce feature maps. The convolution operation preserves the spatial relationship between pixels and learns local patterns like edges, textures, and shapes. Figure \ref{fig:Conv1} shows the working of a convolution kernel. 
 \begin{figure}[ht]
@@ -166,18 +162,18 @@ The convolutional layer in a CNN consists of a set of learnable filters (kernels
 \subsection{Pooling and unpooling} Pooling and unpooling operators perform sampling operations, enabling hierarchical feature extraction while preserving spatial information. Pooling is a down-sampling operation commonly used in CNNs to reduce the spatial dimensions of feature maps. Max pooling and average pooling are popular pooling techniques that select the maximum or average value within each pooling region, respectively. These operations are depicted in Figure \ref{fig:Pool}. Conversely, unpooling layers, used in upsampling, reconstruct the original input resolution from the lower-dimensional representations generated by pooling. These layers store the indices of the maximum values during pooling and use them for upsampling. Nearest neighbor interpolation is a simple upsampling method where each pixel in the input is replicated multiple times to form the output, as seen in Figure \ref{fig:Unpool2}.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=8cm]{images/Theory-DL/Pool.png}
-    \caption{Visualization of pooling operations in CNNs, with examples of (a) max pooling, and (b) average pooling.}
+    \includegraphics[width=6cm]{images/Theory-DL/Pool.png}
+    \caption{Visualization of pooling operations in CNNs, (a) max pooling, and (b) average pooling.}
     \label{fig:Pool}
 \end{figure}
 \begin{figure}[ht]
         \centering
-        \includegraphics[width=8cm]{images/Theory-DL/NNUnpool.png}
-        \caption{Illustration of the unpooling process of nearest neighbor interpolation used in CNNs.}
+        \includegraphics[width=6cm]{images/Theory-DL/NNUnpool.png}
+        \caption{Illustration of nearest neighbor interpolation based unpooling used in CNNs.}
         \label{fig:Unpool2}
     \end{figure}
 \subsection{The U-Net architecture}
-U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a contracting path (encoder) followed by an expanding path (decoder), which enables precise segmentation of structures in medical images, such as cells, organs, or tumors. Some important components of the U-Net architecture are discussed below. 
+U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a contracting path (encoder) followed by an expanding path (decoder), which is widely used for image segmentation. Some important components of the U-Net architecture are discussed below. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=12cm]{images/Theory-DL/UNet.png}
@@ -187,11 +183,11 @@ U-Net \cite{unet} is a CNN consisting of a U-shaped network structure with a con
 \begin{enumerate}
   \item The \textbf{encoder} comprises a series of down-convolutional and max pooling layers that gradually reduce the spatial dimensions of the input image while increasing the number of feature channels. This path extracts high-level features from the input image while preserving spatial context.
   \item The \textbf{decoder} consists of up-convolutional (transposed convolution) and concatenation layers that gradually increase the spatial dimensions of the feature maps while reducing the number of feature channels. This path generates segmentation masks by upsampling the low-resolution feature maps obtained from the encoder and combining them with high-resolution feature maps using skip connections.
-  \item \textbf{Skip connections} or residual connections \cite{he2016deep}, are direct connections between layers at the same hierarchical level in the network. In the U-Net architecture, skip connections connect the encoder to the corresponding layers in the decoder. This enables the network to retain fine-grained spatial information from the encoder while recovering spatial details lost during downsampling. By directly linking the encoder and decoder layers, skip connections facilitate the flow of information across different scales, improving the model's ability to capture both local and global context.
+  \item \textbf{Skip connections} or residual connections \cite{he2016deep}, are direct connections between layers at the same hierarchical level in the network. Skip connections connect the encoder to the corresponding layers in the decoder. This enables the network to retain fine-grained spatial information from the encoder while recovering spatial details lost during downsampling. 
 \end{enumerate}
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=6cm]{images/Theory-DL/Skip.png}
+    \includegraphics[width=5cm]{images/Theory-DL/Skip.png}
     \caption{Diagram demonstrating the concept of skip connections within neural network architectures. Skip connections bypass one or more layers by directly feeding the output from an earlier layer to a later layer.} 
     \label{fig:Skip}
 \end{figure}
@@ -199,7 +195,7 @@ A notable observation pertinent to our current endeavor is the striking resembla
 A major limitation of CNNs is their inability to directly operate on irregular data formats, such as social networks, recommender systems, molecular structures, or citation networks. In contrast to CNNs which are well-suited for grid-like structured data such as images, GNNs are tailored for data represented as graphs, which are discussed in the upcoming section.
 
 \section{Graph Neural Networks (GNNs)} \label{gnnse}
-In 2017, Kipf and Welling introduced the Graph Convolutional Network (GCN) \cite{kipf}, a foundational architecture that laid the groundwork for modern GNNs. Since then, numerous advancements and variants of GNNs have been proposed. Graph data are characterized by non-Euclidean and irregular structures, where entities (nodes) and their relationships (edges) vary in connectivity and structure. Graph Neural Networks (GNNs) excel in processing unstructured data by leveraging the inherent graph structure by dynamically aggregating information from neighboring nodes based on their connectivity. Graphs are set up using nodes, edges, adjacency matrices, node attributes, and edge attributes, defined as follows. 
+In 2017, Kipf and Welling introduced the Graph Convolutional Network (GCN) \cite{kipf}, a foundational architecture that laid the groundwork for modern GNNs. Since then, numerous advancements and variants of GNNs have been proposed. Graph data are characterized by non-Euclidean and irregular structures, where entities (nodes) and their relationships (edges) vary in connectivity and structure. Graph Neural Networks (GNNs) excel in processing unstructured data by leveraging the inherent graph structure by dynamically aggregating information from neighboring nodes based on their connectivity. Graphs are set up using the following components:
 \begin{enumerate}
   \item \textbf{Nodes (\(V\))}: Nodes represent entities in a graph, such as users in a social network, atoms in a molecule, or words in a document. Formally, a graph can be denoted as \( G = (V, E) \), where \( V \) is the set of nodes.
   \item \textbf{Edges (\(E\))}: Edges define relationships or connections between nodes in a graph. Each edge \( e_{ij} \) connects node \( v_i \) to node \( v_j \), where \( v_i, v_j \in V \). The edge set \( E \) can be represented as a collection of tuples \( (v_i, v_j) \) indicating the connections between nodes.
@@ -225,7 +221,7 @@ GNNs leverage these components to perform message passing and aggregation operat
 Graph convolutions update the feature representations of nodes in a graph by aggregating information from their neighboring nodes. Graph convolutional operators typically exhibit local connectivity, where each node's representation is updated based on the information from its neighboring nodes. This local connectivity property allows the model to capture localized patterns and dependencies within the graph structure. Weight sharing is a key aspect of graph convolutions, where the same set of learnable parameters (weights) is shared across different nodes in the graph. This allows for parameter efficiency and enables the model to generalize well to unseen nodes and graphs. GCNConv \cite{kipf}, GMMConv \cite{MoNet}, and SAGEConv \cite{SAGE} are some common classes of convolution operators.
 % There are two ways to perform graph convolution operations. In spectral convolution, graph signals are transformed into the spectral domain using techniques like graph Fourier transforms. Spatial convolution directly operates on the graph's topology and neighborhood structure, aggregating information from neighboring nodes without explicitly transforming the graph. In this work, we only deal with spatial convolutions and refer to them as graph convolutions henceforth. 
 \subsubsection{GCNConv}
-GCNConv aggregates information from neighboring nodes and updates the representations of each node based on this aggregated information. The main steps involved are as follows:
+GCNConv aggregates information from neighboring nodes and updates the representations of each node based on this aggregated information. The main steps involved are:
 \begin{enumerate} 
     \item \textbf{Message passing}: Nodes exchange messages with their neighbors, aggregating information from neighboring nodes. The message passed from node $v_j$ to node $v_i$ at layer $l$ can be represented as:
         \[ m_{ij}^{(l)} = \frac{1}{c_{ij}} W^{(l)} h_j^{(l)} + B^{(l)} h_i^{(l)}  \]
@@ -237,41 +233,42 @@ GCNConv aggregates information from neighboring nodes and updates the representa
     \item \textbf{Update}: Nodes update their feature representations using the aggregated messages and their own features. The updated feature representation $h_i^{(l+1)}$ for node $i$ at layer $l+1$ can be computed as:
         \[ h_i^{(l+1)} = \sigma(a_i^{(l)}) = \sigma \left(\sum_{j \in \mathcal{N}(i)} \frac{1}{c_{ij}} W^{(l)} h_j^{(l)} + B^{(l)} h_i^{(l)} \right)\]
 \end{enumerate}
-These steps are performed iteratively across multiple layers of the GNN. At each layer, nodes update their feature representations based on the aggregated messages. The iterative propagation of messages allows nodes to incorporate information from distant parts of the graph and refine their representations over multiple layers. \\In contrast to filters in CNNs, the weight matrix is consistent and shared across all nodes. However, unlike pixels, nodes do not have a fixed number of neighbors. To maintain uniform value ranges across all nodes and facilitate comparability between them, we normalize the outcomes based on the degree of the nodes, i.e; the number of connections of each node. Hence, $c_{ij} = \sqrt{deg(i)}\sqrt{deg(j)}$ where, ${deg(i)}$ and ${deg(j)}$ denotes the degree of the nodes $v_i$ and $v_j$ respectively. 
-\subsubsection{SAGEConv (GraphSAGE Convolution)}
-The SAGEConv operator stems from the GraphSAGE (Graph Sample and AggregatE) framework which is designed for efficient inductive learning of node embeddings on large graphs. Given a node $i$, the SAGEConv operator updates its feature vector $x_i$ by aggregating features from its immediate neighbors $\mathcal{N}(i)$ and combining this aggregated information with the node's own features. The updated feature vector is calculated using the following formula:
-\[
-\mathbf{x}_i' = \mathbf{W}_1 \mathbf{x}_i + \mathbf{W}_2 \cdot \text{mean}_{j \in N(i)} \mathbf{x}_j
-\]
-where  $\mathbf{W}_1$ and $\mathbf{W}_2$ are trainable weight matrices and $\text{mean}_{j \in N(i)} \mathbf{x}_j$ is the mean aggregation function that computes the element-wise mean of the feature vectors of the neighboring nodes $j \in N(i)$. The SAGEConv operator effectively combines the transformed features of the node itself with the transformed aggregated features from its neighborhood, allowing for the learning of node representations that capture both local neighborhood structures and individual node properties.
-\subsubsection{GMMConv (Gaussian Mixture Model Convolution)}
-GMMConv models the neighborhood aggregation process using a Gaussian Mixture Model (GMM) to capture complex spatial dependencies in the graph. The GMMConv updates the feature \( x_i \) of each node \( i \) using the features of its neighboring nodes, given by, 
-\[
-\mathbf{x}_i^{\prime}=\frac{1}{|\mathcal{N}(i)|} \sum_{j \in \mathcal{N}(i)} \frac{1}{K} \sum_{k=1}^K \mathbf{w}_k\left(\mathbf{e}_{i, j}\right) \odot \boldsymbol{\Theta}_k \mathbf{x}_j\]
-   where, $|\mathcal{N}(i)|$ is a normalization constant based on the neighborhood of node $i$ and \( \mathbf{w}_k(\mathbf{e}_{ij})\) is the weighting function under the \( k \)-th Gaussian component for edge \( e_{i,j} \) between nodes \( i \) and \( j \) given by,
-   \[
-   \mathbf{w}_k(\mathbf{e})=\exp \left(-\frac{1}{2}\left(\mathbf{e}-\mu_k\right)^{\top} \Sigma_k^{-1}\left(\mathbf{e}-\mu_k\right)\right)
-   \]
-The mean vector \( \mu_k \), and the diagonal covariance matrix \( \Sigma_k \) of the \( k \)-th Gaussian component are trainable, allowing the network to learn the optimal way to incorporate neighboring information.\\
-
+These steps are performed iteratively across multiple layers of the GNN. At each layer, nodes update their feature representations based on the aggregated messages. The iterative propagation of messages allows nodes to incorporate information from distant parts of the graph and refine their representations over multiple layers. \\
+% In contrast to filters in CNNs, the weight matrix is consistent and shared across all nodes. However, unlike pixels, nodes do not have a fixed number of neighbors. To maintain uniform value ranges across all nodes and facilitate comparability between them, we normalize the outcomes based on the degree of the nodes, i.e; the number of connections of each node. Hence, $c_{ij} = \sqrt{deg(i)}\sqrt{deg(j)}$ where, ${deg(i)}$ and ${deg(j)}$ denotes the degree of the nodes $v_i$ and $v_j$ respectively. 
+% \subsubsection{SAGEConv (GraphSAGE Convolution)}
+% The SAGEConv operator stems from the GraphSAGE (Graph Sample and AggregatE) framework that updates the feature vector $x_i$ of a node $i$ by aggregating features from its immediate neighbors $\mathcal{N}(i)$ and combining this aggregated information with the node's own features. The updated feature vector is calculated using the following formula:
+% \[
+% \mathbf{x}_i' = \mathbf{W}_1 \mathbf{x}_i + \mathbf{W}_2 \cdot \text{mean}_{j \in N(i)} \mathbf{x}_j
+% \]
+% where  $\mathbf{W}_1$ and $\mathbf{W}_2$ are trainable weight matrices and $\text{mean}_{j \in N(i)} \mathbf{x}_j$ is the mean aggregation function that computes the element-wise mean of the feature vectors of the neighboring nodes $j \in N(i)$. 
+% \subsubsection{GMMConv (Gaussian Mixture Model Convolution)}
+% GMMConv models the neighborhood aggregation process using a Gaussian Mixture Model (GMM), which updates the feature \( x_i \) of each node \( i \) using the features of its neighboring nodes, given by, 
+% \[
+% \mathbf{x}_i^{\prime}=\frac{1}{|\mathcal{N}(i)|} \sum_{j \in \mathcal{N}(i)} \frac{1}{K} \sum_{k=1}^K \mathbf{w}_k\left(\mathbf{e}_{i, j}\right) \odot \boldsymbol{\Theta}_k \mathbf{x}_j\]
+%    where, $|\mathcal{N}(i)|$ is a normalization constant based on the neighborhood of node $i$ and \( \mathbf{w}_k(\mathbf{e}_{ij})\) is the weighting function under the \( k \)-th Gaussian component for edge \( e_{i,j} \) between nodes \( i \) and \( j \) given by,
+%    \[
+%    \mathbf{w}_k(\mathbf{e})=\exp \left(-\frac{1}{2}\left(\mathbf{e}-\mu_k\right)^{\top} \Sigma_k^{-1}\left(\mathbf{e}-\mu_k\right)\right)
+%    \]
+% Here, the mean vector \( \mu_k \), and the diagonal covariance matrix \( \Sigma_k \) are trainable parameters.
 \subsection{Graph pooling}
-Graph pooling aggregates node representations across the entire graph to compute global graph-level features and create a coarser graph representation. It reduces the size of the graph representation while preserving important structural and relational information. By selecting representative nodes or aggregating node features, graph pooling enables GNNs to focus on relevant information while reducing computational complexity. Graph pooling also facilitates hierarchical feature learning by allowing GNNs to operate at multiple levels of granularity, enabling the model to capture both local and global patterns in the graph. The different types of graph pooling are:
+Graph pooling aggregates node representations across the entire graph to compute global graph-level features and create a coarser graph representation. It reduces the size of the graph representation while preserving important structural and relational information. The different types of graph pooling are:
 \subsubsection{Top-k pooling} 
-This algorithm selects the top k nodes based on criteria such as node importance or feature values, and aggregates their information to create a coarser graph representation. It retains the most informative nodes while reducing the size of the graph, making it suitable for tasks requiring node selection or summarization. It uses a pooling ratio approach such that the graph has $\lfloor kN \rfloor$ nodes after the pooling operation, where $k \in (0, 1]$ is the pooling ratio. The decision of which nodes to discard is based on a projection score computed against a learnable vector, $\mathbf{\overrightarrow{p}}$. Fully expressed, computing a pooled graph, $(X^l, A^l)$, from an input graph, $(X, A)$ can be described using the following steps: 
-\begin{enumerate}
-    \item Compute a score for each node in the graph based on node importance or feature relevance as,
-    \[
-\mathbf{\tilde{y}} = \frac{X \mathbf{\overrightarrow{p}}}{k||\mathbf{\overrightarrow{p}}||_2} \]
-    \item Select the top $k$ nodes with the highest scores, \[ \mathbf{\overrightarrow{i}} = \text{top-k}(\mathbf{\tilde{y}}, k) \]
-    Discard the remaining nodes and their associated edges, resulting in a downsampled graph $G^{\prime} = (V^{\prime}, E^{\prime})$ where $V^{\prime}$ contains only the selected nodes.
-    \item Retain the features corresponding to the selected nodes to form the downsampled feature and adjacency matrices, \[
-        X^{\prime} = (X \odot \tanh(\mathbf{\tilde{y}}))_{\mathbf{\overrightarrow{i}}}, \quad A^{\prime} = A_{\mathbf{\overrightarrow{i}},\mathbf{\overrightarrow{i}}}
-       \]
-\end{enumerate}
-Here, $||.||_2$ represents the L$_2$ norm, $\odot$ denotes element-wise multiplication, and $\cdot_{\mathbf{\overrightarrow{i}}}$ represents an indexing operation that extracts slices at indices specified by $\mathbf{\overrightarrow{i}}$. 
-\subsubsection{Max pooling} Max pooling selects the node with the maximum feature value from each neighborhood and aggregates their information to create a coarser representation of the graph. It emphasizes the most salient nodes in each neighborhood, capturing important features while reducing redundancy.
-\subsubsection{Self-attention graph pooling} This method leverages attention mechanisms to dynamically weight the contributions of neighboring nodes based on their importance and similarity. It allows nodes to attend to relevant information in their neighborhoods, facilitating adaptive aggregation and effective summarization of the graph. This method is useful for capturing long-range dependencies and global patterns in the graph.
+This algorithm selects the top k nodes based on criteria such as node importance or feature values, and aggregates their information to create a coarser graph representation. It retains the most informative nodes while reducing the size of the graph, making it suitable for tasks requiring node selection or summarization. It uses a pooling ratio approach such that the graph has $\lfloor kN \rfloor$ nodes after the pooling operation, where $k \in (0, 1]$ is the pooling ratio. The decision of which nodes to discard is based on a projection score computed against a learnable vector.
 
+% , $\mathbf{\overrightarrow{p}}$. Fully expressed, computing a pooled graph, $(X^l, A^l)$, from an input graph, $(X, A)$ can be described using the following steps: 
+% \begin{enumerate}
+%     \item Compute a score for each node in the graph based on node importance or feature relevance as,
+%     \[
+% \mathbf{\tilde{y}} = \frac{X \mathbf{\overrightarrow{p}}}{k||\mathbf{\overrightarrow{p}}||_2} \]
+%     \item Select the top $k$ nodes with the highest scores, \[ \mathbf{\overrightarrow{i}} = \text{top-k}(\mathbf{\tilde{y}}, k) \]
+%     Discard the remaining nodes and their associated edges, resulting in a downsampled graph $G^{\prime} = (V^{\prime}, E^{\prime})$ where $V^{\prime}$ contains only the selected nodes.
+%     \item Retain the features corresponding to the selected nodes to form the downsampled feature and adjacency matrices, \[
+%         X^{\prime} = (X \odot \tanh(\mathbf{\tilde{y}}))_{\mathbf{\overrightarrow{i}}}, \quad A^{\prime} = A_{\mathbf{\overrightarrow{i}},\mathbf{\overrightarrow{i}}}
+%        \]
+% \end{enumerate}
+% Here, $||.||_2$ represents the L$_2$ norm, $\odot$ denotes element-wise multiplication, and $\cdot_{\mathbf{\overrightarrow{i}}}$ represents an indexing operation that extracts slices at indices specified by $\mathbf{\overrightarrow{i}}$. 
+\subsubsection{Max pooling} Max pooling selects the node with the maximum feature value from each neighborhood and aggregates their information to create a coarser representation of the graph. It emphasizes the most salient nodes in each neighborhood, capturing important features while reducing redundancy.
+% \subsubsection{Self-attention graph pooling} This method leverages attention mechanisms to dynamically weight the contributions of neighboring nodes based on their importance and , allowing nodes to attend to relevant information in their neighborhoods, facilitating adaptive aggregation and effective summarization of the graph.
 % Graph pooling aggregates node features to produce a compact representation of the entire graph, which can be fed into subsequent layers or used for downstream tasks. \\
 \subsection{Graph unpooling}
 Graph unpooling is a complementary operation to graph pooling, aimed at upsampling or reconstructing the original graph representation after downsampling. While graph pooling creates a coarser representation, graph unpooling aims to recover the finer details and restore the original graph structure. Some common types of graph unpooling include,
