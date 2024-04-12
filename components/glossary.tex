@@ -27,7 +27,7 @@
 \newglossaryentry{nut}{
   name={$\nu_t$},
   text={\ensuremath{\nu_t}},
-  description={turbulent viscosity},
+  description={Turbulent viscosity},
   type=symbol,
   sort=nu_t
 }
@@ -39,7 +39,22 @@
   type=symbol,
   sort=rho
 }
-
+\newglossaryentry{ui}
+{
+  name={$u_i$},
+  text={\ensuremath{$u_i$}},
+  description={Flow velocity in the spatial direction $x_i$},
+  type=symbol,
+  sort=ui
+}
+\newglossaryentry{delta_ij}
+{
+  name={$\delta_{ij}$},
+  text={\ensuremath{\delta_{ij}}},
+  description={Kronecker delta function},
+  type=symbol,
+  sort=kron
+}
 \newglossaryentry{p}
 {
   name={$\p$},
@@ -67,14 +82,6 @@
   sort=mu
 }
 
-\newglossaryentry{Sij}
-{
-  name={$\S_i_j$},
-  text={\ensuremath{S_i_j}},
-  description={Shear rate},
-  type=symbol,
-  sort=S_i_j
-}
 
 \newglossaryentry{mut}
 {
@@ -87,7 +94,7 @@
 
 \newglossaryentry{k}
 {
-  name={$\k$},
+  name={$k$},
   text={\ensuremath{k}},
   description={Turbulent kinetic energy},
   type=symbol,
@@ -114,18 +121,18 @@
 
 \newglossaryentry{x}
 {
-  name={$\x$},
-  text={\ensuremath{x}},
-  description={Input signals},
+  name={$\mathbf{x}$},
+  text={\ensuremath{\mathbf{x}}},
+  description={Inputs to the perceptron},
   type=symbol,
   sort=x
 }
 
 \newglossaryentry{w}
 {
-  name={$\w$},
-  text={\ensuremath{w}},
-  description={Weight vector},
+  name={$\mathbf{w}$},
+  text={\ensuremath{\mathbf{w}}},
+  description={Connection weights},
   type=symbol,
   sort=w
 }
@@ -141,21 +148,21 @@
 
 \newglossaryentry{b}
 {
-  name={$\b$},
-  text={\ensuremath{b}},
-  description={Bias},
+  name={$b$},
+  text={\ensuremath{\mathbf{b}}},
+  description={Bias term},
   type=symbol,
-  sort=x
+  sort=b
 }
 
-\newglossaryentry{y}
-{
-  name={$\y$},
-  text={\ensuremath{y}},
-  description={Output},
-  type=symbol,
-  sort=y
-}
+% \newglossaryentry{y}
+% {
+%   name={$y$},
+%   text={\ensuremath{y}},
+%   description={Perceptron output},
+%   type=symbol,
+%   sort=y
+% }
 
 \newglossaryentry{lambda}
 {
@@ -229,13 +236,13 @@
   sort=beta
 }
 
-\newglossaryentry{mathcall}
+\newglossaryentry{l}
 {
-  name={$\mathcal{L}$},
-  text={\ensuremath{\mathcal{L}}},
+  name={$\mathcal{L(\theta)}$},
+  text={\ensuremath{\mathcal{L(\theta)}}},
   description={Loss function},
   type=symbol,
-  sort=mathcall
+  sort=l
 }
 
 \newglossaryentry{theta}
@@ -247,14 +254,6 @@
   sort=theta
 }
 
-\newglossaryentry{N}
-{
-  name={$\N$},
-  text={\ensuremath{N}},
-  description={Sample size},
-  type=symbol,
-  sort=N
-}
 
 \newglossaryentry{eta}
 {
@@ -264,8 +263,125 @@
   type=symbol,
   sort=eta
 }
+\newglossaryentry{G}
+{
+  name={$\hat{m}_t$},
+  text={\ensuremath{\hat{m}_t}},
+  description={Graph in a Graph Neural Network},
+  type=symbol,
+  sort=G
+}
 
-
+\newglossaryentry{V}
+{
+  name={$V$},
+  text={\ensuremath{V}},
+  description={Set of nodes in a Graph Neural Network},
+  type=symbol,
+  sort=V
+}
+\newglossaryentry{E}
+{
+  name={$E$},
+  text={\ensuremath{E}},
+  description={Set of edges in a Graph Neural Network},
+  type=symbol,
+  sort=E
+}
+\newglossaryentry{A}
+{
+  name={$A$},
+  text={\ensuremath{A}},
+  description={Adjacency matrix},
+  type=symbol,
+  sort=adj
+}
+\newglossaryentry{X}
+{
+  name={$X$},
+  text={\ensuremath{X}},
+  description={Node feature matrix},
+  type=symbol,
+  sort=X
+}
+\newglossaryentry{W}
+{
+  name={$W$},
+  text={\ensuremath{W}},
+  description={Edge weight matrix},
+  type=symbol,
+  sort=W
+}
+\newglossaryentry{N}
+{
+  name={$N$},
+  text={\ensuremath{N}},
+  description={Number of nodes in a graph},
+  type=symbol,
+  sort=N
+}
+\newglossaryentry{D}
+{
+  name={$D$},
+  text={\ensuremath{D}},
+  description={Number of features per node},
+  type=symbol,
+  sort=D
+}
+% \newglossaryentry{L}
+% {
+%   name={$L$},
+%   text={\ensuremath{L}},
+%   description={Number of channels per graph convolution layer},
+%   type=symbol,
+%   sort=L
+% }
+\newglossaryentry{ni}
+{
+  name={$\mathcal{N}(i)$},
+  text={\ensuremath{\mathcal{N}(i)}},
+  description={Set of neighboring nodes of node $i$},
+  type=symbol,
+  sort=Ni
+}
+\newglossaryentry{gammatag}
+{
+  name={$\gamma_{\operatorname{tag}, i}$},
+  text={\ensuremath{\gamma_{\operatorname{tag}, i}}},
+  description={Type of node $i$},
+  type=symbol,
+  sort=nodetag
+}
+\newglossaryentry{cxi}
+{
+  name={$c_{x, i}$},
+  text={\ensuremath{c_{x, i}}},
+  description={X co-ordinate of node $i$},
+  type=symbol,
+}
+\newglossaryentry{cyi}
+{
+  name={$c_{y, i}$},
+  text={\ensuremath{c_{y, i}}},
+  description={Y co-ordinate of node $i$},
+  type=symbol,
+}
+\newglossaryentry{fx}
+{
+  name={$F_X$},
+  text={\ensuremath{F_X}},
+  description={Number of input channels},
+  type=symbol,
+  sort=fx
+}
+\newglossaryentry{fy}
+{
+  name={$F_Y$},
+  text={\ensuremath{F_Y}},
+  description={Number of output channels},
+  type=symbol,
+  sort=fy
+}
 \newglossaryentry{hatmt}
 {
   name={$\hat{m}_t$},
@@ -285,15 +401,38 @@
   sort=hatvt
 }
 
-
-\newglossaryentry{X}
+\newglossaryentry{Wl}
 {
-  name={$\X$},
-  text={\ensuremath{X}},
-  description={Node feature matrix},
+  name={$\mathbf{W}^{(l)}$},
+  text={\ensuremath{\mathbf{W}^{(l)}}},
+  description={Learnable weight matrix of layer $l$ in graph convolutional operation},
   type=symbol,
-  sort=X
+  sort=Wl
 }
+\newglossaryentry{Bl}
+{
+  name={$\mathbf{B}^{(l)}$},
+  text={\ensuremath{\mathbf{B}^{(l)}}},
+  description={Learnable bias matrix of layer $l$ in graph convolutional operation},
+  type=symbol,
+  sort=Bl
+}
+\newglossaryentry{hil}
+{
+  name={$h_i^{(l)}$},
+  text={\ensuremath{h_i^{(l)}}},
+  description={Feature vector of node $i$ at layer $l$},
+  type=symbol,
+  sort=hil
+}
+% \newglossaryentry{X}
+% {
+%   name={$\X$},
+%   text={\ensuremath{$X$}},
+%   description={Node feature matrix},
+%   type=symbol,
+%   sort=X
+% }
 
 \newglossaryentry{xi}
 {
@@ -329,7 +468,7 @@
 \newacronym[type=acronym]{CNN}{CNN}{Convolutional Neural Networks}
 \newacronym[type=acronym]{RNN}{RNN}{Recurrent Neural Networks}
 \newacronym[type=acronym]{POD}{POD}{Proper Orthogonal Decomposition}
-\newacronym[type=acronym]{PINN}{PINN}{Physics Informed Neural Networks}
+\newacronym[type=acronym]{PINN}{PINN}{Physics-Informed Neural Networks}
 \newacronym[type=acronym]{GMLS}{GMLS}{Generalized Moving Least Squares}
 \newacronym[type=acronym]{GCNN}{GCNN}{Graph Convolutional Neural Networks}
 \newacronym[type=acronym]{GCN}{GCN}{Graph Convolutional Networks}
@@ -338,7 +477,7 @@
 \newacronym[type=acronym]{FDM}{FDM}{Finite Difference Method}
 \newacronym[type=acronym]{FEM}{FEM}{Finite Element Method}
 \newacronym[type=acronym]{FVM}{FVM}{Finite Volume Method}
-\newacronym[type=acronym]{SIMPLE}{SIMPLE}{Semi Implicit Method for Pressure Linked Equations}
+\newacronym[type=acronym]{SIMPLE}{SIMPLE}{Semi-Implicit Method for Pressure Linked Equations}
 \newacronym[type=acronym]{ANN}{ANN}{Artificial Neural Networks}
 \newacronym[type=acronym]{ReLU}{ReLU}{Rectified Linear Unit}
 \newacronym[type=acronym]{NN}{NN}{Neural Networks}

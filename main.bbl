@@ -42,10 +42,12 @@ John Duchi, Elad Hazan, and Yoram Singer.
   2121--2159, 2011.
 
 \bibitem{ester1996dbscan}
-Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu.
+Martin Ester, Hans-Peter Kriegel, Jorg Sander, and Xiaowei Xu.
 \newblock A density-based algorithm for discovering clusters in large spatial
   databases with noise.
-\newblock pages 226--231, 1996.
+\newblock In {\em Proceedings of the Second International Conference on
+  Knowledge Discovery and Data Mining}, KDD'96, page 226–231. AAAI Press,
+  1996.
 
 \bibitem{fefferman2006existence}
 Charles~L. Fefferman.
@@ -101,7 +103,7 @@ Juncai He and Jinchao Xu.
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock Delving deep into rectifiers: Surpassing human-level performance on
   imagenet classification.
-\newblock 2015.
+\newblock {\em CoRR}, abs/1502.01852, 2015.
 
 \bibitem{he2016deep}
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
@@ -151,7 +153,7 @@ Julia Ling, Andrew Kurzawski, and Jeremy Templeton.
 \bibitem{metalearning}
 Wenzhuo Liu, Mouadh Yagoubi, and Marc Schoenauer.
 \newblock Meta-learning for airflow simulations with graph neural networks.
-\newblock 2023.
+\newblock {\em arXiv preprint arXiv:2306.10624}, 2023.
 
 \bibitem{milano2002}
 Michele Milano and Petros Koumoutsakos.
@@ -198,10 +200,10 @@ Stephen~B. Pope.
 \newblock Cambridge University Press, 2000.
 
 \bibitem{pnpp}
-Charles~R. Qi, Li~Yi, Hao Su, and Leonidas~J. Guibas.
+Charles~Ruizhongtai Qi, Li~Yi, Hao Su, and Leonidas~J. Guibas.
 \newblock Pointnet++: Deep hierarchical feature learning on point sets in a
   metric space.
-\newblock 2017.
+\newblock {\em CoRR}, abs/1706.02413, 2017.
 
 \bibitem{raissi2019physics}
 Maziar Raissi, Paris Perdikaris, and George~Em Karniadakis.
@@ -220,7 +222,7 @@ O.~Reynolds.
 \bibitem{unet}
 Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
 \newblock U-net: Convolutional networks for biomedical image segmentation.
-\newblock 2015.
+\newblock {\em CoRR}, abs/1505.04597, 2015.
 
 \bibitem{rumel}
 David~E Rumelhart, Geoffrey~E Hinton, and Ronald~J Williams.
@@ -255,6 +257,7 @@ Tijmen Tieleman and Geoffrey Hinton.
 Brendan~D. Tracey, Karthikeyan Duraisamy, and Juan~J. Alonso.
 \newblock {\em A Machine Learning Strategy to Assist Turbulence Model
   Development}.
+\newblock 2013.
 
 \bibitem{trandum}
 Michele Trancossi and Antonio Dumas.
@@ -263,16 +266,16 @@ Michele Trancossi and Antonio Dumas.
 
 \bibitem{trask2019}
 Nathaniel Trask, Ravi~G. Patel, Ben~J. Gross, and Paul~J. Atzberger.
-\newblock Gmls-nets: A framework for learning from unstructured data.
-\newblock 2019.
+\newblock Gmls-nets: {A} framework for learning from unstructured data.
+\newblock {\em CoRR}, abs/1909.05371, 2019.
 
-\bibitem{vandermaaten2008tsne}
+\bibitem{tsne}
 Laurens van~der Maaten and Geoffrey Hinton.
 \newblock Visualizing data using t-sne.
 \newblock {\em Journal of Machine Learning Research}, 9:2579--2605, 2008.
 
 \bibitem{zhang2015}
 Ze~Jia Zhang and Karthikeyan Duraisamy.
-\newblock Machine learning methods for data-driven turbulence modeling.
+\newblock {\em Machine Learning Methods for Data-Driven Turbulence Modeling}.
 
 \end{thebibliography}

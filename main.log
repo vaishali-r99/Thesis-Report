@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  11 APR 2024 09:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  12 APR 2024 11:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,27 +1094,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-
-./components/acknowledgements.tex:31: LaTeX Error: \begin{document} ended by \e
-nd{center}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \end{center}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./components/acknowledgements.tex:31: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.31 \end{center}
-                 
-Things are pretty mixed up, but I think the worst is over.
-
 ) (./components/abstract.tex [7] [8
 
 
@@ -1158,12 +1137,12 @@ Package scrkbase Info: You've told me to use the font selection of the element
 
 ] [8] (./chapters/Theory-CFD.tex
 chapter 2.
-<images/Theory-CFD/nozzle.png, id=381, 665.8476pt x 538.4115pt>
+<images/Theory-CFD/nozzle.png, id=382, 665.8476pt x 538.4115pt>
 File: images/Theory-CFD/nozzle.png Graphic file (type png)
 <use images/Theory-CFD/nozzle.png>
 Package pdftex.def Info: images/Theory-CFD/nozzle.png  used on input line 8.
 (pdftex.def)             Requested size: 227.62204pt x 184.05156pt.
-<images/Theory-CFD/Coanda-effect.png, id=387, 860.21375pt x 314.17375pt>
+<images/Theory-CFD/Coanda-effect.png, id=388, 860.21375pt x 314.17375pt>
 File: images/Theory-CFD/Coanda-effect.png Graphic file (type png)
 <use images/Theory-CFD/Coanda-effect.png>
 Package pdftex.def Info: images/Theory-CFD/Coanda-effect.png  used on input lin
@@ -1173,7 +1152,7 @@ e 17.
 
 
 ]
-<images/Theory-CFD/Flow Domain.png, id=397, 783.92876pt x 556.0775pt>
+<images/Theory-CFD/Flow Domain.png, id=399, 783.92876pt x 556.0775pt>
 File: images/Theory-CFD/Flow Domain.png Graphic file (type png)
 <use images/Theory-CFD/Flow Domain.png>
 Package pdftex.def Info: images/Theory-CFD/Flow Domain.png  used on input line 
@@ -1191,23 +1170,23 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 7
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [13] [14]
-<images/Theory-CFD/cfdvel.png, id=463, 1127.21124pt x 342.27875pt>
+<images/Theory-CFD/cfdvel.png, id=478, 1127.21124pt x 342.27875pt>
 File: images/Theory-CFD/cfdvel.png Graphic file (type png)
 <use images/Theory-CFD/cfdvel.png>
-Package pdftex.def Info: images/Theory-CFD/cfdvel.png  used on input line 81.
+Package pdftex.def Info: images/Theory-CFD/cfdvel.png  used on input line 80.
 (pdftex.def)             Requested size: 441.01772pt x 133.91643pt.
 
-Overfull \hbox (7.6603pt too wide) in paragraph at lines 81--82
+Overfull \hbox (7.6603pt too wide) in paragraph at lines 80--81
  [][] 
  []
 
-<images/Theory-CFD/cfdp.png, id=464, 1123.19624pt x 341.275pt>
+<images/Theory-CFD/cfdp.png, id=479, 1123.19624pt x 341.275pt>
 File: images/Theory-CFD/cfdp.png Graphic file (type png)
 <use images/Theory-CFD/cfdp.png>
-Package pdftex.def Info: images/Theory-CFD/cfdp.png  used on input line 87.
+Package pdftex.def Info: images/Theory-CFD/cfdp.png  used on input line 86.
 (pdftex.def)             Requested size: 441.01772pt x 133.99759pt.
 
-Overfull \hbox (7.6603pt too wide) in paragraph at lines 87--88
+Overfull \hbox (7.6603pt too wide) in paragraph at lines 86--87
  [][] 
  []
 
@@ -1217,18 +1196,18 @@ images/Theory-CFD/cfdp.png>] [16
 
 ]
 chapter 3.
-<images/Theory-DL/ActFn.png, id=483, 969.6225pt x 493.845pt>
+<images/Theory-DL/ActFn.png, id=499, 969.6225pt x 493.845pt>
 File: images/Theory-DL/ActFn.png Graphic file (type png)
 <use images/Theory-DL/ActFn.png>
 Package pdftex.def Info: images/Theory-DL/ActFn.png  used on input line 15.
 (pdftex.def)             Requested size: 284.52756pt x 144.91438pt.
-<images/Theory-DL/ActGraphs.png, id=486, 677.53125pt x 664.4825pt>
+<images/Theory-DL/ActGraphs.png, id=502, 677.53125pt x 664.4825pt>
 File: images/Theory-DL/ActGraphs.png Graphic file (type png)
 <use images/Theory-DL/ActGraphs.png>
 Package pdftex.def Info: images/Theory-DL/ActGraphs.png  used on input line 22.
 
 (pdftex.def)             Requested size: 227.62204pt x 223.23418pt.
-<images/Theory-DL/MLP.png, id=490, 1015.795pt x 689.57625pt>
+<images/Theory-DL/MLP.png, id=506, 1015.795pt x 689.57625pt>
 File: images/Theory-DL/MLP.png Graphic file (type png)
 <use images/Theory-DL/MLP.png>
 Package pdftex.def Info: images/Theory-DL/MLP.png  used on input line 30.
@@ -1240,7 +1219,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--74
  []
 
 [21]
-<images/Theory-DL/crossval.png, id=542, 865.926pt x 228.636pt>
+<images/Theory-DL/crossval.png, id=558, 865.926pt x 228.636pt>
 File: images/Theory-DL/crossval.png Graphic file (type png)
 <use images/Theory-DL/crossval.png>
 Package pdftex.def Info: images/Theory-DL/crossval.png  used on input line 97.
@@ -1252,50 +1231,47 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ) [25]
-<images/Theory-DL/Conv1.png, id=613, 1064.97874pt x 419.5675pt>
+<images/Theory-DL/Conv1.png, id=633, 1064.97874pt x 419.5675pt>
 File: images/Theory-DL/Conv1.png Graphic file (type png)
 <use images/Theory-DL/Conv1.png>
 Package pdftex.def Info: images/Theory-DL/Conv1.png  used on input line 158.
 (pdftex.def)             Requested size: 398.33858pt x 156.92769pt.
-<images/Theory-DL/Pool.png, id=616, 549.05125pt x 355.3275pt>
+<images/Theory-DL/Pool.png, id=636, 549.05125pt x 355.3275pt>
 File: images/Theory-DL/Pool.png Graphic file (type png)
 <use images/Theory-DL/Pool.png>
 Package pdftex.def Info: images/Theory-DL/Pool.png  used on input line 165.
 (pdftex.def)             Requested size: 170.71652pt x 110.48111pt.
-<images/Theory-DL/NNUnpool.png, id=617, 465.74pt x 223.83624pt>
+<images/Theory-DL/NNUnpool.png, id=637, 465.74pt x 223.83624pt>
 File: images/Theory-DL/NNUnpool.png Graphic file (type png)
 <use images/Theory-DL/NNUnpool.png>
 Package pdftex.def Info: images/Theory-DL/NNUnpool.png  used on input line 171.
 
 (pdftex.def)             Requested size: 170.71652pt x 82.04622pt.
  [26 <./images/Theory-DL/Conv1.png>]
-<images/Theory-DL/UNet.png, id=627, 1560.83125pt x 1039.885pt>
+<images/Theory-DL/UNet.png, id=648, 1560.83125pt x 1039.885pt>
 File: images/Theory-DL/UNet.png Graphic file (type png)
 <use images/Theory-DL/UNet.png>
 Package pdftex.def Info: images/Theory-DL/UNet.png  used on input line 179.
 (pdftex.def)             Requested size: 341.43306pt x 227.47427pt.
  [27 <./images/Theory-DL/Pool.png> <./images/Theory-DL/NNUnpool.png>]
-<images/Theory-DL/Skip.png, id=643, 434.62375pt x 391.4625pt>
+<images/Theory-DL/Skip.png, id=663, 434.62375pt x 391.4625pt>
 File: images/Theory-DL/Skip.png Graphic file (type png)
 <use images/Theory-DL/Skip.png>
 Package pdftex.def Info: images/Theory-DL/Skip.png  used on input line 190.
 (pdftex.def)             Requested size: 142.26378pt x 128.1377pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [28 <./images/Theory-DL/UNet.png>] [29 <./images/Theory-DL/Skip.png>]
-<images/Theory-DL/AdjMat.png, id=667, 915.42pt x 246.9225pt>
+<images/Theory-DL/AdjMat.png, id=697, 915.42pt x 246.9225pt>
 File: images/Theory-DL/AdjMat.png Graphic file (type png)
 <use images/Theory-DL/AdjMat.png>
-Package pdftex.def Info: images/Theory-DL/AdjMat.png  used on input line 215.
+Package pdftex.def Info: images/Theory-DL/AdjMat.png  used on input line 214.
 (pdftex.def)             Requested size: 341.43306pt x 92.09459pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 [30 <./images/Theory-DL/AdjMat.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 236--253
+Underfull \hbox (badness 10000) in paragraph at lines 234--251
 
  []
 
@@ -1309,13 +1285,13 @@ Package scrkbase Info: You've told me to use the font selection of the element
 
 ] [34] (./chapters/Methodology.tex
 chapter 4.
-<images/Methodology/Clipped.png, id=721, 750.805pt x 552.0625pt>
+<images/Methodology/Clipped.png, id=762, 721.69624pt x 463.7325pt>
 File: images/Methodology/Clipped.png Graphic file (type png)
 <use images/Methodology/Clipped.png>
 Package pdftex.def Info: images/Methodology/Clipped.png  used on input line 17.
 
-(pdftex.def)             Requested size: 312.9803pt x 230.13779pt.
-<images/Methodology/AdjMatrix.png, id=722, 400.49625pt x 374.39874pt>
+(pdftex.def)             Requested size: 284.52756pt x 182.82205pt.
+<images/Methodology/AdjMatrix.png, id=763, 400.49625pt x 374.39874pt>
 File: images/Methodology/AdjMatrix.png Graphic file (type png)
 <use images/Methodology/AdjMatrix.png>
 Package pdftex.def Info: images/Methodology/AdjMatrix.png  used on input line 2
@@ -1328,102 +1304,92 @@ Underfull \vbox (badness 1748) has occurred while \output is active []
 
 
 ]
-Underfull \vbox (badness 7133) has occurred while \output is active []
-
- [36 <./images/Methodology/Clipped.png>] [37 <./images/Methodology/AdjMatrix.pn
-g>]
-<images/Methodology/GraphUNet.png, id=750, 974.64125pt x 633.36626pt>
+[36 <./images/Methodology/Clipped.png>] [37 <./images/Methodology/AdjMatrix.png
+>]
+<images/Methodology/GraphUNet.png, id=803, 974.64125pt x 633.36626pt>
 File: images/Methodology/GraphUNet.png Graphic file (type png)
 <use images/Methodology/GraphUNet.png>
 Package pdftex.def Info: images/Methodology/GraphUNet.png  used on input line 7
-8.
+7.
 (pdftex.def)             Requested size: 341.43306pt x 221.8748pt.
  [38]
-[39 <./images/Methodology/GraphUNet.png>]
-<images/Methodology/allvelrecon.png, id=771, 591.4095pt x 404.712pt>
+Underfull \vbox (badness 2932) has occurred while \output is active []
+
+ [39 <./images/Methodology/GraphUNet.png>]
+<images/Methodology/allvelrecon.png, id=825, 591.4095pt x 404.712pt>
 File: images/Methodology/allvelrecon.png Graphic file (type png)
 <use images/Methodology/allvelrecon.png>
 Package pdftex.def Info: images/Methodology/allvelrecon.png  used on input line
- 149.
+ 148.
 (pdftex.def)             Requested size: 398.33858pt x 272.58832pt.
+
+Underfull \vbox (badness 5316) has occurred while \output is active []
+
  [40]
-<images/Methodology/Baselineprediction.png, id=784, 890.32625pt x 626.34pt>
+[41 <./images/Methodology/allvelrecon.png>]
+<images/Methodology/Baselineprediction.png, id=846, 890.32625pt x 626.34pt>
 File: images/Methodology/Baselineprediction.png Graphic file (type png)
 <use images/Methodology/Baselineprediction.png>
 Package pdftex.def Info: images/Methodology/Baselineprediction.png  used on inp
-ut line 166.
+ut line 165.
 (pdftex.def)             Requested size: 398.33858pt x 280.22566pt.
-
-Overfull \hbox (17.81808pt too wide) in paragraph at lines 174--183
- [][] 
- []
-
-[41] [42 <./images/Methodology/allvelrecon.png>]
+ [42]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43 <./images/Methodology/Baselineprediction.png>] [44]
-<images/Methodology/presvelcomp.png, id=834, 781.11826pt x 341.47575pt>
+<images/Methodology/presvelcomp.png, id=889, 781.11826pt x 341.47575pt>
 File: images/Methodology/presvelcomp.png Graphic file (type png)
 <use images/Methodology/presvelcomp.png>
 Package pdftex.def Info: images/Methodology/presvelcomp.png  used on input line
- 246.
+ 243.
 (pdftex.def)             Requested size: 426.79134pt x 186.58257pt.
-<images/Methodology/Asset 18.png, id=835, 1403.9652pt x 793.5246pt>
+<images/Methodology/Asset 18.png, id=890, 1403.9652pt x 793.5246pt>
 File: images/Methodology/Asset 18.png Graphic file (type png)
 <use images/Methodology/Asset 18.png>
 Package pdftex.def Info: images/Methodology/Asset 18.png  used on input line 25
-4.
+1.
 (pdftex.def)             Requested size: 398.33858pt x 225.13977pt.
-<images/Methodology/Asset 17.png, id=836, 1338.6813pt x 813.0375pt>
+<images/Methodology/Asset 17.png, id=891, 1338.6813pt x 813.0375pt>
 File: images/Methodology/Asset 17.png Graphic file (type png)
 <use images/Methodology/Asset 17.png>
-Package pdftex.def Info: images/Methodology/Asset 17.png  used on input line 26
-1.
+Package pdftex.def Info: images/Methodology/Asset 17.png  used on input line 25
+8.
 (pdftex.def)             Requested size: 398.33858pt x 241.92818pt.
-<images/Methodology/Asset 15.png, id=837, 1338.9222pt x 774.9753pt>
+<images/Methodology/Asset 15.png, id=892, 1338.9222pt x 774.9753pt>
 File: images/Methodology/Asset 15.png Graphic file (type png)
 <use images/Methodology/Asset 15.png>
 Package pdftex.def Info: images/Methodology/Asset 15.png  used on input line 27
-3.
+0.
 (pdftex.def)             Requested size: 398.33858pt x 230.55505pt.
-<images/Methodology/Asset 14.png, id=838, 1349.2809pt x 774.9753pt>
+<images/Methodology/Asset 14.png, id=893, 1349.2809pt x 774.9753pt>
 File: images/Methodology/Asset 14.png Graphic file (type png)
 <use images/Methodology/Asset 14.png>
-Package pdftex.def Info: images/Methodology/Asset 14.png  used on input line 28
-0.
+Package pdftex.def Info: images/Methodology/Asset 14.png  used on input line 27
+7.
 (pdftex.def)             Requested size: 398.33858pt x 228.7931pt.
 
-Overfull \hbox (5.0316pt too wide) in paragraph at lines 243--383
+Overfull \hbox (5.0316pt too wide) in paragraph at lines 240--380
 \OT1/ppl/m/n/10.95 from the three sur-ro-gates for four dif-fer-ent flow con-di
 -tions. Fig-ure [][][][]4.6[][][][][][][][][][][][][][] pro-vides an overview
  []
 
 [45 <./images/Methodology/presvelcomp.png>] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \vbox (badness 3098) has occurred while \output is active []
 
- []
-
-[47]
-Overfull \hbox (2.72134pt too wide) in paragraph at lines 418--419
-[]\OT1/ppl/m/it/10.95 SAGEknn \OT1/ppl/m/n/10.95 and \OT1/ppl/m/it/10.95 MoN-et
-knn\OT1/ppl/m/n/10.95 , main-tain a uni-for-mity in the pre-dicted flow field t
-hat closely
- []
-
-
-Overfull \hbox (4.0894pt too wide) in paragraph at lines 420--423
+ [47]
+Overfull \hbox (4.0894pt too wide) in paragraph at lines 417--419
 \OT1/ppl/m/n/10.95 mod-elling com-plex phys-i-cal phe-nom-ena. How-ever, the GN
 N mod-els - \OT1/ppl/m/it/10.95 Graphknn\OT1/ppl/m/n/10.95 , \OT1/ppl/m/it/10.9
 5 SAGEknn\OT1/ppl/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--423
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
 
  []
 
 [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 441--445
+Underfull \hbox (badness 10000) in paragraph at lines 437--441
 
  []
 
@@ -1441,56 +1407,61 @@ Overfull \hbox (14.45886pt too wide) in paragraph at lines 5--6
 h-dimensional data, mak-ing it amenable
  []
 
-[55]
-<images/Clustering/tsne_sim_cmap.png, id=947, 798.985pt x 690.58pt>
+
+Underfull \vbox (badness 1400) has occurred while \output is active []
+
+ [55]
+<images/Clustering/tsne_sim_cmap.png, id=998, 798.985pt x 690.58pt>
 File: images/Clustering/tsne_sim_cmap.png Graphic file (type png)
 <use images/Clustering/tsne_sim_cmap.png>
 Package pdftex.def Info: images/Clustering/tsne_sim_cmap.png  used on input lin
 e 17.
 (pdftex.def)             Requested size: 284.52756pt x 245.92157pt.
-<images/Clustering/pca_sim_cmap.png, id=948, 814.04124pt x 698.61pt>
+<images/Clustering/pca_sim_cmap.png, id=999, 814.04124pt x 698.61pt>
 File: images/Clustering/pca_sim_cmap.png Graphic file (type png)
 <use images/Clustering/pca_sim_cmap.png>
 Package pdftex.def Info: images/Clustering/pca_sim_cmap.png  used on input line
  23.
 (pdftex.def)             Requested size: 256.0748pt x 219.76483pt.
-<images/Clustering/tsne_inlet_cmp.png, id=949, 860.21375pt x 691.58376pt>
+<images/Clustering/tsne_inlet_cmp.png, id=1000, 860.21375pt x 691.58376pt>
 File: images/Clustering/tsne_inlet_cmp.png Graphic file (type png)
 <use images/Clustering/tsne_inlet_cmp.png>
 Package pdftex.def Info: images/Clustering/tsne_inlet_cmp.png  used on input li
 ne 29.
 (pdftex.def)             Requested size: 284.52756pt x 228.75098pt.
- [56]
-<images/Clustering/dbscan_tsne_sim.png, id=960, 858.20625pt x 700.6175pt>
+
+[56]
+<images/Clustering/dbscan_tsne_sim.png, id=1011, 858.20625pt x 700.6175pt>
 File: images/Clustering/dbscan_tsne_sim.png Graphic file (type png)
 <use images/Clustering/dbscan_tsne_sim.png>
 Package pdftex.def Info: images/Clustering/dbscan_tsne_sim.png  used on input l
 ine 41.
 (pdftex.def)             Requested size: 256.0748pt x 209.05367pt.
-<images/Clustering/anno.png, id=961, 532.389pt x 524.505pt>
-File: images/Clustering/anno.png Graphic file (type png)
-<use images/Clustering/anno.png>
-Package pdftex.def Info: images/Clustering/anno.png  used on input line 54.
-(pdftex.def)             Requested size: 227.62204pt x 224.25223pt.
-<images/Clustering/dbscan_pca_sim.png, id=967, 695.59875pt x 701.62125pt>
+<images/Clustering/redgreen.png, id=1012, 693.792pt x 400.49625pt>
+File: images/Clustering/redgreen.png Graphic file (type png)
+<use images/Clustering/redgreen.png>
+Package pdftex.def Info: images/Clustering/redgreen.png  used on input line 54.
+
+(pdftex.def)             Requested size: 398.33858pt x 229.94133pt.
+<images/Clustering/dbscan_pca_sim.png, id=1018, 695.59875pt x 701.62125pt>
 File: images/Clustering/dbscan_pca_sim.png Graphic file (type png)
 <use images/Clustering/dbscan_pca_sim.png>
 Package pdftex.def Info: images/Clustering/dbscan_pca_sim.png  used on input li
 ne 65.
 (pdftex.def)             Requested size: 227.62204pt x 229.58725pt.
-<images/Clustering/pca_tsne_sim_cmap.png, id=968, 815.045pt x 694.595pt>
+<images/Clustering/pca_tsne_sim_cmap.png, id=1019, 815.045pt x 694.595pt>
 File: images/Clustering/pca_tsne_sim_cmap.png Graphic file (type png)
 <use images/Clustering/pca_tsne_sim_cmap.png>
 Package pdftex.def Info: images/Clustering/pca_tsne_sim_cmap.png  used on input
  line 71.
 (pdftex.def)             Requested size: 284.52756pt x 242.47597pt.
-<images/Clustering/dbscan_tsne_pca_sim.png, id=969, 693.59125pt x 698.61pt>
+<images/Clustering/dbscan_tsne_pca_sim.png, id=1020, 693.59125pt x 698.61pt>
 File: images/Clustering/dbscan_tsne_pca_sim.png Graphic file (type png)
 <use images/Clustering/dbscan_tsne_pca_sim.png>
 Package pdftex.def Info: images/Clustering/dbscan_tsne_pca_sim.png  used on inp
 ut line 77.
 (pdftex.def)             Requested size: 284.52756pt x 286.59184pt.
-<images/Clustering/tsne_sim_1dcmap.png, id=971, 797.98125pt x 544.0325pt>
+<images/Clustering/tsne_sim_1dcmap.png, id=1022, 797.98125pt x 544.0325pt>
 File: images/Clustering/tsne_sim_1dcmap.png Graphic file (type png)
 <use images/Clustering/tsne_sim_1dcmap.png>
 Package pdftex.def Info: images/Clustering/tsne_sim_1dcmap.png  used on input l
@@ -1507,10 +1478,9 @@ Underfull \vbox (badness 8038) has occurred while \output is active []
 
  [58 <./images/Clustering/pca_sim_cmap.png>]) [59 <./images/Clustering/tsne_inl
 et_cmp.png>] [60 <./images/Clustering/dbscan_tsne_sim.png> <./images/Clustering
-/anno.png>]
-[61 <./images/Clustering/dbscan_pca_sim.png> <./images/Clustering/pca_tsne_sim_
-cmap.png>] [62 <./images/Clustering/dbscan_tsne_pca_sim.png> <./images/Clusteri
-ng/tsne_sim_1dcmap.png>]
+/redgreen.png>] [61 <./images/Clustering/dbscan_pca_sim.png> <./images/Clusteri
+ng/pca_tsne_sim_cmap.png>] [62 <./images/Clustering/dbscan_tsne_pca_sim.png> <.
+/images/Clustering/tsne_sim_1dcmap.png>]
 part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
@@ -1533,19 +1503,22 @@ Overfull \hbox (7.83539pt too wide) in paragraph at lines 47--48
 
 
 ] [69] [70] (./chapters/Appendix.tex
-<images/Appendix/Asset 28.png, id=1077, 2513.0688pt x 3300.0891pt>
+<images/Appendix/Asset 28.png, id=1125, 2513.0688pt x 3300.0891pt>
 File: images/Appendix/Asset 28.png Graphic file (type png)
 <use images/Appendix/Asset 28.png>
 Package pdftex.def Info: images/Appendix/Asset 28.png  used on input line 5.
-(pdftex.def)             Requested size: 426.79134pt x 560.40347pt.
+(pdftex.def)             Requested size: 398.33858pt x 523.03989pt.
 
 
-LaTeX Warning: Float too large for page by 42.60323pt on input line 8.
+LaTeX Warning: Float too large for page by 5.23964pt on input line 8.
 
-)) [71 <./images/Appendix/Asset 28.png (PNG copy)>] [72
-
-
-] (./main.acr
+<images/Appendix/loss.png, id=1126, 3486.7866pt x 2666.2812pt>
+File: images/Appendix/loss.png Graphic file (type png)
+<use images/Appendix/loss.png>
+Package pdftex.def Info: images/Appendix/loss.png  used on input line 11.
+(pdftex.def)             Requested size: 426.79134pt x 326.32735pt.
+)) [71 <./images/Appendix/Asset 28.png (PNG copy)>] [72 <./images/Appendix/loss
+.png (PNG copy)>] (./main.acr
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 2
 8.
 
@@ -1556,16 +1529,18 @@ File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 
 
 
+
+
 ]) (./main.sbl
-[74]) (./main.bbl [75
+[74] [75
 
 
 
 
-] [76
+]) (./main.bbl [76] [77
 
 
-] [77] [78] [79])
+] [78] [79])
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
@@ -1581,13 +1556,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29700 strings out of 477695
- 556325 string characters out of 5831648
- 1877759 words of memory out of 5000000
- 49274 multiletter control sequences out of 15000+600000
+ 30179 strings out of 477695
+ 562734 string characters out of 5831648
+ 1878759 words of memory out of 5000000
+ 49734 multiletter control sequences out of 15000+600000
  540544 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,20n,134p,10899b,756s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,20n,134p,10899b,762s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -1605,10 +1580,10 @@ exlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf
 type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
 latino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr
 .pfb>
-Output written on main.pdf (94 pages, 8288715 bytes).
+Output written on main.pdf (94 pages, 8712303 bytes).
 PDF statistics:
- 1577 PDF objects out of 1728 (max. 8388607)
- 1351 compressed objects within 14 object streams
- 404 named destinations out of 1000 (max. 500000)
- 750 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1634 PDF objects out of 1728 (max. 8388607)
+ 1406 compressed objects within 15 object streams
+ 423 named destinations out of 1000 (max. 500000)
+ 755 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -28,7 +28,7 @@
 \contentsline {subsubsection}{\nonumberline k-Fold cross-validation}{22}{subsubsection*.13}%
 \contentsline {subsection}{\numberline {3.3.8}Optimization}{23}{subsection.3.3.8}%
 \contentsline {subsubsection}{\nonumberline Loss function}{23}{subsubsection*.16}%
-\contentsline {subsubsection}{\nonumberline Backpropagation}{24}{subsubsection*.18}%
+\contentsline {subsubsection}{\nonumberline Backpropagation}{23}{subsubsection*.18}%
 \contentsline {subsubsection}{\nonumberline Learning rate}{24}{subsubsection*.20}%
 \contentsline {subsubsection}{\nonumberline Optimizer}{24}{subsubsection*.22}%
 \contentsline {section}{\numberline {3.4}Model evaluation metrics}{25}{section.3.4}%
@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {3.5.1}Convolutional layer}{26}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Pooling and unpooling}{26}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}The U-Net architecture}{27}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Graph Neural Networks (GNNs)}{29}{section.3.6}%
+\contentsline {section}{\numberline {3.6}Graph Neural Networks (GNNs)}{28}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Graph convolutions}{30}{subsection.3.6.1}%
 \contentsline {subsubsection}{\nonumberline GCNConv}{31}{subsubsection*.30}%
 \contentsline {subsection}{\numberline {3.6.2}Graph pooling}{31}{subsection.3.6.2}%
@@ -50,13 +50,13 @@
 \contentsline {section}{\numberline {4.1}Data pre-processing}{35}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Dataset generation}{35}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Transformation of mesh data to graph data}{36}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Model inputs and outputs}{37}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Data normalization}{38}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.3}Model inputs and outputs}{36}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Data normalization}{37}{subsection.4.1.4}%
 \contentsline {section}{\numberline {4.2}Graph U-Net}{38}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Architecture}{38}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Results and discussion}{39}{subsection.4.2.2}%
-\contentsline {subsubsection}{\nonumberline Reconstruction task}{40}{subsubsection*.45}%
-\contentsline {subsubsection}{\nonumberline Prediction task}{41}{subsubsection*.48}%
+\contentsline {subsubsection}{\nonumberline Reconstruction task}{41}{subsubsection*.45}%
+\contentsline {subsubsection}{\nonumberline Prediction task}{42}{subsubsection*.48}%
 \contentsline {subsection}{\numberline {4.2.3}Limitations}{44}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Proposed architecture}{44}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Results and discussion}{45}{section.4.4}%
@@ -67,15 +67,15 @@
 \contentsline {chapter}{\numberline {5}Dimensionality reduction and clustering}{55}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Dimensionality reduction}{55}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Principal Component Analysis (PCA)}{55}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}t-Distributed Stochastic Neighbor Embedding (t-SNE):}{55}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Clustering with DBSCAN}{56}{section.5.2}%
+\contentsline {subsection}{\numberline {5.1.2}t-Distributed Stochastic Neighbor Embedding (t-SNE)}{55}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Density-Based Spatial Clustering of Applications with Noise (DBSCAN)}{56}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Experiments, results and inference}{56}{section.5.3}%
 \contentsline {part}{\numberline {IV}Conclusion}{63}{part.4}%
 \contentsline {chapter}{\numberline {6}Conclusion}{65}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Recap of objectives and contributions}{65}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Future directions}{66}{section.6.2}%
-\contentsline {part}{Appendix}{72}{part*.67}%
-\contentsline {chapter}{List of Acronyms}{73}{section*.69}%
-\contentsline {chapter}{List of Symbols}{75}{section*.71}%
-\contentsline {chapter}{Bibliography}{75}{chapter*.72}%
+\contentsline {part}{Appendix}{73}{part*.67}%
+\contentsline {chapter}{List of Acronyms}{73}{section*.70}%
+\contentsline {chapter}{List of Symbols}{75}{section*.72}%
+\contentsline {chapter}{Bibliography}{76}{chapter*.73}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -650,11 +650,11 @@ INPUT ./images/Clustering/dbscan_tsne_sim.png
 INPUT ./images/Clustering/dbscan_tsne_sim.png
 INPUT ./images/Clustering/dbscan_tsne_sim.png
 INPUT ./images/Clustering/dbscan_tsne_sim.png
-INPUT ./images/Clustering/anno.png
-INPUT ./images/Clustering/anno.png
-INPUT ./images/Clustering/anno.png
-INPUT ./images/Clustering/anno.png
-INPUT ./images/Clustering/anno.png
+INPUT ./images/Clustering/redgreen.png
+INPUT ./images/Clustering/redgreen.png
+INPUT ./images/Clustering/redgreen.png
+INPUT ./images/Clustering/redgreen.png
+INPUT ./images/Clustering/redgreen.png
 INPUT ./images/Clustering/dbscan_pca_sim.png
 INPUT ./images/Clustering/dbscan_pca_sim.png
 INPUT ./images/Clustering/dbscan_pca_sim.png
@@ -690,6 +690,11 @@ INPUT ./images/Appendix/Asset 28.png
 INPUT ./images/Appendix/Asset 28.png
 INPUT ./images/Appendix/Asset 28.png
 INPUT ./images/Appendix/Asset 28.png
+INPUT ./images/Appendix/loss.png
+INPUT ./images/Appendix/loss.png
+INPUT ./images/Appendix/loss.png
+INPUT ./images/Appendix/loss.png
+INPUT ./images/Appendix/loss.png
 INPUT ./main.acr
 INPUT ./main.acr
 INPUT main.acr

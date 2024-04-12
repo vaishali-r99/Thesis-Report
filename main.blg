@@ -3,56 +3,50 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: bibliography/literature.bib
-Warning--empty journal in ester1996dbscan
-Warning--empty journal in he2015
-Warning--empty journal in metalearning
-Warning--empty journal in pnpp
-Warning--empty journal in unet
 Warning--empty chapter and pages in tracey2013
 Warning--empty publisher in tracey2013
-Warning--empty year in tracey2013
-Warning--empty journal in trask2019
-Warning--empty journal in zhang2015
+Warning--empty chapter and pages in zhang2015
+Warning--empty publisher in zhang2015
 Warning--empty year in zhang2015
 You've used 48 entries,
             2118 wiz_defined-function locations,
-            775 strings with 11937 characters,
-and the built_in function-call counts, 15345 in all, are:
-= -- 1491
+            783 strings with 12033 characters,
+and the built_in function-call counts, 15464 in all, are:
+= -- 1512
 > -- 751
 < -- 7
 + -- 302
 - -- 246
-* -- 1058
-:= -- 2609
-add.period$ -- 146
+* -- 1059
+:= -- 2621
+add.period$ -- 148
 call.type$ -- 48
-change.case$ -- 261
+change.case$ -- 260
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 570
-empty$ -- 1163
+cite$ -- 53
+duplicate$ -- 586
+empty$ -- 1177
 format.name$ -- 246
-if$ -- 3147
+if$ -- 3195
 int.to.chr$ -- 0
 int.to.str$ -- 48
-missing$ -- 52
-newline$ -- 244
+missing$ -- 53
+newline$ -- 245
 num.names$ -- 98
-pop$ -- 275
+pop$ -- 259
 preamble$ -- 1
 purify$ -- 218
 quote$ -- 0
-skip$ -- 408
+skip$ -- 426
 stack$ -- 0
-substring$ -- 900
-swap$ -- 93
+substring$ -- 886
+swap$ -- 111
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
-warning$ -- 11
-while$ -- 146
+type$ -- 178
+warning$ -- 5
+while$ -- 144
 width$ -- 50
-write$ -- 510
-(There were 11 warnings)
+write$ -- 524
+(There were 5 warnings)
