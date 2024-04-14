@@ -41,7 +41,7 @@
 \glsXpageXglsnumberformat{}{45}}}\glsgroupskip
 \glsgroupheading{D}\relax\glsresetentrylist
 \glossentry{DBSCAN}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{55}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{53}}}\relax\glsresetentrylist
 \glossentry{DL}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{3}}}\relax\glsresetentrylist
 \glossentry{DNS}{\glossaryentrynumbers{\relax 
@@ -57,7 +57,7 @@
 \glossentry{GCNN}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{5}}}\relax\glsresetentrylist
 \glossentry{GNN}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{4}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{3}}}\glsgroupskip
 \glsgroupheading{H}\relax\glsresetentrylist
 \glossentry{HOMER}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{5}}}\relax\glsresetentrylist
@@ -88,12 +88,14 @@
 \glsXpageXglsnumberformat{}{3}}}\glsgroupskip
 \glsgroupheading{P}\relax\glsresetentrylist
 \glossentry{PCA}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{55}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{53}}}\relax\glsresetentrylist
 \glossentry{PDE}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{3}}}\relax\glsresetentrylist
 \glossentry{PINN}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{4}}}\glsgroupskip
 \glsgroupheading{R}\relax\glsresetentrylist
+\glossentry{RANS}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{12}}}\relax\glsresetentrylist
 \glossentry{ReLU}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{18}}}\relax\glsresetentrylist
 \glossentry{RMSE}{\glossaryentrynumbers{\relax 
@@ -115,5 +117,5 @@
 \glsXpageXglsnumberformat{}{13}}}\glsgroupskip
 \glsgroupheading{T}\relax\glsresetentrylist
 \glossentry{t-SNE}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{55}}}%
+\glsXpageXglsnumberformat{}{53}}}%
 \end{theglossary}\glossarypostamble

@@ -42,7 +42,7 @@
 \newglossaryentry{ui}
 {
   name={$u_i$},
-  text={\ensuremath{$u_i$}},
+  text={\ensuremath{u_i}},
   description={Flow velocity in the spatial direction $x_i$},
   type=symbol,
   sort=ui
@@ -57,7 +57,7 @@
 }
 \newglossaryentry{p}
 {
-  name={$\p$},
+  name={$p$},
   text={\ensuremath{p}},
   description={Pressure},
   type=symbol,
@@ -209,15 +209,30 @@
   sort=hatxi
 }
 
+% \newglossaryentry{yi}
+% {
+%   name={$\y^i$},
+%   text={\ensuremath{y^i}},
+%   description={Output of batch normalization layer},
+%   type=symbol,
+%   sort=yi
+% }
+\newglossaryentry{yihat}
+{
+  name={$\hat{y}_i$},
+  text={\ensuremath{\hat{y}_i}},
+  description={Prediction of the neural network},
+  type=symbol,
+  sort=yihat
+}
 \newglossaryentry{yi}
 {
-  name={$\y^i$},
-  text={\ensuremath{y^i}},
-  description={Output of batch normalization layer},
+  name={$y_i$},
+  text={\ensuremath{y_i}},
+  description={Ground truth},
   type=symbol,
   sort=yi
 }
-
 \newglossaryentry{gamma}
 {
   name={$\gamma$},
@@ -265,8 +280,8 @@
 }
 \newglossaryentry{G}
 {
-  name={$\hat{m}_t$},
-  text={\ensuremath{\hat{m}_t}},
+  name={$G$},
+  text={\ensuremath{G}},
   description={Graph in a Graph Neural Network},
   type=symbol,
   sort=G

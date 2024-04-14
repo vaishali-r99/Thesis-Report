@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Literature review}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Scope and objectives}{5}{section.1.2}%
-\contentsline {part}{\numberline {II}Theory}{7}{part.2}%
+\contentsline {part}{\numberline {II}Theoretical background}{7}{part.2}%
 \contentsline {chapter}{\numberline {2}Nozzle simulation and fluid mechanics primer}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Jet deflection in the HOMER nozzle}{9}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Coanda effect}{9}{subsection.2.1.1}%
@@ -32,20 +32,20 @@
 \contentsline {subsubsection}{\nonumberline Learning rate}{24}{subsubsection*.20}%
 \contentsline {subsubsection}{\nonumberline Optimizer}{24}{subsubsection*.22}%
 \contentsline {section}{\numberline {3.4}Model evaluation metrics}{25}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Convolutional Neural Networks (CNNs)}{26}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Convolutional Neural Networks (CNNs)}{25}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Convolutional layer}{26}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Pooling and unpooling}{26}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}The U-Net architecture}{27}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.3}The U-Net architecture}{26}{subsection.3.5.3}%
 \contentsline {section}{\numberline {3.6}Graph Neural Networks (GNNs)}{28}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Graph convolutions}{30}{subsection.3.6.1}%
-\contentsline {subsubsection}{\nonumberline GCNConv}{31}{subsubsection*.30}%
+\contentsline {subsubsection}{\nonumberline GCNConv}{30}{subsubsection*.30}%
 \contentsline {subsection}{\numberline {3.6.2}Graph pooling}{31}{subsection.3.6.2}%
-\contentsline {subsubsection}{\nonumberline Top-k pooling}{32}{subsubsection*.32}%
+\contentsline {subsubsection}{\nonumberline Top-k pooling}{31}{subsubsection*.32}%
 \contentsline {subsubsection}{\nonumberline Max pooling}{32}{subsubsection*.34}%
 \contentsline {subsection}{\numberline {3.6.3}Graph unpooling}{32}{subsection.3.6.3}%
 \contentsline {subsubsection}{\nonumberline Nearest neighbor interpolation}{32}{subsubsection*.36}%
 \contentsline {subsubsection}{\nonumberline Max unpooling}{32}{subsubsection*.38}%
-\contentsline {part}{\numberline {III}Methodology}{33}{part.3}%
+\contentsline {part}{\numberline {III}Application and analysis}{33}{part.3}%
 \contentsline {chapter}{\numberline {4}Implementation, results and discussion}{35}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Data pre-processing}{35}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Dataset generation}{35}{subsection.4.1.1}%
@@ -64,18 +64,18 @@
 \contentsline {subsection}{\numberline {4.5.1}Checkerboard artifacts}{48}{subsection.4.5.1}%
 \contentsline {section}{\numberline {4.6}Challenges}{49}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Hierarchical multi-resolution pooling mechanism in GNN architecture}{50}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Dimensionality reduction and clustering}{55}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Dimensionality reduction}{55}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Principal Component Analysis (PCA)}{55}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}t-Distributed Stochastic Neighbor Embedding (t-SNE)}{55}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Density-Based Spatial Clustering of Applications with Noise (DBSCAN)}{56}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Experiments, results and inference}{56}{section.5.3}%
-\contentsline {part}{\numberline {IV}Conclusion}{63}{part.4}%
-\contentsline {chapter}{\numberline {6}Conclusion}{65}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Recap of objectives and contributions}{65}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Future directions}{66}{section.6.2}%
-\contentsline {part}{Appendix}{73}{part*.67}%
-\contentsline {chapter}{List of Acronyms}{73}{section*.70}%
-\contentsline {chapter}{List of Symbols}{75}{section*.72}%
-\contentsline {chapter}{Bibliography}{76}{chapter*.73}%
+\contentsline {chapter}{\numberline {5}Dimensionality reduction and clustering}{53}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Dimensionality reduction}{53}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Principal Component Analysis (PCA)}{53}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}t-Distributed Stochastic Neighbor Embedding (t-SNE)}{53}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Density-Based Spatial Clustering of Applications with Noise (DBSCAN)}{54}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Experiments, results and inference}{54}{section.5.3}%
+\contentsline {part}{\numberline {IV}Conclusion}{61}{part.4}%
+\contentsline {chapter}{\numberline {6}Conclusion}{63}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Recap of objectives and contributions}{63}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future directions}{64}{section.6.2}%
+\contentsline {part}{Appendix}{71}{part*.67}%
+\contentsline {chapter}{List of Acronyms}{71}{section*.70}%
+\contentsline {chapter}{List of Symbols}{73}{section*.72}%
+\contentsline {chapter}{Bibliography}{74}{chapter*.73}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
